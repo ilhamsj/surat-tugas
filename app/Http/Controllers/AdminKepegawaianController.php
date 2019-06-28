@@ -14,7 +14,7 @@ class AdminKepegawaianController extends Controller
      */
     public function index()
     {
-        $pegawai = User::All();
+        $pegawai = User::paginate(10);
         return view('admin_kepegawaian.index')->with(['pegawai' => $pegawai]);
     }
 

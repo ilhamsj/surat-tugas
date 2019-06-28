@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pegawai = User::All();
+        $pegawai = User::paginate(3);
         return view('home')->with(['pegawai' => $pegawai]);
     }
 }

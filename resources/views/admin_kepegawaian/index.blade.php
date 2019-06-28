@@ -4,31 +4,27 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
-            Dashboard
-        </div>
-
-        <div class="col-sm-9">
-            @foreach ($pegawai as $item)
-                {{$item->name}} <br/>
-            @endforeach
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Username</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Tanggal Pendaftaran</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                    @foreach ($pegawai as $item)
+                        <tr>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->email}}</td>
+                            <td>{{$item->role}}</td>
+                            <td>{{$item->created_at}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
+            {{ $pegawai->links() }}
         </div>
     </div>
 </div>
