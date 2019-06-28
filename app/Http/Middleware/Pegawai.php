@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 
 class Pegawai
 {
@@ -15,6 +16,18 @@ class Pegawai
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (Auth::check() && Auth::user()->role == 'pegawai') 
+        {
+            return $next($request);
+        } 
+        
+        elseif(Auth::check() && Auth::user()->role == 'admin_bagian')
+        {
+            return redirect('/admin_bagian');
+        }
+        
+        else {
+            return redirect('/admin_kepegawaian');
+        }   
     }
 }

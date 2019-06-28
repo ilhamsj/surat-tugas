@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 
 class AdminKepegawaian
 {
@@ -15,6 +16,19 @@ class AdminKepegawaian
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (Auth::check() && Auth::user()->role == 'admin_kepegawaian') 
+        {
+            return $next($request);
+        } 
+        
+        elseif(Auth::check() && Auth::user()->role == 'admin_bagian')
+        {
+            return redirect('/admin_bagian');
+        }
+        
+        else
+        {
+            return redirect('/pegawai');
+        }
     }
 }
