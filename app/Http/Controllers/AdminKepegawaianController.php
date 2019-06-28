@@ -25,7 +25,7 @@ class AdminKepegawaianController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin_kepegawaian.create');
     }
 
     /**
@@ -47,7 +47,8 @@ class AdminKepegawaianController extends Controller
      */
     public function show($id)
     {
-        //
+        $pegawai = User::find($id);
+        return view('admin_kepegawaian.show')->with(['pegawai' => $pegawai]);
     }
 
     /**

@@ -7,7 +7,7 @@
             <a href="{{route('home')}}" class="btn btn-primary">Home</a>
             <a href="{{route('pegawai')}}" class="btn btn-primary">Pegawai</a>
             <a href="{{route('admin')}}" class="btn btn-primary">Admin Bagian</a>
-            <a href="{{route('superadmin')}}" class="btn btn-primary">Admin Kepegawaian</a>
+            <a href="{{route('admin_kepegawaian.index')}}" class="btn btn-primary">Admin Kepegawaian</a>
         </div>
     </div>
 </div>

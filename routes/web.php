@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pegawai', 'PegawaiController@index')->name('pegawai')->middleware('pegawai');
 Route::get('/admin_bagian', 'HomeController@index')->name('admin')->middleware('admin_bagian');
-Route::get('/admin_kepegawaian', 'AdminKepegawaianController@index')->name('superadmin'); #->middleware('admin_kepegawaian');
+Route::resource('admin_kepegawaian', 'AdminKepegawaianController');#->name('superadmin'); #->middleware('admin_kepegawaian');
