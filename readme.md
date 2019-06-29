@@ -4,3 +4,4 @@
 1. apa itu session notification
 1. insert multiple data
 1. apa hal wajib yang harus saya ketahui seputar laravel
+1. intregasi admin template ke laravel
