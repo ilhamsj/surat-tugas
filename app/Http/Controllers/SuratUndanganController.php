@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\SuratUndangan;
 
 class SuratUndanganController extends Controller
 {
@@ -13,7 +14,10 @@ class SuratUndanganController extends Controller
      */
     public function index()
     {
-        return view('surat_undangan.index');
+        $undangan = SuratUndangan::all();
+        return view('surat_undangan.index')->with([
+            'undangan' => $undangan,
+        ]);
     }
 
     /**
@@ -23,7 +27,7 @@ class SuratUndanganController extends Controller
      */
     public function create()
     {
-        //
+        return view('surat_undangan.create');
     }
 
     /**
@@ -34,7 +38,12 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $undangan = new SuratUndangan([
+            'pengundang' => $request->get('pengundang'),
+        ]);
+        $undangan->save();
+
+        return redirect(route('surat_undangan.index'));
     }
 
     /**
@@ -45,7 +54,8 @@ class SuratUndanganController extends Controller
      */
     public function show($id)
     {
-        //
+        $undangan = SuratUndangan::find($id);
+        return view('surat_undangan.show')->with(['undangan' => $undangan]);
     }
 
     /**
@@ -56,7 +66,8 @@ class SuratUndanganController extends Controller
      */
     public function edit($id)
     {
-        //
+        $undangan = SuratUndangan::find($id);
+        return view('surat_undangan.edit')->with(['undangan' => $undangan]);
     }
 
     /**
@@ -68,7 +79,11 @@ class SuratUndanganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $undangan = SuratUndangan::find($id);
+        $undangan->pengundang = $request->get('pengundang');
+        $undangan->save();
+
+        return redirect(route('surat_undangan.index'))->with('success', 'Undangan berhasil di update');
     }
 
     /**
@@ -79,6 +94,7 @@ class SuratUndanganController extends Controller
      */
     public function destroy($id)
     {
-        //
+        SuratUndangan::destroy($id);
+        return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil dihapus');
     }
 }
