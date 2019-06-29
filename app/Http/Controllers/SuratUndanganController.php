@@ -43,7 +43,7 @@ class SuratUndanganController extends Controller
         ]);
         $undangan->save();
 
-        return redirect(route('surat_undangan.index'));
+        return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil ditambahkan');
     }
 
     /**

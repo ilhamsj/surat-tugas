@@ -4,7 +4,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-2">
-            <a href="{{ route('admin_kepegawaian.create') }}" class="">Surat Baru</a>
+            <h4>Data Pegawai</h4>
+            <a href="{{ route('admin_kepegawaian.create') }}" class="">Data Pegawai</a> <br/>
+
+            <h4>Data Undangan</h4>
+            <a href="{{ route('admin_kepegawaian.create') }}" class="">Data Undangan</a> <br/>
+            
+            <h4>Data Surat Tugas</h4>
+            <a href="{{ route('admin_kepegawaian.create') }}" class="">Data Surat Tugas</a>
         </div>
         <div class="col">
             <table class="table">

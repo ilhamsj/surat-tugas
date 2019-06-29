@@ -4,12 +4,14 @@
 <div class="container">
 
 
-    <div class="alert alert-success" role="alert">
-        Data berhasil dihapus
-        <button class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+            <button class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
 
     <div class="row">
         <div class="col-sm-12">
@@ -17,7 +19,7 @@
             <a href="{{route('surat_undangan.create')}}">Tambah</a>
         </div>
         @foreach ($undangan as $item)
-        <div class="col-sm-3 mb-4 py-3">
+        <div class="col-sm-3 mb-4 py-3 shadow ml-3">
             <h6>Pengundang</h6>
             <h4>{{$item->pengundang}}</h4>
 
