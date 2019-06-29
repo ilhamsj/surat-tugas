@@ -4,10 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-2">
-            <a href="{{ route('surat_undangan.create') }}" class="">Surat Baru</a>
+            <a href="{{ route('admin_kepegawaian.create') }}" class="">Surat Baru</a>
         </div>
         <div class="col">
-            <h3>Data pegawai</h3>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
