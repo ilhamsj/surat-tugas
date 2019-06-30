@@ -79,26 +79,6 @@
                     <div class="col-sm-3">
                             <div class="row">
                                 <div class="col mb-4">
-                                    @auth
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Pegawai Panel
-                                        </div>
-                                        <div class="card-body">
-                                            Nama :
-                                            <h5>{{ Auth::user()->name }}</h5>
-                                            
-                                            Role :
-                                            <h5>{{ Auth::user()->role }}</h5>
-                                            NIP :
-                                            <h5>{{ Auth::user()->email }}</h5>
-                                        </div>
-                                    </div>
-                                    @endauth
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col mb-4">
                                     <div class="card">
                                         <div class="card-header">
                                             Admin Bagian
@@ -106,6 +86,8 @@
                                         <div class="card-body">
                                             <nav class="nav flex-column">
                                                 <a class="nav-link" href="{{ route('admin') }}">Dashboard</a>
+                                                <a class="nav-link" href="{{ route('surat_undangan.create') }}">Submit Undangan</a>
+                                                <a class="nav-link" href="{{ route('surat_undangan.create') }}">Buat Surat Tugas</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -117,9 +99,8 @@
                                         </div>
                                         <div class="card-body">
                                             <nav class="nav flex-column">
-                                                <a class="nav-link" href="{{ route('admin_kepegawaian.index') }}">Dashboard</a>
-                                                <a class="nav-link" href="#">Data Pegawai</a>
-                                                <a class="nav-link" href="#">Data Undangan</a>
+                                                <a class="nav-link" href="{{ route('admin_kepegawaian.index') }}">Data Pegawai</a>
+                                                <a class="nav-link" href="{{ route('surat_undangan.index') }}">Data Undangan</a>
                                                 <a class="nav-link" href="#">Data Surat</a>
                                             </nav>
                                         </div>

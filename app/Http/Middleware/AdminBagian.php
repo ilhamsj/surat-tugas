@@ -27,7 +27,7 @@ class AdminBagian
         }
         
         else {
-            return redirect('/pegawai');
+            return redirect('/pegawai')->with('session', 'Anda tidak memiliki hak akses');
         }
         
     }

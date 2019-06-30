@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/pegawai', 'PegawaiController@index')->name('pegawai'); #->middleware('pegawai');
-Route::get('/admin_bagian', 'HomeController@index')->name('admin'); #->middleware('admin_bagian');
-Route::resource('admin_kepegawaian', 'AdminKepegawaianController');#->name('superadmin'); #->middleware('admin_kepegawaian');
+Route::get('/pegawai', 'PegawaiController@index')->name('pegawai')->middleware('pegawai');
+Route::get('/admin_bagian', 'HomeController@index')->name('admin')->middleware('admin_bagian');
+Route::resource('admin_kepegawaian', 'AdminKepegawaianController')->middleware('admin_kepegawaian');
 Route::resource('surat_undangan', 'SuratUndanganController');

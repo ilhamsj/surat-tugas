@@ -82,11 +82,9 @@
                         <p class="lead">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio quam, nam facilis reprehenderit unde aut enim perspiciatis nemo ipsam quidem perferendis beatae saepe sed quaerat nostrum praesentium officia voluptate maiores?
                         </p>
-                        @auth
-                            <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
-                            <a href="" class="btn btn-secondary">Daftar</a>
-                        @endauth
-                        
+                            <a href="{{ route('pegawai') }}" class="btn btn-primary">Pegawai</a>
+                            <a href="{{ route('admin') }}" class="btn btn-secondary">Admin Bagian</a>
+                            <a href="{{ route('admin_kepegawaian.index') }}" class="btn btn-secondary">Admin Kepegawaian</a>
                     <hr>
                     </div>
                 </div>

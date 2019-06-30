@@ -4,9 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">   
-            <div class="py-2">
-                <h3>Data Pegawai</h3>
-            </div>
             <table class="table border">
                 <thead class="thead-light">
                     <tr>

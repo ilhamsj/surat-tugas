@@ -17,6 +17,6 @@ class PegawaiController extends Controller
 
     public function index()
     {
-        return 'Halaman pegawai';
+        return view('pegawai');
     }
 }
