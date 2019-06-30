@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">   
-            <table class="table border">
+            <table class="table">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Nama</th>
@@ -29,7 +29,11 @@
                                     
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="#">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <form action="{{ route('admin_kepegawaian.destroy', $item->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item">Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>

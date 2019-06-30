@@ -82,6 +82,7 @@ class AdminKepegawaianController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect(route('admin_kepegawaian.index'))->with('success', 'User berhasil dihapus');
     }
 }
