@@ -14,6 +14,6 @@ class SuratUndangan extends Model
         'perihal',
         'waktu',
         'tempat',
-        'url_bukti',
+        'file',
     ];
 }

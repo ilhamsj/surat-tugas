@@ -140,9 +140,19 @@
                     </div>
                 @endauth
                     <div class="col">
+                        
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                                <button class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+
                         @yield('content')
                     </div>
-                </div>            
+                </div>
             </div>
         </main>
     </div>

@@ -7,6 +7,10 @@ use App\SuratUndangan;
 
 class SuratUndanganController extends Controller
 {
+
+    public function __construct() {
+        // $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,8 +42,20 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'pengundang' => 'required',
+            'file' => 'required|image',
+        ]);
+
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+
+        $destination = 'images';
+        $file->move($destination, $fileName);
+
         $undangan = new SuratUndangan([
             'pengundang' => $request->get('pengundang'),
+            'file' => $fileName
         ]);
         $undangan->save();
 

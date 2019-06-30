@@ -21,7 +21,7 @@ class CreateSuratUndangansTable extends Migration
             // $table->string('perihal', 30);
             // $table->timestamp('waktu');
             // $table->string('tempat', 100);
-            // $table->text('url_bukti');
+            $table->text('file');
             $table->timestamps();
         });
     }
