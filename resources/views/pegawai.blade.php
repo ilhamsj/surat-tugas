@@ -1,16 +1,5 @@
 @extends('layouts.app')
 
-@section('sidebar')
-    <div class="row">
-        <div class="col mb-4">
-            <div class="card">
-                <div class="card-body">
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
-
 @section('content')
     <div class="row">
         <div class="col">
