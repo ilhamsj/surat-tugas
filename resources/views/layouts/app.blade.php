@@ -14,14 +14,15 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -73,13 +74,72 @@
         </nav>
 
         <main class="py-4 bg-white" style="min-height:100vh">
-            @yield('content')
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                            <div class="row">
+                                <div class="col mb-4">
+                                    @auth
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Pegawai Panel
+                                        </div>
+                                        <div class="card-body">
+                                            Nama :
+                                            <h5>{{ Auth::user()->name }}</h5>
+                                            
+                                            Role :
+                                            <h5>{{ Auth::user()->role }}</h5>
+                                            NIP :
+                                            <h5>{{ Auth::user()->email }}</h5>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="">Edit Profil</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="">Edit Profil</a>
+                                        </div>
+                                    </div>
+                                    @endauth
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Admin Bagian
+                                        </div>
+                                        <div class="card-body">
+                                            <nav class="nav flex-column">
+                                                <a class="nav-link" href="#">Active</a>
+                                                <a class="nav-link" href="#">Link</a>
+                                                <a class="nav-link" href="#">Link</a>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Admin Kepegawaian
+                                        </div>
+                                        <div class="card-body">
+                                            <nav class="nav flex-column">
+                                                <a class="nav-link" href="#">Data Pegawai</a>
+                                                <a class="nav-link" href="#">Link</a>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @yield('sidebar')
+                    </div>
+                    <div class="col">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        ScrollReveal().reveal('.undangan');
-        console.log('hello llarav');
-    </script>
 </body>
 </html>
