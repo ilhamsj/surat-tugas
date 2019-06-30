@@ -93,12 +93,6 @@
                                             NIP :
                                             <h5>{{ Auth::user()->email }}</h5>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="">Edit Profil</a>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="">Edit Profil</a>
-                                        </div>
                                     </div>
                                     @endauth
                                 </div>
@@ -111,7 +105,7 @@
                                         </div>
                                         <div class="card-body">
                                             <nav class="nav flex-column">
-                                                <a class="nav-link" href="#">Buat Surat</a>
+                                                <a class="nav-link" href="{{ route('admin') }}">Dashboard</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -123,6 +117,7 @@
                                         </div>
                                         <div class="card-body">
                                             <nav class="nav flex-column">
+                                                <a class="nav-link" href="{{ route('admin_kepegawaian.index') }}">Dashboard</a>
                                                 <a class="nav-link" href="#">Data Pegawai</a>
                                                 <a class="nav-link" href="#">Data Undangan</a>
                                                 <a class="nav-link" href="#">Data Surat</a>

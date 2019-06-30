@@ -25,10 +25,16 @@
                             <td>{{$item->role}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>
-                                <a href="" class="btn btn-secondary btn-sm">Edit</a>
-                            </td>
-                            <td>
-                                <a href="" class="btn btn-danger btn-sm">Del</a>
+                                <div class="dropdown show">
+                                    <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Details
+                                    </a>
+                                    
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach

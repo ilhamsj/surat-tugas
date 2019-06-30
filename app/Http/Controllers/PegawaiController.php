@@ -12,7 +12,7 @@ class PegawaiController extends Controller
         $this->middleware('auth');
 
         // cek apakah pegawai
-        $this->middleware('pegawai');
+        // $this->middleware('pegawai');
     }
 
     public function index()

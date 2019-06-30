@@ -13,17 +13,6 @@
 
 @section('content')
     <div class="row">
-        <div class="col-sm-12 mb-4">
-            <div class="card">
-                <div class="card-header">
-                    Pengumuman
-                </div>
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In dolor officia esse, sapiente ea fugit soluta assumenda perspiciatis unde magnam aspernatur distinctio, animi maiores dolorem suscipit eius recusandae, optio inventore.
-                </div>
-            </div>
-        </div>
-
         <div class="col mb-4">
             <div class="card">
                 <div class="card-header">
