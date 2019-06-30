@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\SuratUndangan;
 use App\User;
+use App\SuratTugas;
 
-class AdminKepegawaianController extends Controller
+class SuratTugasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +16,11 @@ class AdminKepegawaianController extends Controller
      */
     public function index()
     {
-        // $pegawai = User::paginate(5);
-        $pegawai = User::orderBy('role', 'desc')
-                        ->paginate(5);
-        return view('admin_kepegawaian.index')->with(['pegawai' => $pegawai]);
+        $surat_tugas = SuratTugas::all();
+        return view('surat_tugas.index')->with([
+                        'surat_tugas' => $surat_tugas,
+                        'session' => 'Menampilkan data surat tugas',
+                        ]);
     }
 
     /**
@@ -27,7 +30,12 @@ class AdminKepegawaianController extends Controller
      */
     public function create()
     {
-        return view('admin_kepegawaian.create');
+        $undangan = SuratUndangan::all();
+        $pegawai = User::all();
+        return view('surat_tugas.create')->with([
+            'undangan' => $undangan,
+            'pegawai' => $pegawai
+        ]);
     }
 
     /**
@@ -38,7 +46,13 @@ class AdminKepegawaianController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $suratTugas = new SuratTugas([
+            'id_pegawai' => $request->get('id_pegawai'),
+            'id_undangan' => $request->get('id_undangan'),
+        ]);
+        $suratTugas->save();
+        // return redirect(route('surat_tugas.create'));
+        return $request->get('id_pegawai').' Berhasil disimpan';
     }
 
     /**
@@ -49,8 +63,7 @@ class AdminKepegawaianController extends Controller
      */
     public function show($id)
     {
-        $pegawai = User::find($id);
-        return view('admin_kepegawaian.show')->with(['pegawai' => $pegawai]);
+        //
     }
 
     /**
@@ -84,7 +97,6 @@ class AdminKepegawaianController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
-        return redirect(route('admin_kepegawaian.index'))->with('success', 'User berhasil dihapus');
+        //
     }
 }

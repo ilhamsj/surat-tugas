@@ -16,6 +16,7 @@
 1. kapan harus menggunakan put patch delete
 1. cara migration tanpa fresh
 1. tinker
+1. index, unique, primary key
 
 #tips
 1. untuk merubah error message di sini [validation](resources\lang\en\validation.php)

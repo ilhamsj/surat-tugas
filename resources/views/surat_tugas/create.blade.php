@@ -1,16 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-8">
-            <form action="{{route('surat_undangan.store')}}" method="post">
+        <div class="col">
+            <form action="{{route('surat_tugas.store')}}" method="post">
                 @csrf
                 
-                <input type="text" name="pengundang" id="">
-                <button type="submit">Save</button>
+                <div class="form-group">
+                    <select name="id_undangan" id="" class="form-control">
+                        @foreach ($undangan as $item)
+                            <option value="{{ $item->id }}">{{ $item->pengundang }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="id_pegawai" id="" class="form-control">
+                        @foreach ($pegawai as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Save</button>
             </form>
         </div>
     </div>
-</div>
 @endsection

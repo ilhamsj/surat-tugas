@@ -91,7 +91,7 @@
                                             <nav class="nav flex-column">
                                                 <a class="nav-link" href="{{ route('admin_kepegawaian.index') }}">Data Pegawai</a>
                                                 <a class="nav-link" href="{{ route('surat_undangan.index') }}">Data Undangan</a>
-                                                <a class="nav-link" href="#">Data Surat</a>
+                                                <a class="nav-link" href="{{ route('surat_tugas.index') }}">Data Surat</a>
                                             </nav>
                                         </div>
                                     </div>

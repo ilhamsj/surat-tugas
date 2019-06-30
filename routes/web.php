@@ -23,3 +23,4 @@ Route::get('/admin_bagian', 'HomeController@index')->name('admin')->middleware('
 
 Route::resource('admin_kepegawaian', 'AdminKepegawaianController')->middleware('admin_kepegawaian');
 Route::resource('surat_undangan', 'SuratUndanganController');
+Route::resource('surat_tugas', 'SuratTugasController');
