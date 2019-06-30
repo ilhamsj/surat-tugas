@@ -3,24 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-2">
-            <h4>Data Pegawai</h4>
-            <a href="{{ route('admin_kepegawaian.create') }}" class="">Data Pegawai</a> <br/>
-
-            <h4>Data Undangan</h4>
-            <a href="{{ route('admin_kepegawaian.create') }}" class="">Data Undangan</a> <br/>
-            
-            <h4>Data Surat Tugas</h4>
-            <a href="{{ route('admin_kepegawaian.create') }}" class="">Data Surat Tugas</a>
-        </div>
-        <div class="col">
-            <table class="table">
+        <div class="col">   
+            <div class="py-2">
+                <h3>Data Pegawai</h3>
+            </div>
+            <table class="table border">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Nama</th>
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
                         <th scope="col">Tanggal Pendaftaran</th>
+                        <th scope="col" colspan="2"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +24,12 @@
                             <td>{{$item->email}}</td>
                             <td>{{$item->role}}</td>
                             <td>{{$item->created_at}}</td>
+                            <td>
+                                <a href="" class="btn btn-secondary btn-sm">Edit</a>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-danger btn-sm">Del</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

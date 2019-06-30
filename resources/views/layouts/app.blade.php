@@ -111,9 +111,7 @@
                                         </div>
                                         <div class="card-body">
                                             <nav class="nav flex-column">
-                                                <a class="nav-link" href="#">Active</a>
-                                                <a class="nav-link" href="#">Link</a>
-                                                <a class="nav-link" href="#">Link</a>
+                                                <a class="nav-link" href="#">Buat Surat</a>
                                             </nav>
                                         </div>
                                     </div>
@@ -126,7 +124,8 @@
                                         <div class="card-body">
                                             <nav class="nav flex-column">
                                                 <a class="nav-link" href="#">Data Pegawai</a>
-                                                <a class="nav-link" href="#">Link</a>
+                                                <a class="nav-link" href="#">Data Undangan</a>
+                                                <a class="nav-link" href="#">Data Surat</a>
                                             </nav>
                                         </div>
                                     </div>
