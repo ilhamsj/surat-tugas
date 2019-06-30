@@ -19,8 +19,8 @@
             <a href="{{route('surat_undangan.create')}}">Tambah</a>
         </div>
         @foreach ($undangan as $item)
-        <div class="col-sm-3 mb-4 py-3 shadow ml-3">
-            <h6>Pengundang</h6>
+        <div class="col-sm-3 mb-4 py-3">
+            <h6 class="undangan">Pengundang</h6>
             <h4>{{$item->pengundang}}</h4>
 
             <h6>Nama Acara</h6>
@@ -37,12 +37,12 @@
             <h6>tempat</h6>
             <h4>{{$item->tempat}}</h4>
 
-            <a class="btn btn-primary" href="{{route('surat_undangan.edit',  $item->id)}}">Edit</a>
+            <a class="btn btn-primary btn-sm" href="{{route('surat_undangan.edit',  $item->id)}}">Edit</a>
 
             <form action="{{route('surat_undangan.destroy', $item->id)}}" method="post" class="d-inline">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger" type="submit">Delete</button>
+                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
             </form>
         </div>
         @endforeach

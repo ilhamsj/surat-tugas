@@ -76,5 +76,10 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.undangan');
+        console.log('hello llarav');
+    </script>
 </body>
 </html>
