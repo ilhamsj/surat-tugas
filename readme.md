@@ -20,5 +20,7 @@
 
 #tips
 1. untuk merubah error message di sini [validation](resources\lang\en\validation.php)
-1. ``php artisan make:migration add_column_admin_id_to_surat_undangan --table=surat_undangan``
-1. ``composer require doctrine/dbal``
+
+1. add migration command ``php artisan make:migration add_column_admin_id_to_surat_undangan --table=surat_undangan``
+1. Error when renaming column ``composer require doctrine/dbal``
+1. add factory with model ``php artisan make:factory SuratTugasFactory -m SuratTugas``
