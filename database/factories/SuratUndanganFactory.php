@@ -14,6 +14,6 @@ $factory->define(SuratUndangan::class, function (Faker $faker) {
         'perihal' => $faker->name,
         'waktu' => $faker->dateTime,
         'tempat' => $faker->streetAddress(),
-        'file' => $faker->url,
+        'file' => $faker->imageUrl($width = 640, $height = 480),
     ];
 });

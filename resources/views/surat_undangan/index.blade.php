@@ -8,11 +8,11 @@
         </div>
             @foreach ($undangan as $item)
                 <div class="col-sm-3 mb-4 py-3">
-                    Pengundang
+                    <h5>Pengundang :</h5>
                     {{$item->pengundang}}
                     <img src="{{ 'images/'.$item->file }}" alt="" srcset="" class="img-fluid">
 
-                    <div>
+                    <div class="mt-4">
                         <a class="btn btn-primary btn-sm" href="{{route('surat_undangan.edit',  $item->id)}}">Edit</a>
 
                         <form action="{{route('surat_undangan.destroy', $item->id)}}" method="post" class="d-inline">

@@ -45,7 +45,6 @@ class SuratUndanganController extends Controller
         $request->validate([
             'pengundang' => 'required',
             'file' => 'required|image',
-            // 'admin_id' => 'required|image',
         ]);
 
         $file = $request->file('file');
