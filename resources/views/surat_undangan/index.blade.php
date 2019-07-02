@@ -10,7 +10,8 @@
                 <div class="col-sm-3 mb-4 py-3">
                     <h5>Pengundang :</h5>
                     {{$item->pengundang}}
-                    
+
+                    {{-- <img src="{{ Storage::disk('s3')->url('avatars/'.$item->file) }}" alt="" srcset="" class="img-fluid"> --}}
                     <img src="{{ Storage::url('files/'.$item->file) }}" alt="" srcset="" class="img-fluid">
 
                     <div class="mt-4">

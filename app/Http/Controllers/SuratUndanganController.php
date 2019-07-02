@@ -42,9 +42,10 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->file('file')->store('files', 'public');
+        $request->file('file')->store('files', 'public');
         // https://laravel.com/docs/5.0/filesystem
-        $request->file('file')->store('files', 's3');
+        // $request->file('file')->store('files', 's3');
+        // $request->file('file')->store('avatars', 's3');
 
         $request->validate([
             'pengundang' => 'required',
