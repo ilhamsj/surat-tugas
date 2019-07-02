@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col">
+        <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
                     Surat Undangan Baru
@@ -11,7 +11,10 @@
             <form action="{{route('surat_undangan.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-                {{--  --}}
+                <div class="form-group">
+                    <input type="text" value="{{Auth::user()->id}}" name="admin_id" id="admin_id" class="form-control" readonly>
+                </div>
+
                 <div class="form-group">
                     <input type="text" id="pengundang"  name="pengundang" class="form-control @error('pengundang') is-invalid @enderror" value="{{ old('pengundang') }}" placeholder="Pengundang" autocomplete="pengundang" autofocus>
                 </div>

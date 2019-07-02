@@ -9,7 +9,7 @@ class SuratUndanganController extends Controller
 {
 
     public function __construct() {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -45,6 +45,7 @@ class SuratUndanganController extends Controller
         $request->validate([
             'pengundang' => 'required',
             'file' => 'required|image',
+            // 'admin_id' => 'required|image',
         ]);
 
         $file = $request->file('file');
@@ -55,10 +56,11 @@ class SuratUndanganController extends Controller
 
         $undangan = new SuratUndangan([
             'pengundang' => $request->get('pengundang'),
-            'file' => $fileName
+            'admin_id' => $request->get('admin_id'),
+            'file' => $fileName,
         ]);
-        $undangan->save();
 
+        $undangan->save();
         return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil ditambahkan');
     }
 

@@ -15,8 +15,8 @@ class CreateSuratTugasTable extends Migration
     {
         Schema::create('surat_tugas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_pegawai')->index();
-            $table->integer('id_undangan')->index();
+            $table->integer('pegawai_id')->index();
+            $table->integer('undangan_id')->index();
             $table->timestamps();
         });
     }

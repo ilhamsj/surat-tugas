@@ -88,24 +88,6 @@
                     <hr>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-8 text-center">
-                        <h1 class="display-6 p-4">Kegiatan</h1>
-                        <div class="row">
-                        @for ($i = 0; $i < 3; $i++)
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">Sunatan</div>
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    </div>
-                                </div>
-                            </div>
-                        @endfor
-                    </div>
-                    </div>
-                </div>
-
             </div>
         </main>
     </div>

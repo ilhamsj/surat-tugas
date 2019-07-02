@@ -11,12 +11,15 @@
                     <th>Pegawai</th>
                 </tr>
                 @foreach ($surat_tugas as $item)
+
+                @endforeach
+                @foreach ($surat_tugas as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->id_undangan }}</td>
-                        <td>{{ $item->id_pegawai }}</td>
+                        <td>{{ $item->SuratTugas_id }}</td>
+                        <td>{{ $item->SuratUndangan_id }}</td>
                     </tr>
-                    @endforeach
+                @endforeach
             </table>
         </div>
     </div>

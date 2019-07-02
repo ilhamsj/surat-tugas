@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\SuratTugas;
 
 class PegawaiController extends Controller
 {
@@ -17,6 +18,7 @@ class PegawaiController extends Controller
 
     public function index()
     {
-        return view('pegawai');
+        $surat_tugas = SuratTugas::all();
+        return view('pegawai')->with(['surat_tugas' => $surat_tugas]);
     }
 }

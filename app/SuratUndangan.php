@@ -15,5 +15,6 @@ class SuratUndangan extends Model
         'waktu',
         'tempat',
         'file',
+        'admin_id'
     ];
 }

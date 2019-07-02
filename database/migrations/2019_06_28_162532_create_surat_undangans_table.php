@@ -15,12 +15,13 @@ class CreateSuratUndangansTable extends Migration
     {
         Schema::create('surat_undangan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('admin_id');
             $table->string('pengundang', 50);
-            // $table->string('no_surat', 30)->unique();
-            // $table->string('nama_acara', 50);
-            // $table->string('perihal', 30);
-            // $table->timestamp('waktu');
-            // $table->string('tempat', 100);
+            $table->string('no_surat', 30)->unique();
+            $table->string('nama_acara', 50);
+            $table->string('perihal', 30);
+            $table->timestamp('waktu');
+            $table->string('tempat', 100);
             $table->text('file');
             $table->timestamps();
         });
