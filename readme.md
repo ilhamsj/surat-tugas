@@ -24,3 +24,5 @@
 1. add migration command ``php artisan make:migration add_column_admin_id_to_surat_undangan --table=surat_undangan``
 1. Error when renaming column ``composer require doctrine/dbal``
 1. add factory with model ``php artisan make:factory SuratTugasFactory -m SuratTugas``
+1. agar file dapat di akses secara public ``php artisan storage:link``
+1. amazon s3

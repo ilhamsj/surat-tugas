@@ -42,24 +42,21 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->file('file')->store('files', 'public');
+        // https://laravel.com/docs/5.0/filesystem
+        $request->file('file')->store('files', 's3');
+
         $request->validate([
             'pengundang' => 'required',
             'file' => 'required|image',
         ]);
 
-        $file = $request->file('file');
-        $fileName = time().'_'.$file->getClientOriginalName();
-
-        $destination = 'images';
-        $file->move($destination, $fileName);
-
-        $undangan = new SuratUndangan([
-            'pengundang' => $request->get('pengundang'),
-            'admin_id' => $request->get('admin_id'),
-            'file' => $fileName,
+        $undangan = SuratUndangan::create([
+            'pengundang' => $request->pengundang,
+            'admin_id' => $request->admin_id,
+            'file' => $request->file('file')->hashName(),
         ]);
 
-        $undangan->save();
         return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil ditambahkan');
     }
 
