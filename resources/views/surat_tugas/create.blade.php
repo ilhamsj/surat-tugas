@@ -7,14 +7,14 @@
                 @csrf
                 
                 <div class="form-group">
-                    <select name="id_undangan" id="" class="form-control">
+                    <select name="undangan_id" id="" class="form-control">
                         @foreach ($undangan as $item)
                             <option value="{{ $item->id }}">{{ $item->pengundang }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
-                    <select name="id_pegawai" id="" class="form-control">
+                    <select name="pegawai_id" id="" class="form-control">
                         @foreach ($pegawai as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach

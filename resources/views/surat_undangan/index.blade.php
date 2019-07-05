@@ -4,7 +4,8 @@
     <div class="row">
         <div class="col-sm-12">
             <h3>Undangan</h3>
-            <a href="{{route('surat_undangan.create')}}">Tambah</a>
+            <a href="{{route('surat_undangan.create')}}">Input undangan</a> |
+            <a href="{{route('surat_tugas.create')}}">Buat Surat Tugas</a>
         </div>
             @foreach ($undangan as $item)
                 <div class="col-sm-3 mb-4 py-3">

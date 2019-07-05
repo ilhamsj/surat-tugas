@@ -47,12 +47,14 @@ class SuratTugasController extends Controller
     public function store(Request $request)
     {
         $suratTugas = new SuratTugas([
-            'id_pegawai' => $request->get('id_pegawai'),
-            'id_undangan' => $request->get('id_undangan'),
+            'pegawai_id' => $request->get('pegawai_id'),
+            'undangan_id' => $request->get('undangan_id'),
+            'penanda_tangan_id' => $request->get('pegawai_id'),
+            'no_surat' => $request->get('pegawai_id'),
         ]);
         $suratTugas->save();
-        // return redirect(route('surat_tugas.create'));
-        return $request->get('id_pegawai').' Berhasil disimpan';
+        // return $request->get('id_pegawai').' Berhasil disimpan';
+        return redirect(route('surat_tugas.index'))->with('success', 'Surat tugas berhasil ditambahkan');
     }
 
     /**
@@ -97,6 +99,7 @@ class SuratTugasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        SuratTugas::destroy($id);
+        return redirect(route('surat_tugas.index'))->with('success', 'Surat tugas berhasil dihapus');
     }
 }

@@ -73,7 +73,7 @@ class SuratUndanganController extends Controller
         return view('surat_undangan.show')->with(['undangan' => $undangan]);
     }
 
-    /**
+    /**x
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

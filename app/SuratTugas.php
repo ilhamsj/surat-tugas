@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class SuratTugas extends Model
 {
     protected $fillable = [
-        'id_pegawai', 'id_undangan',
+        'pegawai_id', 
+        'undangan_id', 
+        'penanda_tangan_id',
+        'no_surat'
     ];
 
     public function SuratUndangan() {

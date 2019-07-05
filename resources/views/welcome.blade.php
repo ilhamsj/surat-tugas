@@ -77,16 +77,20 @@
             <div class="container">
 
                 <div class="row mb-4  justify-content-center">
-                    <div class="col-sm-8 text-center">
-                        <h1 class="display-3">Sistem Pengajuan Surat Tugas</h1>
-                        <p class="lead">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio quam, nam facilis reprehenderit unde aut enim perspiciatis nemo ipsam quidem perferendis beatae saepe sed quaerat nostrum praesentium officia voluptate maiores?
-                        </p>
-                            <a href="{{ route('pegawai') }}" class="btn btn-primary">Pegawai</a>
-                            <a href="{{ route('admin') }}" class="btn btn-secondary">Admin Bagian</a>
-                            <a href="{{ route('admin_kepegawaian.index') }}" class="btn btn-secondary">Admin Kepegawaian</a>
-                    <hr>
+                    <div class="col">
+                        <h3>Admin Bagian</h3>
+                        <a href="{{ route('surat_undangan.create') }}">input undangan</a> <br/>
+                        admin bagian membuat surat tugas <br/>
                     </div>
+                    <div class="col">
+                        <h3>Admin Bagian</h3>
+                        admin Kepegawaian acc surat tugas <br/>
+                    </div>
+                    <div class="col">
+                        <h3>Pegawai</h3>
+                        pegawai submit laporan kegiatan <br/>
+                    </div>
+
                 </div>
             </div>
         </main>
