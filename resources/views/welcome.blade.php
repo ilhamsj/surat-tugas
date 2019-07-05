@@ -8,9 +8,9 @@
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perferendis est ipsam similique? Consequatur animi impedit quis illo assumenda beatae eum est dicta iste nulla, repudiandae recusandae, rerum ducimus alias!"
 
             <div class="mt-4">
-                <a href="" class="btn btn-primary">Admin Kepegawaian</a>
+                <a href="{{ route('admin_kepegawaian.index') }}" class="btn btn-primary">Admin Kepegawaian</a>
                 <a href="{{ route('admin') }}" class="btn btn-primary">Admin Bagian</a>
-                <a href="" class="btn btn-primary">Pegawai</a>
+                <a href="{{ route('pegawai') }}" class="btn btn-primary">Pegawai</a>
             </div>
         </div>
     </div>

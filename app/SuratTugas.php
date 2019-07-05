@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\SuratUndangan;
+use App\User;
 
 class SuratTugas extends Model
 {

@@ -76,71 +76,7 @@
         <main class="py-4 bg-white" style="min-height:100vh">
             <div class="container">
                 <div class="row">
-                @auth
-                    <div class="col-sm-3">
-                            <div class="row">
-
-                                {{-- Admin Kepegawaian--}}
-                                @if (Auth::user()->role == 'admin_kepegawaian')
-                                <div class="col mb-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Admin Kepegawaian
-                                        </div>
-                                        <div class="card-body">
-                                            <nav class="nav flex-column">
-                                                <a class="nav-link" href="{{ route('admin_kepegawaian.index') }}">Data Pegawai</a>
-                                                <a class="nav-link" href="{{ route('surat_undangan.index') }}">Data Undangan</a>
-                                                <a class="nav-link" href="{{ route('surat_tugas.index') }}">Data Surat</a>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- //superadmin --}}
-
-                                {{--  --}}
-                                @elseif(Auth::user()->role == 'admin_bagian')
-                                <div class="col mb-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Admin Bagian
-                                        </div>
-                                        <div class="card-body">
-                                            <nav class="nav flex-column">
-                                                <a class="nav-link" href="{{ route('admin') }}">Dashboard</a>
-                                                <a class="nav-link" href="{{ route('surat_undangan.create') }}">Submit Undangan</a>
-                                                <a class="nav-link" href="{{ route('surat_undangan.create') }}">Buat Surat Tugas</a>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{--  --}}
-
-                                {{--  --}}
-                                @else
-                                <div class="col mb-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            Pegawai
-                                        </div>
-                                        <div class="card-body">
-                                            <nav class="nav flex-column">
-                                                <a class="nav-link" href="{{ route('admin') }}">Dashboard</a>
-                                                <a class="nav-link" href="{{ route('surat_undangan.create') }}">Submit Undangan</a>
-                                                <a class="nav-link" href="{{ route('surat_undangan.create') }}">Buat Surat Tugas</a>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                {{--  --}}
-
-                            </div>
-                        @yield('sidebar')
-                    </div>
-                @endauth
                     <div class="col">
-                        
                         @if (session('success'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('success') }}

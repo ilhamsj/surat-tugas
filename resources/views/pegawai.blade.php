@@ -1,16 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    Surat Tugas
-                    @foreach ($surat_tugas as $item)
-                        {{$item->SuratTugas_id}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            Surat Tugas
+
+            <table class="table table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Pegawai</th>
+                    <th scope="col">Detail Undangan</th>
+                    <th scope="col">Di setujui oleh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($items as $item)
+                        <tr>
+                            <td>{{$item->user->name}}</td>
+                            <td>{{$item->undangan->pengundang}}</td>
+                            <td>{{$item->penanda_tangan_id}}</td>
+                        </tr>    
                     @endforeach
-                </div>
-            </div>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 @endsection
