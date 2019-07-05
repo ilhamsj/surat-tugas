@@ -17,4 +17,10 @@ class SuratUndangan extends Model
         'file',
         'admin_id'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class, 'admin_id', 'id');
+    }
 }
+
+    // return $this->hasOne('Model::class', 'foreign_key', 'local_key');

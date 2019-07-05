@@ -1,30 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <h3>Undangan</h3>
-            <a href="{{route('surat_undangan.create')}}">Input undangan</a> |
-            <a href="{{route('surat_tugas.create')}}">Buat Surat Tugas</a>
+    <div class="row justify-content-center">
+        <div class="col">   
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Admin</th>
+                        <th scope="col">Pengundang</th>
+                        <th scope="col">File</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($items as $item)
+                        <tr>
+                            <td>{{$item->user->name}}</td>
+                            <td>{{$item->pengundang}}</td>
+                            <td>{{$item->file}}</td>
+                            <td>{{$item->created_at}}</td>
+                            <td>
+                                <div class="dropdown show">
+                                    <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Details
+                                    </a>
+                                    
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <form action="{{ route('admin_kepegawaian.destroy', $item->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-            @foreach ($undangan as $item)
-                <div class="col-sm-3 mb-4 py-3">
-                    <h5>Pengundang :</h5>
-                    {{$item->pengundang}}
-
-                    {{-- <img src="{{ Storage::disk('s3')->url('avatars/'.$item->file) }}" alt="" srcset="" class="img-fluid"> --}}
-                    <img src="{{ Storage::url('files/'.$item->file) }}" alt="" srcset="" class="img-fluid">
-
-                    <div class="mt-4">
-                        <a class="btn btn-primary btn-sm" href="{{route('surat_undangan.edit',  $item->id)}}">Edit</a>
-
-                        <form action="{{route('surat_undangan.destroy', $item->id)}}" method="post" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                        </form>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+    </div>
 @endsection

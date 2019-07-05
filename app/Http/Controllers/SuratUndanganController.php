@@ -20,7 +20,7 @@ class SuratUndanganController extends Controller
     {
         $undangan = SuratUndangan::all();
         return view('surat_undangan.index')->with([
-            'undangan' => $undangan,
+            'items' => $undangan,
         ]);
     }
 

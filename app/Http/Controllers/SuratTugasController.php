@@ -17,10 +17,13 @@ class SuratTugasController extends Controller
     public function index()
     {
         $surat_tugas = SuratTugas::all();
+
+        // dd($surat_tugas);
+
         return view('surat_tugas.index')->with([
-                        'surat_tugas' => $surat_tugas,
-                        'session' => 'Menampilkan data surat tugas',
-                        ]);
+            'surat_tugas' => $surat_tugas,
+            'session' => 'Menampilkan data surat tugas',
+        ]);
     }
 
     /**
