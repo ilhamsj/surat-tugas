@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="row justify-content-center">
+        <div class="col-sm-12 mb-4">
+            <h3>Pegawai</h3>
+            <a href="{{route('surat_tugas.create')}}">Tambah Pegawai</a>
+        </div>
         <div class="col">   
             <table class="table">
-                <thead class="thead-light">
+                <thead>
                     <tr>
                         <th scope="col">Nama</th>
                         <th scope="col">Email</th>

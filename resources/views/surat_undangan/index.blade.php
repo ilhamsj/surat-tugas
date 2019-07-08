@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="row justify-content-center">
+        <div class="col-sm-12 mb-4">
+            <h3>Undangan</h3>
+            <a href="{{route('surat_undangan.create')}}">Buat Surat Undangan</a>
+        </div>
         <div class="col">   
             <table class="table">
-                <thead class="thead-light">
+                <thead>
                     <tr>
                         <th scope="col">Admin</th>
                         <th scope="col">Pengundang</th>
@@ -18,7 +22,9 @@
                         <tr>
                             <td>{{$item->user->name}}</td>
                             <td>{{$item->pengundang}}</td>
-                            <td>{{$item->file}}</td>
+                            <td>
+                                <img src="{{Storage::url('files/'.$item->file)}}" style='max-width:100px' alt="" srcset="">
+                            </td>
                             <td>{{$item->created_at}}</td>
                             <td>
                                 <div class="dropdown show">

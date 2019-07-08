@@ -3,11 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-8">
-            Surat Tugas
-
-            <table class="table table-responsive">
-                <thead class="thead-dark">
+        <div class="col-sm-12 mb-4">
+            <h3>Surat Tugas</h3>
+        </div>
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
                     <tr>
                     <th scope="col">Pegawai</th>
                     <th scope="col">Detail Undangan</th>
@@ -19,7 +20,7 @@
                         <tr>
                             <td>{{$item->user->name}}</td>
                             <td>{{$item->undangan->pengundang}}</td>
-                            <td>{{$item->penanda_tangan_id}}</td>
+                            <td>{{$item->user->name}}</td>
                         </tr>    
                     @endforeach
                 </tbody>

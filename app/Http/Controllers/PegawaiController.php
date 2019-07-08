@@ -19,9 +19,10 @@ class PegawaiController extends Controller
     public function index()
     {
         $surat_tugas = SuratTugas::all();
-        // dd($surat_tugas);
+        // $surat_tugas = SuratTugas::where('no_surat', '17');
+        // $surat_tugas = SuratTugas::findOrFail(17);
         
-        return view('pegawai')->with(['items' => $surat_tugas]);
-
+        // dd($surat_tugas);
+        return view('pegawai')->with(['items' => $surat_tugas]);    
     }
 }
