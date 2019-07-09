@@ -14,7 +14,6 @@
                     <td>Undangan</td>
                     <td>Pegawai</td>
                     <td>Disetujui Oleh</td>
-                    <td>Tanggal Verivikasi</td>
                     <td>Action</td>
                 </tr>
 
@@ -24,7 +23,6 @@
                         <td><a href="">{{ $item->undangan->pengundang }}</a></td>
                         <td>{{ $item->user->name }}</td>
                         <td>{{ $item->user->name }}</td>
-                        <td></td>
                         <td>
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
