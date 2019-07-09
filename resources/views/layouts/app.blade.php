@@ -102,15 +102,15 @@
 
                         <li class="list-group-item disabled">Admin</li>
                         <li class="list-group-item">
-                            <a href="">Submit Undangan</a>
+                            <a href="{{ route('surat_undangan.create') }}">Submit Undangan</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Buat Surat Tugas</a>
+                            <a href="{{ route('surat_tugas.create') }}">Buat Surat Tugas</a>
                         </li>
 
                         <li class="list-group-item disabled">Pegawai</li>
                         <li class="list-group-item">
-                            <a href="">Surat Tugas</a>
+                            <a href="{{ route('surat') }}">Surat Tugas</a>
                         </li>
                         <li class="list-group-item">
                         <a href="{{ route('home') }}">Lapor Kegiatan</a>

@@ -18,11 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/surat', 'HomeController@surat_tugas')->name('surat');
 
-// Route::get('/pegawai', 'PegawaiController@index')->name('pegawai');#->middleware('pegawai');
-Route::get('/admin_bagian', 'HomeController@index')->name('admin');#->middleware('admin_bagian');
-
-Route::resource('pegawai', 'PegawaiController');#->middleware('pegawai');
-Route::resource('admin_kepegawaian', 'AdminKepegawaianController');#->middleware('admin_kepegawaian');
+Route::resource('pegawai', 'PegawaiController');
 Route::resource('surat_undangan', 'SuratUndanganController');
 Route::resource('surat_tugas', 'SuratTugasController');
+
+// middleware
+// admin_kepegawaian, admin_bagian, pegawai

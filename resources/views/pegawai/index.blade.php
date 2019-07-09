@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-12 mb-4">
             <h3>Pegawai</h3>
-            <a href="{{route('register')}}">Tambah Pegawai</a>
+            <a href="{{route('pegawai.create')}}">Tambah Pegawai</a>
         </div>
         <div class="col">   
             <table class="table table-bordered">
@@ -33,7 +33,7 @@
                                     
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="#">Edit</a>
-                                        <form action="{{ route('admin_kepegawaian.destroy', $item->id) }}" method="post">
+                                        <form action="{{ route('pegawai.destroy', $item->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="dropdown-item">Delete</button>

@@ -39,6 +39,9 @@ class User extends Authenticatable
     ];
 
     public function surat_undangan() {
-        // return $this->hasMany(SuratUndangan::class, 'admin_id');
+        return $this->hasMany(SuratUndangan::class, 'admin_id', 'id');
+    }
+    public function surat_tugas() {
+        return $this->hasMany(SuratTugas::class, 'pegawai_id', 'id');
     }
 }

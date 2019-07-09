@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\SuratTugas;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,5 +29,10 @@ class HomeController extends Controller
         // $pegawai = User::paginate(3);
         $pegawai = User::all();
         return view('home')->with(['pegawai' => $pegawai]);
+    }
+    public function surat_tugas()
+    {
+        $items = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
+        return view('surat_tugas')->with(['items' => $items]);
     }
 }

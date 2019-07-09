@@ -22,7 +22,9 @@
                             <td>
                                 <a href="{{ route('pegawai.show', $item->user->id) }}">{{$item->user->name}}</a>
                             </td>
-                            <td>{{$item->pengundang}}</td>
+                            <td>
+                                <a href="{{ route('surat_undangan.show', $item->id) }}">{{$item->pengundang}}</a>
+                            </td>
                             <td>
                                 <img src="{{Storage::url('files/'.$item->file)}}" style='max-width:100px' alt="" srcset="">
                             </td>
@@ -34,8 +36,9 @@
                                     </a>
                                     
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Edit</a>
-                                        <form action="{{ route('admin_kepegawaian.destroy', $item->id) }}" method="post">
+                                        <a class="dropdown-item" href="{{ route('surat_undangan.show', $item->id) }}">Lihat Undangan</a>
+                                        <a class="dropdown-item" href="{{ route('surat_undangan.edit', $item->id) }}">Edit</a>
+                                        <form action="{{ route('surat_undangan.destroy', $item->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="dropdown-item">Delete</button>

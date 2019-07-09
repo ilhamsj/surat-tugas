@@ -38,7 +38,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        return view('pegawai.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -95,7 +95,10 @@ class PegawaiController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        $user = User::find($id);
+        $user->surat_tugas()->delete();
+        $user->surat_undangan()->delete();
+        $user->delete();
         return redirect(route('pegawai.index'))->with('success', 'User berhasil dihapus');
     }
 }
