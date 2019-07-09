@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
+
 use App\SuratTugas;
 
 class PegawaiController extends Controller
@@ -19,11 +21,9 @@ class PegawaiController extends Controller
     public function index()
     {
         $surat_tugas = SuratTugas::all();
-        // $surat_tugas = SuratTugas::where('no_surat', '17');
-        // $surat_tugas = SuratTugas::findOrFail(17);
-        $JohnDoe = SuratTugas::where('pegawai_id', '=', 5);
+        // $surat_tugas = DB::table('surat_tugas')->where()->get();
         
-        dd($surat_tugas);
+        // dd($surat_tugas);
         return view('pegawai')->with(['items' => $surat_tugas]);    
     }
 }

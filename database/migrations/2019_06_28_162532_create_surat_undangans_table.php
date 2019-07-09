@@ -34,6 +34,6 @@ class CreateSuratUndangansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('surat_undangans');
+        Schema::dropIfExists('surat_undangan');
     }
 }

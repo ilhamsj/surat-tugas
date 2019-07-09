@@ -3,16 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-12 mb-4">
-            <h3>Surat Tugas</h3>
-        </div>
-        <div class="col-sm-12">
+        <div class="col">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                    <th scope="col">Pegawai</th>
-                    <th scope="col">Detail Undangan</th>
-                    <th scope="col">Di setujui oleh</th>
+                        <td>Pegawai</td>
+                        <td>Detail Undangan</td>
+                        <td>Di setujui oleh</td>
                     </tr>
                 </thead>
                 <tbody>

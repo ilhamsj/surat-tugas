@@ -73,7 +73,7 @@
             </div>
         </nav>
 
-        <main class="py-4 bg-white" style="min-height:100vh">
+        <div class="container mt-3">
             @if (session('success'))
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}
@@ -82,9 +82,49 @@
                 </button>
             </div>
             @endif
+        </div>
+
+        <div class="container">
             
-            @yield('content')
-        </main>
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item disabled">Superadmin</li>
+                        <li class="list-group-item">
+                            <a href="">Data Pegawai</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">Data Undangan</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">Data Surat Tugas</a>
+                        </li>
+
+                        <li class="list-group-item disabled">Admin</li>
+                        <li class="list-group-item">
+                            <a href="">Submit Undangan</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">Buat Surat Tugas</a>
+                        </li>
+
+                        <li class="list-group-item disabled">Pegawai</li>
+                        <li class="list-group-item">
+                            <a href="">Surat Tugas</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="">Lapor Kegiatan</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9">
+                    <main class="mb-4 py-3 bg-white border row" style="min-height:100vh">
+                        @yield('content')
+                    </main>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

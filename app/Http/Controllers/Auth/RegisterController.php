@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin_kepegawaian';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('admin_kepegawaian');
     }
 
     /**
@@ -49,8 +49,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nip'      => ['required', 'string'],
+            'name'     => ['required', 'string', 'max:255'],
+            'golongan' => ['required', 'integer', 'max:255'],
+            'jabatan'  => ['required', 'string'],
+            'eselon'   => ['required', 'string'],
+            'telp'     => ['required', 'integer'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'role'     => ['required', 'string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -63,10 +69,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'nip'       => $data['nip'],
+            'name'      => $data['name'],
+            'golongan'  => $data['golongan'],
+            'jabatan'   => $data['jabatan'],
+            'eselon'    => $data['eselon'],
+            'telp'      => $data['telp'],
+            'email'     => $data['email'],
+            'role'      => $data['role'],
+            'password'  => Hash::make($data['password']),
         ]);
     }
 }
