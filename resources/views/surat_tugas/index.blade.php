@@ -8,7 +8,7 @@
             <a href="{{route('surat_tugas.create')}}">Buat Surat Tugas</a>
         </div>
         <div class="col">
-            <table class="table">
+            <table class="table table-responsive">
                 <tr>
                     <th>No Surat</th>
                     <th>Undangan</th>

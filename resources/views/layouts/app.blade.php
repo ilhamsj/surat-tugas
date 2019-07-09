@@ -74,22 +74,16 @@
         </nav>
 
         <main class="py-4 bg-white" style="min-height:100vh">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
-                                <button class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        @endif
-
-                        @yield('content')
-                    </div>
-                </div>
+            @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+                <button class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            @endif
+            
+            @yield('content')
         </main>
     </div>
 </body>

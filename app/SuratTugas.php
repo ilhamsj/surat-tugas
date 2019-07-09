@@ -22,6 +22,6 @@ class SuratTugas extends Model
     }
 
     public function undangan() {
-        return $this->belongsTo(SuratUndangan::class, 'undangan_id', 'id');
+        return $this->belongsTo(SuratUndangan::class, 'undangan_id', 'id')->where('pegawai_id', 5);
     }
 }

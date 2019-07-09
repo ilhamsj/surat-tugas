@@ -7,7 +7,7 @@
             <h3>Surat Tugas</h3>
         </div>
         <div class="col-sm-12">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                     <th scope="col">Pegawai</th>

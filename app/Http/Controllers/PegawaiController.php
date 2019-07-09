@@ -21,8 +21,9 @@ class PegawaiController extends Controller
         $surat_tugas = SuratTugas::all();
         // $surat_tugas = SuratTugas::where('no_surat', '17');
         // $surat_tugas = SuratTugas::findOrFail(17);
+        $JohnDoe = SuratTugas::where('pegawai_id', '=', 5);
         
-        // dd($surat_tugas);
+        dd($surat_tugas);
         return view('pegawai')->with(['items' => $surat_tugas]);    
     }
 }
