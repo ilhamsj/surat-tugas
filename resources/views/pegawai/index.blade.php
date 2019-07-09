@@ -18,7 +18,6 @@
                             <a href="{{route('register')}}">Tambah Pegawai</a>
                         </td>
                     </tr>
-                <tbody>
                     @foreach ($pegawai as $item)
                         <tr>
                             <td><a href="{{ route('pegawai.show', $item->id) }}">{{$item->name}}</a></td>
@@ -43,8 +42,7 @@
                             </td>
                         </tr>
                     @endforeach
-                </tbody>
-            </table>
+           </table>
         </div>
     </div>
 </div>

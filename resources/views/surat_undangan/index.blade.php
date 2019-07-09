@@ -16,7 +16,6 @@
                         <td>Tanggal</td>
                         <td>Action</td>
                     </tr>
-                <tbody>
                     @foreach ($items as $item)
                         <tr>
                             <td>
@@ -48,7 +47,6 @@
                             </td>
                         </tr>
                     @endforeach
-                </tbody>
             </table>
         </div>
     </div>
