@@ -9,7 +9,6 @@
         </div>
         <div class="col">   
             <table class="table table-bordered">
-                <thead>
                     <tr>
                         <td>Admin</td>
                         <td>Pengundang</td>
@@ -17,11 +16,12 @@
                         <td>Tanggal</td>
                         <td>Action</td>
                     </tr>
-                </thead>
                 <tbody>
                     @foreach ($items as $item)
                         <tr>
-                            <td>{{$item->user->name}}</td>
+                            <td>
+                                <a href="{{ route('pegawai.show', $item->user->id) }}">{{$item->user->name}}</a>
+                            </td>
                             <td>{{$item->pengundang}}</td>
                             <td>
                                 <img src="{{Storage::url('files/'.$item->file)}}" style='max-width:100px' alt="" srcset="">

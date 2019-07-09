@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="row">
-                <div class="col">
-                    Sistem Pengajuan Surat Tugas
+                <div class="col text-center">
+                    <h1>Sistem Pengajuan Surat Tugas</h1>
                 </div>
             </div>
         </div>

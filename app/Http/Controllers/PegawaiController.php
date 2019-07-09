@@ -23,7 +23,8 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = User::all();
+        $pegawai = User::orderBy('role', 'desc')->get();
+        // $pegawai = User::all();
         // $pegawai = User::first(); 
         // $pegawai = User::where('name', 'budi')->get(); // menampilkan seleksi data
         // $pegawai = User::where('name', 'like', '%i%')->get(); // menampilkan seleksi data

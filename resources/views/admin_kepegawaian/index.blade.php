@@ -9,7 +9,6 @@
         </div>
         <div class="col">   
             <table class="table">
-                <thead>
                     <tr>
                         <th scope="col">Nama</th>
                         <th scope="col">Email</th>
@@ -17,7 +16,6 @@
                         <th scope="col">Tanggal Pendaftaran</th>
                         <th scope="col" colspan="2"></th>
                     </tr>
-                </thead>
                 <tbody>
                     @foreach ($pegawai as $item)
                         <tr>

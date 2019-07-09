@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\SuratUndangan;
 use App\User;
 use App\SuratTugas;
+use Auth;
 
 class SuratTugasController extends Controller
 {
@@ -16,7 +17,10 @@ class SuratTugasController extends Controller
      */
     public function index()
     {
-        $surat_tugas = SuratTugas::all();
+        // $surat_tugas = SuratTugas::all();
+        $surat_tugas = SuratTugas::orderBy('created_at', 'desc')->get();
+        
+        // $surat_tugas = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
 
         // dd($surat_tugas);
 

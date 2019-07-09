@@ -9,7 +9,6 @@
         </div>
         <div class="col">   
             <table class="table table-bordered">
-                <thead>
                     <tr>
                         <td>Nama</td>
                         <td>Email</td>
@@ -19,7 +18,6 @@
                             <a href="{{route('register')}}">Tambah Pegawai</a>
                         </td>
                     </tr>
-                </thead>
                 <tbody>
                     @foreach ($pegawai as $item)
                         <tr>

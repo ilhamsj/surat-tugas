@@ -113,7 +113,7 @@
                             <a href="">Surat Tugas</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Lapor Kegiatan</a>
+                        <a href="{{ route('home') }}">Lapor Kegiatan</a>
                         </li>
                     </ul>
                 </div>
