@@ -21,6 +21,11 @@ class SuratUndangan extends Model
     public function user() {
         return $this->belongsTo(User::class, 'admin_id', 'id');
     }
+
+    public function surat_tugas() 
+    {
+        return $this->hasMany(SuratTugas::class, 'undangan_id', 'id');
+    }
 }
 
     // return $this->hasOne('Model::class', 'foreign_key', 'local_key');

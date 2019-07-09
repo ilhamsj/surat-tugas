@@ -96,9 +96,10 @@ class PegawaiController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $user->surat_tugas()->delete();
+        // $user->surat_undangan()->surat_tugas()->delete();
         $user->surat_undangan()->delete();
         $user->delete();
+
         return redirect(route('pegawai.index'))->with('success', 'User berhasil dihapus');
     }
 }

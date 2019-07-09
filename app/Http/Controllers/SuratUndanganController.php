@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SuratUndangan;
+use App\SuratTugas;
 
 class SuratUndanganController extends Controller
 {
@@ -109,7 +110,12 @@ class SuratUndanganController extends Controller
      */
     public function destroy($id)
     {
-        SuratUndangan::destroy($id);
+        // SuratUndangan::destroy($id);
+
+        $surat = SuratUndangan::find($id);
+        $surat->surat_tugas()->delete();
+        $surat->delete();
+
         return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil dihapus');
     }
 }

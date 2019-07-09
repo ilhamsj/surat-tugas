@@ -38,10 +38,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function surat_undangan() {
+    public function surat_undangan() 
+    {
         return $this->hasMany(SuratUndangan::class, 'admin_id', 'id');
     }
-    public function surat_tugas() {
+    
+    public function surat_tugas() 
+    {
         return $this->hasMany(SuratTugas::class, 'pegawai_id', 'id');
     }
 }
