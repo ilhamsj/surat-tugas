@@ -91,13 +91,13 @@
                     <ul class="list-group">
                         <li class="list-group-item disabled">Superadmin</li>
                         <li class="list-group-item">
-                            <a href="">Data Pegawai</a>
+                            <a href="{{ route('pegawai') }}">Data Pegawai</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Data Undangan</a>
+                            <a href="{{ route('surat_undangan.index') }}">Data Undangan</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Data Surat Tugas</a>
+                            <a href="{{ route('surat_tugas.index') }}">Data Surat Tugas</a>
                         </li>
 
                         <li class="list-group-item disabled">Admin</li>

@@ -3,6 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-sm-12 mb-4">
+            <h3>Data Pegawai</h3>
+            <a href="{{route('surat_tugas.create')}}">Pegawai Baru</a>
+        </div>
         <div class="col">
             <table class="table table-bordered">
                 <thead>

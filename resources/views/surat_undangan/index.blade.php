@@ -4,18 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12 mb-4">
-            <h3>Undangan</h3>
+            <h3>Data Undangan</h3>
             <a href="{{route('surat_undangan.create')}}">Buat Surat Undangan</a>
         </div>
         <div class="col">   
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Admin</th>
-                        <th scope="col">Pengundang</th>
-                        <th scope="col">File</th>
-                        <th scope="col">Tanggal</th>
-                        <th scope="col">Action</th>
+                        <td>Admin</td>
+                        <td>Pengundang</td>
+                        <td>File</td>
+                        <td>Tanggal</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>

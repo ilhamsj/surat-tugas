@@ -4,18 +4,18 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 mb-4">
-            <h3>Undangan</h3>
+            <h3>Data Surat Tugas</h3>
             <a href="{{route('surat_tugas.create')}}">Buat Surat Tugas</a>
         </div>
         <div class="col">
-            <table class="table table-responsive">
+            <table class="table table-bordered">
                 <tr>
-                    <th>No Surat</th>
-                    <th>Undangan</th>
-                    <th>Pegawai</th>
-                    <th>Disetujui Oleh</th>
-                    <th>Tanggal Verivikasi</th>
-                    <th>Action</th>
+                    <td>No Surat</td>
+                    <td>Undangan</td>
+                    <td>Pegawai</td>
+                    <td>Disetujui Oleh</td>
+                    <td>Tanggal Verivikasi</td>
+                    <td>Action</td>
                 </tr>
 
                 @foreach ($surat_tugas as $item)
