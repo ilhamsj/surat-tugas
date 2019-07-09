@@ -37,7 +37,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin_kepegawaian');
+        // $this->middleware('admin_kepegawaian');
+        $this->middleware('auth');
     }
 
     /**

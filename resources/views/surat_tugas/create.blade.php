@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row justify-content-center">
+<div class="container">
+    <div class="row">
         <div class="col">
             <form action="{{route('surat_tugas.store')}}" method="post">
                 @csrf
@@ -24,4 +25,5 @@
             </form>
         </div>
     </div>
+</div>
 @endsection

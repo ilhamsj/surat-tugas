@@ -21,7 +21,7 @@
                 @foreach ($surat_tugas as $item)
                     <tr>
                         <td>{{ $item->no_surat }}</td>
-                        <td>{{ $item->undangan->pengundang }}</td>
+                        <td><a href="">{{ $item->undangan->pengundang }}</a></td>
                         <td>{{ $item->user->name }}</td>
                         <td>{{ $item->user->name }}</td>
                         <td></td>
@@ -32,6 +32,7 @@
                                 </a>
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Cetak</a>
                                     <a class="dropdown-item" href="#">Edit</a>
                                     <form action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
                                         @csrf

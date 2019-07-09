@@ -91,7 +91,7 @@
                     <ul class="list-group">
                         <li class="list-group-item disabled">Superadmin</li>
                         <li class="list-group-item">
-                            <a href="{{ route('pegawai') }}">Data Pegawai</a>
+                            <a href="{{ route('pegawai.index') }}">Data Pegawai</a>
                         </li>
                         <li class="list-group-item">
                             <a href="{{ route('surat_undangan.index') }}">Data Undangan</a>
