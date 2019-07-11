@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AjaxCrud;
+use Validator;
+
 use App\User;
 
 class PegawaiController extends Controller
@@ -23,11 +26,7 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = User::orderBy('role', 'desc')->get();
-        // $pegawai = User::all();
-        // $pegawai = User::first(); 
-        // $pegawai = User::where('name', 'budi')->get(); // menampilkan seleksi data
-        // $pegawai = User::where('name', 'like', '%i%')->get(); // menampilkan seleksi data
+        $pegawai = User::all();
         return view('pegawai.index')->with(['pegawai' => $pegawai]); 
     }
 
@@ -101,5 +100,5 @@ class PegawaiController extends Controller
         $user->delete();
 
         return redirect(route('pegawai.index'))->with('success', 'User berhasil dihapus');
-    }
+    }           
 }

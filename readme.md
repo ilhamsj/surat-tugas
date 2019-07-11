@@ -26,3 +26,11 @@
 1. add factory with model ``php artisan make:factory SuratTugasFactory -m SuratTugas``
 1. agar file dapat di akses secara public ``php artisan storage:link``
 1. amazon s3
+
+<!-- 
+$pegawai = User::orderBy('role', 'desc')->get();
+$pegawai = User::all();
+$pegawai = User::first(); 
+$pegawai = User::where('name', 'budi')->get(); // menampilkan seleksi data
+$pegawai = User::where('name', 'like', '%i%')->get(); // menampilkan seleksi data 
+-->
