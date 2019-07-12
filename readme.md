@@ -27,6 +27,11 @@
 1. agar file dapat di akses secara public ``php artisan storage:link``
 1. amazon s3
 
+#deploy to heroku
+1. echo "web: vendor/bin/heroku-php-apache2 public/" > Procfile
+1. commit
+1. heroku create
+1. heroku config:set APP_KEY=MBmJVvgC8ZOdaH2bipBf1tikPVlEdV4jpb88T4
 <!-- 
 $pegawai = User::orderBy('role', 'desc')->get();
 $pegawai = User::all();

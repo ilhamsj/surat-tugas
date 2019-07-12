@@ -11,6 +11,7 @@ class SuratUndanganController extends Controller
 
     public function __construct() {
         $this->middleware('auth');
+        // $this->middleware('pegawai')->except('create');
     }
     /**
      * Display a listing of the resource.
@@ -43,7 +44,7 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
-        $request->file('file')->store('files', 'public');
+        // (Link)[storage/app/public/files]
         // https://laravel.com/docs/5.0/filesystem
         // $request->file('file')->store('files', 's3');
         // $request->file('file')->store('avatars', 's3');
@@ -52,6 +53,8 @@ class SuratUndanganController extends Controller
             'pengundang' => 'required',
             'file' => 'required|image',
         ]);
+
+        $request->file('file')->store('files', 'public');
 
         $undangan = SuratUndangan::create([
             'pengundang' => $request->pengundang,
