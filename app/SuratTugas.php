@@ -30,4 +30,8 @@ class SuratTugas extends Model
         return $this->belongsTo(User::class, 'penanda_tangan_id', 'id');
     }
 
+    public function laporan_kegiatan() 
+    {
+        return $this->hasMany(LaporanKegiatan::class, 'surat_tugas_id', 'id');
+    }
 }

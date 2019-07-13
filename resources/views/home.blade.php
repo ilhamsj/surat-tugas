@@ -10,11 +10,15 @@
                 </div>
                 <div class="card-body">
                     <form action="" method="post">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" name="nama kegiatan" id="" class="form-control" placeholder="Nama Kegiatan">
+                            <label for="tugas">Pilih Tugas</label>
+                            <input type="text" name="nama kegiatan" id="" class="form-control">
                         </div>
+
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Laporan Kegiatan"></textarea>
+                            <label for="tugas">Laporan Kegiatan</label>
+                            <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
                         </div>
 
                         <div class="form-group">

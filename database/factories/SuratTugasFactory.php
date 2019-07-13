@@ -10,7 +10,7 @@ $factory->define(SuratTugas::class, function (Faker $faker) {
         'pegawai_id' => $faker->numberBetween(1,5),
         'undangan_id' => $faker->numberBetween(1,5),
         'penanda_tangan_id' => $faker->numberBetween(1,5),
-        'no_surat' => $faker->numberBetween($min = 1000, $max = 2000),
         'confirmed' => $faker->boolean,
+        // 'no_surat' => $faker->numberBetween($min = 1000, $max = 2000),
     ];
 });

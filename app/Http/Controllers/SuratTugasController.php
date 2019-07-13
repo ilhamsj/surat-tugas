@@ -19,12 +19,10 @@ class SuratTugasController extends Controller
     public function index()
     {
         // $surat_tugas = SuratTugas::all();
+        // dd($surat_tugas->laporan_kegiatans);
+        // $surat_tugas = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
         $surat_tugas = SuratTugas::orderBy('created_at', 'desc')->get();
         
-        // $surat_tugas = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
-
-        // dd($surat_tugas);
-
         return view('surat_tugas.index')->with([
             'surat_tugas' => $surat_tugas,
             'session' => 'Menampilkan data surat tugas',

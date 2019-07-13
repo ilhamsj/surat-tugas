@@ -15,6 +15,7 @@
                     <td>Pegawai</td>
                     <td>Disetujui Oleh</td>
                     <td>Confirmed</td>
+                    {{-- <td>Laporan</td> --}}
                     <td>Action</td>
                 </tr>
 
@@ -28,6 +29,7 @@
                         <td>{{ $item->user->name }}</td>
                         <td>{{ $item->ttd->name }}</td>
                         <td>{{ $item->confirmed }}</td>
+                        {{-- <td>{{ $item->LaporanKegiatan->content }}</td> --}}
                         <td>
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
