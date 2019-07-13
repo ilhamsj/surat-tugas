@@ -15,6 +15,7 @@
                 <div class="form-group">
                     <label for="pegawai">Pegawai</label>
                     <select name="pegawai" class="form-control">
+                        
                     </select>
                 </div>
 
