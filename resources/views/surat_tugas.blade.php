@@ -33,7 +33,7 @@
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">Cetak</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="{{ route('surat_tugas.edit', $item->id) }}">Edit</a>
                                     <form action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')

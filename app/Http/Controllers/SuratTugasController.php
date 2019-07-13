@@ -87,7 +87,8 @@ class SuratTugasController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        return view('surat_tugas.edit');
     }
 
     /**
@@ -99,7 +100,6 @@ class SuratTugasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->confirmed);
         $items = SuratTugas::find($id);
         $items->confirmed = true;
         $items->save();
