@@ -20,7 +20,8 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'nip' => $faker->randomNumber($nbDigits = NULL, $strict = false),
         'name' => $faker->name,
-        'golongan' => $faker->unique()->randomDigit,
+        // 'golongan' => $faker->randomElement(['IA','IB','IIA', 'IIB', 'IIIA', 'IIIB', 'IVA', 'IVB', 'VA']),
+        'golongan' => $faker->randomElement(['I', 'II', 'III', 'IV', 'V']),
         'jabatan' => $faker->jobTitle,
         'eselon' => $faker->unique()->randomDigit,
         'telp' => $faker->phoneNumber,

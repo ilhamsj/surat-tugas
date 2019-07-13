@@ -14,7 +14,8 @@ class SuratTugas extends Model
         'pegawai_id', 
         'undangan_id', 
         'penanda_tangan_id',
-        'no_surat'
+        'no_surat',
+        'confirmed',
     ];
 
     public function user() {

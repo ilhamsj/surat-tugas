@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('nip');
             $table->string('name');
-            $table->integer('golongan');
+            $table->string('golongan', 10);
             $table->string('jabatan');
             $table->string('eselon');
             $table->string('telp');

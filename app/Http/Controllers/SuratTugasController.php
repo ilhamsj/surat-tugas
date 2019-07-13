@@ -73,8 +73,12 @@ class SuratTugasController extends Controller
      */
     public function show($id)
     {
+        $users = User::where('golongan', 'V')->get();
         $item = SuratTugas::find($id);
-        return view('surat_tugas.show');
+        return view('surat_tugas.show')->with([
+            'item' => $item,
+            'atasan' => $users,
+        ]);
     }
 
     /**
@@ -97,7 +101,11 @@ class SuratTugasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->confirmed);
+        $items = SuratTugas::find($id);
+        $items->confirmed = true;
+        $items->save();
+        return redirect(route('surat_tugas.show', $id));
     }
 
     /**

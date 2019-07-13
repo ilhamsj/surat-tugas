@@ -17,7 +17,8 @@ class CreateSuratTugasTable extends Migration
             $table->bigIncrements('id');
             $table->integer('pegawai_id')->index();
             $table->integer('undangan_id')->index();
-            $table->integer('penanda_tangan_id')->index();
+            $table->integer('penanda_tangan_id')->index()->nullable();
+            $table->boolean('confirmed')->default(false);
             $table->string('no_surat');
             $table->timestamps();
         });
