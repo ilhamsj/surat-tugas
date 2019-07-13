@@ -22,7 +22,7 @@
                         <td>{{ $item->no_surat }}</td>
                         <td><a href="">{{ $item->undangan->pengundang }}</a></td>
                         <td>{{ $item->user->name }}</td>
-                        <td>{{ $item->user->name }}</td>
+                        <td>{{ $item->ttd->name }}</td>
                         <td>
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,7 +30,7 @@
                                 </a>
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Cetak</a>
+                                    <a class="dropdown-item" target="_blank" href="{{ route('cetak_surat', $item->id) }}">Cetak</a>
                                     <a class="dropdown-item" href="#">Edit</a>
                                     <form action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
                                         @csrf

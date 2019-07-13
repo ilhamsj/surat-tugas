@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/surat', 'HomeController@surat_tugas')->name('surat');
+Route::get('/cetak/surat_tugas/{id}', 'HomeController@cetak_surat_tugas')->name('cetak_surat');
 
 Route::resource('pegawai', 'PegawaiController');
 Route::resource('surat_undangan', 'SuratUndanganController');

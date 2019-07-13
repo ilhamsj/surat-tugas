@@ -24,4 +24,9 @@ class SuratTugas extends Model
     public function undangan() {
         return $this->belongsTo(SuratUndangan::class, 'undangan_id', 'id');
     }
+
+    public function ttd() {
+        return $this->belongsTo(User::class, 'penanda_tangan_id', 'id');
+    }
+
 }

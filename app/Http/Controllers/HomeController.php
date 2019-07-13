@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\SuratTugas;
 use Auth;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -34,5 +35,14 @@ class HomeController extends Controller
     {
         $items = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
         return view('surat_tugas')->with(['items' => $items]);
+    }
+
+    public function cetak_surat_tugas($id)
+    {
+        //where('pegawai_id', Auth::user()->id)
+        $item = SuratTugas::find($id);
+        $pdf = PDF::loadview('cetak.surat_tugas', ['item' => $item]);
+        return $pdf->setPaper('a4')->stream();
+        // return $pdf->download('surat-tugas-pdf');
     }
 }

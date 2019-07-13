@@ -7,6 +7,7 @@ use App\SuratUndangan;
 use App\User;
 use App\SuratTugas;
 use Auth;
+use PDF;
 
 class SuratTugasController extends Controller
 {
@@ -72,7 +73,8 @@ class SuratTugasController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = SuratTugas::find($id);
+        return view('surat_tugas.show');
     }
 
     /**
