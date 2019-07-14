@@ -53,11 +53,12 @@ class SuratTugasController extends Controller
     public function store(Request $request)
     {
         $suratTugas = new SuratTugas([
-            'pegawai_id' => $request->get('pegawai_id'),
-            'undangan_id' => $request->get('undangan_id'),
-            'penanda_tangan_id' => $request->get('pegawai_id'),
-            'no_surat' => $request->get('pegawai_id'),
+            'pegawai_id'        => $request->pegawai_id,
+            'undangan_id'       => $request->undangan_id,
+            'penanda_tangan_id' => $request->penanda_tangan_id,
+            'no_surat'          => $request->no_surat,
         ]);
+
         $suratTugas->save();
         // return $request->get('id_pegawai').' Berhasil disimpan';
         return redirect(route('surat_tugas.index'))->with('success', 'Surat tugas berhasil ditambahkan');
@@ -87,8 +88,15 @@ class SuratTugasController extends Controller
      */
     public function edit($id)
     {
-        
-        return view('surat_tugas.edit');
+        $pegawai        = User::all();
+        $undangan       = SuratUndangan::all();
+        $surat_tugas    = SuratTugas::find($id);
+
+        return view('surat_tugas.edit')->with([
+            'undangan'      => $undangan,
+            'pegawai'       => $pegawai,
+            'surat_tugas'   => $surat_tugas
+        ]);
     }
 
     /**
@@ -101,9 +109,8 @@ class SuratTugasController extends Controller
     public function update(Request $request, $id)
     {
         $items = SuratTugas::find($id);
-        $items->confirmed = true;
-        $items->save();
-        return redirect(route('surat_tugas.show', $id));
+        $items->update($request->all());
+        return redirect(route('surat_tugas.index', $id));
     }
 
     /**

@@ -8,7 +8,16 @@
                 @csrf
                 
                 <div class="form-group">
-                    <label for="undangan_id">Asal Undangan</label>
+                    <label for="pegawai_id">Pegawai</label>
+                    <select name="pegawai_id" id="" class="form-control">
+                        @foreach ($pegawai as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="undangan_id">Undangan</label>
                     <select name="undangan_id" id="" class="form-control">
                         @foreach ($undangan as $item)
                             <option value="{{ $item->id }}">{{ $item->pengundang }}</option>
@@ -17,13 +26,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="pegawai_id">Pegawai</label>
-                    <select name="pegawai_id" id="" class="form-control">
+                    <label for="penanda_tangan_id">Atasan</label>
+                    <select name="penanda_tangan_id" class="form-control">
                         @foreach ($pegawai as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="no_surat">Nomor Surat</label>
+                    <input type="text" name="no_surat" class="form-control">
+                </div>
+
                 <button type="submit" class="btn btn-success btn-block">Save</button>
             </form>
         </div>

@@ -19,7 +19,7 @@ class SuratTugas extends Model
     ];
 
     public function user() {
-        return $this->belongsTo(User::class, 'pegawai_id', 'id');
+        return $this->belongsTo(User::class, 'pegawai_id');
     }
 
     public function undangan() {

@@ -31,7 +31,7 @@
                 @method('PUT')
 
                 <div class="form-group">
-                    <input type="text" name="confirmed" value=true class="form-control" hidden>
+                    <input type="text" name="confirmed" value=1 class="form-control" hidden>
                 </div>
                 <button class="btn btn-primary btn-block">
                     Verivikasi
