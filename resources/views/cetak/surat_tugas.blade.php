@@ -1,14 +1,11 @@
-<h1>Surat Tugas</h1>
-
-Dari
-<h2>{{$item->undangan->pengundang}}</h2>
-
-
-Kepada
-<h2>{{$item->user->name}}</h2>
-
-Disetujui Oleh
-<h2>{{$item->ttd->name}}</h2>
-
-Undangan
-<img src="{{$item->undangan->file}}" alt="">
+<ol>
+  <li>Nomor Surat Tugas</li>
+  <li>Pengundang Acara</li>
+  <li>Nama Kegiatan</li>
+  <li>Nomor Undangan</li>
+  <li>Perihal</li>
+  <li>Data Pegawai</li>
+  <li>Jadwal Pelaksanaan Tugas</li>
+  <li>Lokasi</li>
+  <li>TTD Atasan</li>
+</ol>
