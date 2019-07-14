@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td>waktu</td>
-                    <td>{{$undangan->waktu}}</td>
+                    <td>{{ $undangan->waktu_mulai . ' - ' . $undangan->waktu_selesai }}</td>
                 </tr>
                 <tr>
                     <td>tempat</td>

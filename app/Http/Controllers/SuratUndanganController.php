@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SuratUndangan;
 use App\SuratTugas;
+use Carbon\Carbon;
 
 class SuratUndanganController extends Controller
 {
@@ -44,23 +45,20 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
-        // (Link)[storage/app/public/files]
-        // https://laravel.com/docs/5.0/filesystem
-        // $request->file('file')->store('files', 's3');
-        // $request->file('file')->store('avatars', 's3');
-
-        $request->validate([
-            'pengundang' => 'required',
-            'file' => 'required|image',
-        ]);
-
-        $request->file('file')->store('files', 'public');
-
         $undangan = SuratUndangan::create([
-            'pengundang' => $request->pengundang,
-            'admin_id' => $request->admin_id,
-            'file' => $request->file('file')->hashName(),
+            'pengundang'    => $request->pengundang,
+            'admin_id'      => $request->admin_id,
+            'no_surat'      => $request->no_surat,
+            'pengundang'    => $request->pengundang,
+            'perihal'       => $request->perihal,
+            'nama_acara'    => $request->nama_acara,
+            // 'waktu_mulai'   => $request->waktu_mulai,
+            // 'waktu_selesai' => $request->waktu_selesai,
+            'tempat'        => $request->tempat,
+            'file'          => $request->file('file')->hashName(),
         ]);
+
+        // $request->file('file')->store('files', 'public');
 
         return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil ditambahkan');
     }
