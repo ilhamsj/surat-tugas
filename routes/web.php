@@ -24,6 +24,10 @@ Route::get('/cetak/surat_tugas/{id}', 'HomeController@cetak_surat_tugas')->name(
 Route::resource('pegawai', 'PegawaiController');
 Route::resource('surat_undangan', 'SuratUndanganController');
 Route::resource('surat_tugas', 'SuratTugasController');
+Route::resource('kegiatan', 'LaporanKegiatanController');
+
+// ajax
+
 
 // middleware
 // admin_kepegawaian, admin_bagian, pegawai

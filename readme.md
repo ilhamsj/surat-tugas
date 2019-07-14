@@ -39,3 +39,5 @@ $pegawai = User::first();
 $pegawai = User::where('name', 'budi')->get(); // menampilkan seleksi data
 $pegawai = User::where('name', 'like', '%i%')->get(); // menampilkan seleksi data 
 -->
+
+1. php artisan vendor:publish
