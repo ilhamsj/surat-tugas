@@ -2,8 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <h3>Surat Tugas Baru</h3>
             <form action="{{route('surat_tugas.store')}}" method="post">
                 @csrf
                 
