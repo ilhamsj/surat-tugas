@@ -26,6 +26,9 @@ class CreateSuratUndangansTable extends Migration
             $table->string('tempat', 100);
             $table->text('file');
             $table->timestamps();
+
+            // $table->foreign('admin_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+
         });
     }
 

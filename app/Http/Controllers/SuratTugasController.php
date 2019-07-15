@@ -11,6 +11,10 @@ use PDF;
 
 class SuratTugasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -52,15 +56,10 @@ class SuratTugasController extends Controller
      */
     public function store(Request $request)
     {
-        $suratTugas = new SuratTugas([
-            'pegawai_id'        => $request->pegawai_id,
-            'undangan_id'       => $request->undangan_id,
-            'penanda_tangan_id' => $request->penanda_tangan_id,
-            'no_surat'          => $request->no_surat,
-        ]);
-
+        $suratTugas = new ModelName;
+        $suratTugas->fill($request->all());
         $suratTugas->save();
-        // return $request->get('id_pegawai').' Berhasil disimpan';
+        
         return redirect(route('surat_tugas.index'))->with('success', 'Surat tugas berhasil ditambahkan');
     }
 

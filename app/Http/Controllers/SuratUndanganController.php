@@ -58,7 +58,12 @@ class SuratUndanganController extends Controller
             'file'          => $request->file('file')->hashName(),
         ]);
 
-        // $request->file('file')->store('files', 'public');
+        // dd($request->file('file')->hashName());
+        // $request->merge(['file' => $request->file('file')->hashName()]);
+        // $request->merge(['file' => bcrypt($request->pengundang)]);
+        // $item = SuratUndangan::create($request->all());
+
+        $request->file('file')->store('files', 'public');
 
         return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil ditambahkan');
     }

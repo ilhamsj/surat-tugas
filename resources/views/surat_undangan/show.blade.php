@@ -16,7 +16,7 @@
                 <tr>
                     <td>File</td>
                     <td>
-                        <img src="{{ $undangan->file }}" alt="" class="img-fluid" style="max-width:200px">
+                        {{ $undangan->file }}
                     </td>
                 </tr>
                 <tr>
