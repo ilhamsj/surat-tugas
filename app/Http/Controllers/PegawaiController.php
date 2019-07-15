@@ -100,5 +100,5 @@ class PegawaiController extends Controller
         $user->delete();
 
         return redirect(route('pegawai.index'))->with('success', 'User berhasil dihapus');
-    }           
+    }
 }
