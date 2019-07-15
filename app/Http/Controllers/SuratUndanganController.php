@@ -84,7 +84,7 @@ class SuratUndanganController extends Controller
     public function edit($id)
     {
         $undangan = SuratUndangan::find($id);
-        return view('surat_undangan.edit')->with(['undangan' => $undangan]);
+        return view('surat_undangan.edit')->with(['item' => $undangan]);
     }
 
     /**
@@ -96,9 +96,8 @@ class SuratUndanganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $undangan = SuratUndangan::find($id);
-        $undangan->pengundang = $request->get('pengundang');
-        $undangan->save();
+        $items = SuratUndangan::find($id);
+        $items->update($request->all());
 
         return redirect(route('surat_undangan.index'))->with('success', 'Undangan berhasil di update');
     }
