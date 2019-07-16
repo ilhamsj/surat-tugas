@@ -37,10 +37,12 @@
                                 </a>
                                 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    @if (!$item->confirmed)
+                                    @if ($item->no_surat == !null && $item->confirmed)
+                                        <a class="dropdown-item" target="_blank" href="{{ route('cetak_surat', $item->id) }}">Cetak</a>
+                                    @else
                                         <a class="dropdown-item" href="{{ route('surat_tugas.update', $item->id) }}">Verivikasi</a>
                                     @endif
-                                    <a class="dropdown-item" target="_blank" href="{{ route('cetak_surat', $item->id) }}">Cetak</a>
+
                                     <a class="dropdown-item" href="{{ route('surat_tugas.edit', $item->id) }}">Edit</a>
                                     <form action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
                                         @csrf

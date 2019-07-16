@@ -51,9 +51,12 @@
     
     Nama Kegiatan
     <h3>{{$item->undangan->nama_acara}}</h3>
-    
-    Jadwal Pelaksanaan Tugas
-    <h3>{{$item->undangan->created_at}}</h3>
+
+    Acara dimulai
+    <h3>{{$item->undangan->waktu_mulai}}</h3>
+
+    Acara selesai
+    <h3>{{$item->undangan->waktu_selesai}}</h3>
     
     Lokasi
     <h3>{{$item->undangan->tempat}}</h3>
