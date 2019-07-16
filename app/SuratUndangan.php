@@ -8,14 +8,15 @@ class SuratUndangan extends Model
 {
     protected $table = 'surat_undangan';
     protected $fillable = [
+        'admin_id',
         'pengundang',
         'no_surat',
         'nama_acara',
         'perihal',
-        'waktu',
+        'waktu_mulai',
+        'waktu_selesai',
         'tempat',
         'file',
-        'admin_id'
     ];
 
     public function user() {
