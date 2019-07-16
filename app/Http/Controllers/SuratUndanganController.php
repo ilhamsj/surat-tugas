@@ -45,6 +45,7 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->waktu_mulai);
         $undangan = SuratUndangan::create([
             'pengundang'    => $request->pengundang,
             'admin_id'      => $request->admin_id,
@@ -52,7 +53,7 @@ class SuratUndanganController extends Controller
             'pengundang'    => $request->pengundang,
             'perihal'       => $request->perihal,
             'nama_acara'    => $request->nama_acara,
-            // 'waktu_mulai'   => $request->waktu_mulai,
+            'waktu_mulai'   => $request->waktu_mulai,
             // 'waktu_selesai' => $request->waktu_selesai,
             'tempat'        => $request->tempat,
             'file'          => $request->file('file')->hashName(),

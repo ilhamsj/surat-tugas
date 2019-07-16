@@ -56,7 +56,7 @@ class SuratTugasController extends Controller
      */
     public function store(Request $request)
     {
-        $suratTugas = new ModelName;
+        $suratTugas = new SuratTugas;
         $suratTugas->fill($request->all());
         $suratTugas->save();
         
