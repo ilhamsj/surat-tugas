@@ -21,7 +21,7 @@ class CreateSuratTugasTable extends Migration
             $table->boolean('confirmed')->default(false);
             $table->string('no_surat')->nullable();
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
