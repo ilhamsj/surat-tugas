@@ -84,7 +84,16 @@ class SuratUndanganController extends Controller
     public function edit($id)
     {
         $undangan = SuratUndangan::find($id);
-        return view('surat_undangan.edit')->with(['item' => $undangan]);
+
+        Carbon::macro('toAtomStringWithNoTimezone', function () {
+            return $this->format('Y-m-d\TH:i:s');
+        });
+        
+        return view('surat_undangan.edit')->with([
+            'item' => $undangan,
+            'waktu_mulai' => Carbon::parse($undangan->waktu_mulai)->toAtomStringWithNoTimezone(),
+            'waktu_selesai' => Carbon::parse($undangan->waktu_selesai)->toAtomStringWithNoTimezone(),
+        ]);
     }
 
     /**
