@@ -10,11 +10,44 @@
   <style>
     * {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: small;
+      font-size: medium;
+    }
+
+    table, tr, td {
+      border-collapse: collapse;
+    }
+    .main {
+      margin: auto;
+      text-align: left;
+      width: 80%;
+    }
+
+    table tr, .main td {
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    .peserta td {
+      padding: 0;
+    }
+    .list {
+      width: 100%;
+    }
+   .list td{
+      border: 1px solid black;
+    }
+
+
+    .ttd .kepala {
+      text-align: right
+    }
+
+    table img {
+      width: 150px;
     }
 
     .text-center {
-      text-align: center
+      text-align: center;
     }
   </style>
 </head>
@@ -31,38 +64,103 @@
           Website: www.yogyakarta.kemenag.go.id
       </p>
       <hr>
-      <h2>SURAT TUGAS</h2>
+      <h2>
+        <u>SURAT TUGAS</u>
+      </h2>
+      Nomor : /Kw.12.1/2/KP.01.1/06/2019
+
   </div>
 
-    Nomor Surat Tugas
-    <h3>{{$item->no_surat}}</h3>
-    
-    Data Pegawai
-    <h3>{{$item->user->name}}</h3>
-    
-    Nomor Undangan
-    <h3>{{$item->undangan->no_surat}}</h3>
-    
-    Pengundang Acara<h3>
-    {{$item->undangan->pengundang}}</h3>
-    
-    Perihal
-    <h3>{{$item->undangan->perihal}}</h3>
-    
-    Nama Kegiatan
-    <h3>{{$item->undangan->nama_acara}}</h3>
+  <div>
+    <table class="main">
+    <tr>
+      <td>Menimbang</td>
+      <td>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quas animi, earum eum aut id sapiente voluptatum explicabo ab nemo ducimus autem distinctio et sit nesciunt eligendi similique nihil possimus?  
+      </td>
+    </tr>
+    <tr>
+      <td>Dasar</td>
+      <td>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis unde ea odit necessitatibus minima reiciendis ab suscipit rem voluptatem. Minus fugit deleniti ducimus molestiae ad quo iste rerum debitis voluptate.
+      </td>
+    </tr>
 
-    Acara dimulai
-    <h3>{{$item->undangan->waktu_mulai}}</h3>
+    <tr>
+      <td>Kepada</td>
+      <td>
 
-    Acara selesai
-    <h3>{{$item->undangan->waktu_selesai}}</h3>
-    
-    Lokasi
-    <h3>{{$item->undangan->tempat}}</h3>
-    
-    TTD Atasan
-    <h3>{{$item->ttd->name}}</h3>
-    
+        <table class="peserta list">
+          <tr>
+            <td>No</td>
+            <td>Nama</td>
+            <td>Tempat Tugas</td>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>H Nadhif, S.Ag, M.S.I</td>
+            <td>Kanwil Kemenag DI Yogyakarta</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>H Nadhif, S.Ag, M.S.I</td>
+            <td>Kanwil Kemenag DI Yogyakarta</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>H Nadhif, S.Ag, M.S.I</td>
+            <td>Kanwil Kemenag DI Yogyakarta</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>H Nadhif, S.Ag, M.S.I</td>
+            <td>Kanwil Kemenag DI Yogyakarta</td>
+          </tr>
+
+
+        </table>
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>Untuk</td>
+      <td>
+          Melaksanakan tugas pada kegiatan tersebut diatas, pada
+            <table class="peserta ttd">
+              <tr>
+                <td>1. Hari/Tanggal</td>
+                <td>:</td>
+                <td>Jumat, 21 Juni 2019</td>
+              </tr>
+              <tr>
+                <td>2. Tempat</td>
+                <td>:</td>
+                <td>Pesona Hotel Malioboro, Jl. Gadean No. 3 Ngupasan Yogyakarta</td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="kepala">
+                  <p>Yogyakarta, Juni 2019</p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="kepala">Kepala</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="kepala">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Tanda_tangan_bapak.png/240px-Tanda_tangan_bapak.png" alt="" srcset="">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="kepala">Edhi Gunawan</td>
+              </tr>
+            </table>
+        </tr>
+      </table>
+    </p>
+  </div>
+
 </body>
 </html>

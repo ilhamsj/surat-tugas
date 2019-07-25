@@ -25,8 +25,12 @@
                             <a href="{{ route('surat_tugas.show', $item->id) }}">
                                 {{ $item->no_surat }}</td>
                             </a>
-                        <td><a href="">{{ $item->undangan->pengundang }}</a></td>
-                        <td>{{ $item->user->name }}</td>
+                        <td><a href="{{ route('surat_undangan.show', $item->undangan->id) }}">{{ $item->undangan->pengundang }}</a></td>
+                        <td>
+                            <a href="{{ route('pegawai.show', $item->user->id) }}">
+                                {{ $item->user->name }}
+                            </a>
+                        </td>
                         <td>{{ $item->confirmed }}</td>
                         <td>{{ $item->ttd->name }}</td>
                         {{-- <td>{{ $item->LaporanKegiatan->content }}</td> --}}

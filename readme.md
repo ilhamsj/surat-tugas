@@ -41,3 +41,28 @@ $pegawai = User::where('name', 'like', '%i%')->get(); // menampilkan seleksi dat
 -->
 
 1. php artisan vendor:publish
+
+
+*SAGET ROAD TO SCHOOL*
+📘📝 🎨✏️📏
+
+Mau tau cara mudah belajar ?
+Mau tau cara mudah menghafal ?
+
+Kenali dulu tipe gaya belajarmu
+Setiap orang memiliki tipe gaya belajar yang berbeda-beda,
+dengan tipe gaya belajar yang sesuai dijamin prestasi kamu akan meningkat pesat 🚀🚀🚀
+
+Jadi, apa kamu mau tau tipe gaya belajarmu ?
+Tunggu kehadiran Dr. Saget di sekolahmu ya 🚐🚐🚐 !
+
+Mau sekolahmu kami kunjungi ?
+yuk hubungi !
+
+*☎️ SAGET OFFICIAL ☎️* 
+bit.ly/saget-wa
+bit.ly/saget-ig
+bit.ly/saget-fb
+bit.ly/saget-on
+
+#SagetRoadToSchool
