@@ -7,6 +7,7 @@ use App\User;
 use App\SuratTugas;
 use Auth;
 use PDF;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -39,10 +40,12 @@ class HomeController extends Controller
 
     public function cetak_surat_tugas($id)
     {
-        //where('pegawai_id', Auth::user()->id)
-        $item = SuratTugas::find($id);
-        $pdf = PDF::loadview('cetak.surat_tugas', ['item' => $item]);
+        $item   = SuratTugas::find($id);
+        $pdf    = PDF::loadview('cetak.surat_tugas', [
+            'item'          => $item,
+            'ttd'           => Carbon::now()->isoFormat('d MMMM Y'),
+            'tgl_terbit'    => Carbon::now()->isoFormat('M/Y'),
+        ]);
         return $pdf->setPaper('a4')->stream();
-        // return $pdf->download('surat-tugas-pdf');
     }
 }

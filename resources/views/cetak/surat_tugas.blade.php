@@ -19,7 +19,7 @@
     .main {
       margin: auto;
       text-align: left;
-      width: 80%;
+      width: 90%;
     }
 
     table tr, .main td {
@@ -49,6 +49,11 @@
     .text-center {
       text-align: center;
     }
+
+    ol {
+      /* padding: 0; */
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -67,7 +72,7 @@
       <h2>
         <u>SURAT TUGAS</u>
       </h2>
-      Nomor : /Kw.12.1/2/KP.01.1/06/2019
+      Nomor : {{$item->no_surat}}/Kw.12.1/2/KP.01.1/{{$tgl_terbit}}
 
   </div>
 
@@ -76,13 +81,32 @@
     <tr>
       <td>Menimbang</td>
       <td>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quas animi, earum eum aut id sapiente voluptatum explicabo ab nemo ducimus autem distinctio et sit nesciunt eligendi similique nihil possimus?  
-      </td>
-    </tr>
+          {{-- a. Bidang Urusan Agama Islam dan Pembinaan Syariah Kanwil Kementerian Agama Daerah Istimewa Yogyakarta, akan menyelenggarakan kegiatan       </td> --}}
+        <ol type="a"> 
+          <li>
+            {{$item->undangan->pengundang}}
+            akan menyelenggarakan 
+            kegiatan
+            {{$item->undangan->nama_acara}}
+          <li>
+              Bahwa mereka yang namanya tercantum disurat tugas ini dipandang
+              mampu, cakap serta bertanggung jawab sepenuhnya dalam
+              melaksanakan tugasnya              
+          </li>
+          <li>
+              berdasarkan pertimbangan sebagaimana dimaksud huruf a dan b, perlu
+              menetapkan surat tugas;
+              
+          </li>
+        </ol>
+      </tr>
     <tr>
       <td>Dasar</td>
       <td>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis unde ea odit necessitatibus minima reiciendis ab suscipit rem voluptatem. Minus fugit deleniti ducimus molestiae ad quo iste rerum debitis voluptate.
+          Nota Dinas {{$item->undangan->pengundang}}
+          Nomor {{$item->undangan->no_surat}} ,
+          perihal {{$item->undangan->perihal}},
+          memberikan tugas
       </td>
     </tr>
 
@@ -99,26 +123,8 @@
 
           <tr>
             <td>1</td>
-            <td>H Nadhif, S.Ag, M.S.I</td>
+            <td>{{$item->user->name}}</td>
             <td>Kanwil Kemenag DI Yogyakarta</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>H Nadhif, S.Ag, M.S.I</td>
-            <td>Kanwil Kemenag DI Yogyakarta</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>H Nadhif, S.Ag, M.S.I</td>
-            <td>Kanwil Kemenag DI Yogyakarta</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>H Nadhif, S.Ag, M.S.I</td>
-            <td>Kanwil Kemenag DI Yogyakarta</td>
-          </tr>
-
-
         </table>
         
       </td>
@@ -130,19 +136,19 @@
           Melaksanakan tugas pada kegiatan tersebut diatas, pada
             <table class="peserta ttd">
               <tr>
-                <td>1. Hari/Tanggal</td>
-                <td>:</td>
-                <td>Jumat, 21 Juni 2019</td>
+                <td>1. Hari/Tanggal </td>
+                <td> : </td>
+                <td>{{$item->undangan->waktu_mulai}} - {{$item->undangan->waktu_selesai}}</td>
               </tr>
               <tr>
-                <td>2. Tempat</td>
+                <td>2. Tempat </td>
                 <td>:</td>
-                <td>Pesona Hotel Malioboro, Jl. Gadean No. 3 Ngupasan Yogyakarta</td>
+                <td>{{$item->undangan->tempat}}</td>
               </tr>
 
               <tr>
                 <td colspan="3" class="kepala">
-                  <p>Yogyakarta, Juni 2019</p>
+                  <p>Yogyakarta, {{ $ttd }}</p>
                 </td>
               </tr>
               <tr>
