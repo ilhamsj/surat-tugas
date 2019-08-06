@@ -23,8 +23,9 @@
                     <tr>
                         <td>
                             <a href="{{ route('surat_tugas.show', $item->id) }}">
-                                {{ $item->no_surat }}</td>
+                                {{ Str::limit($item->no_surat, 10) }}
                             </a>
+                        </td>
                         <td><a href="{{ route('surat_undangan.show', $item->undangan->id) }}">{{ $item->undangan->pengundang }}</a></td>
                         <td>
                             <a href="{{ route('pegawai.show', $item->user->id) }}">

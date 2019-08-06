@@ -117,14 +117,16 @@
           <tr>
             <td>No</td>
             <td>Nama</td>
-            <td>Tempat Tugas</td>
+            <td>Jabatan</td>
           </tr>
 
           @forelse ($items as $item)
             <tr>
               <td>{{ $item->id }}</td>
               <td>{{ $item->user->name }}</td>
-                <td>Kanwil Kemenag DI Yogyakarta</td>
+              <td>
+                  {{ $item->user->jabatan }}
+              </td>
             </tr>
           @empty
               
