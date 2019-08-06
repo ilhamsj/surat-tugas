@@ -28,7 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $pegawai = User::paginate(3);
         $pegawai = User::all();
         return view('home')->with(['pegawai' => $pegawai]);
     }
@@ -40,9 +39,11 @@ class HomeController extends Controller
 
     public function cetak_surat_tugas($id)
     {
-        $item   = SuratTugas::find($id);
-        $pdf    = PDF::loadview('cetak.surat_tugas', [
-            'item'          => $item,
+        $item       = SuratTugas::where('undangan_id', $id);
+        $pdf        = PDF::loadview('cetak.index', [
+            'items'         => $item->get(),
+            'surat'         => $item->first(),
+            'penanda_tangan'=> $item->first()->ttd->name,
             'ttd'           => Carbon::now()->isoFormat('d MMMM Y'),
             'tgl_terbit'    => Carbon::now()->isoFormat('M/Y'),
         ]);

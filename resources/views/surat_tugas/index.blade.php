@@ -33,28 +33,30 @@
                         </td>
                         <td>{{ $item->confirmed }}</td>
                         <td>{{ $item->ttd->name }}</td>
-                        {{-- <td>{{ $item->LaporanKegiatan->content }}</td> --}}
                         <td>
-                            <div class="dropdown show">
-                                <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Details
-                                </a>
-                                
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    @if ($item->no_surat == !null && $item->confirmed)
-                                        <a class="dropdown-item" target="_blank" href="{{ route('cetak_surat', $item->id) }}">Cetak</a>
-                                    @else
-                                        <a class="dropdown-item" href="{{ route('surat_tugas.update', $item->id) }}">Verivikasi</a>
-                                    @endif
+                                @if ($item->confirmed)
+                                    <i class="fi-cwsuxl-check"></i>
+                                    <a class="d-inline" target="_blank" href="{{ route('cetak_surat', $item->undangan_id) }}">
+                                        <i class="fi-xwsuxl-external-link-solid"></i>
+                                        
+                                    </a>
+                                @else
+                                    <a class="d-inline" href="{{ route('surat_tugas.update', $item->id) }}">
+                                        <i class="fi-cwsuxl-check"></i>
+                                    </a>
+                                @endif
 
-                                    <a class="dropdown-item" href="{{ route('surat_tugas.edit', $item->id) }}">Edit</a>
-                                    <form action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="dropdown-item">Delete</button>
-                                    </form>
-                                </div>
-                            </div>
+                                <a class="d-inline" href="{{ route('surat_tugas.edit', $item->id) }}"><i class="fi-xnsuxl-edit-solid"></i></a>
+                                <a class="d-inline" href="{{ route('surat_tugas.destroy', $item->id) }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('delete{{$item->id}}').submit();">
+                                    <i class="fi-xnsuxl-trash-bin"></i>
+                                </a>
+
+                                <form id="delete{{$item->id}}" action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                         </td>
                     </tr>
 
