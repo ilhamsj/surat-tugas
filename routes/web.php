@@ -29,5 +29,8 @@ Route::resource('kegiatan', 'LaporanKegiatanController');
 Route::get('admin_bagian', function () {
     return 'halaman admin bagian';
 });
+
+Route::get('/json_pegawai', 'HomeController@pegawai');
+
 // middleware
 // admin_kepegawaian, admin_bagian, pegawai

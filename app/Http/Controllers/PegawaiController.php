@@ -8,14 +8,13 @@ use Validator;
 use App\User;
 use App\SuratTugas;
 use Auth;
+use DataTables;
 
 class PegawaiController extends Controller
 {
     public function __construct()
     {
-        // cek apakah login
         $this->middleware('auth');
-        // $this->middleware('pegawai');
     }
 
     /**

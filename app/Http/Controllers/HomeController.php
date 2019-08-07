@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PDF;
+use DataTables;
+use Carbon\Carbon;
+use Auth;
 use App\User;
 use App\SuratTugas;
-use Auth;
-use PDF;
-use Carbon\Carbon;
+use App\SuratUndangan;
+
 
 class HomeController extends Controller
 {
@@ -48,5 +51,9 @@ class HomeController extends Controller
             'tgl_terbit'    => Carbon::now()->isoFormat('M/Y'),
         ]);
         return $pdf->setPaper('a4')->stream();
+    }
+
+    public function pegawai() {
+        return datatables()->of(User::all())->toJson();
     }
 }

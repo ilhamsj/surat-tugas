@@ -1,30 +1,42 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col">   
-            <table class="table table-bordered">
-                <tr>
-                    <td>No</td>
-                    <td>Surat Tugas</td>
-                    <td>Tanggal</td>
-                    <td>Status</td>
-                    <td>Action</td>
-                </tr>
-                @foreach ($items as $item)
+        <div class="col">
+            <table class="table table-bordered" id="users-table">
+                <thead>
                     <tr>
-                        <td>{{$item->id}}</td>
-                        <td>{{$item->no_surat}}</td>
-                        <td>{{$item->undangan->}}</td>
-                        <td>{{$item->confirmed}}</td>
-                        <td>
-                            <a href="">Lapor Kegiatan</a>
-                        </td>
+                        <th>id</th>
+                        <th>Nama</th>
+                        <th>Golongan</th>
+                        <th>Jabatan</th>
                     </tr>
-                @endforeach
-           </table>
+                </thead>
+            </table>
         </div>
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    
+<script>
+
+$(function() {
+    $('#users-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: 'json_pegawai',
+        columns: [
+            { data: 'id', name: 'id' },
+            { data: 'name', name: 'name' },
+            { data: 'golongan', name: 'golongan' },
+            { data: 'jabatan', name: 'jabatan' },
+        ]
+    });
+});
+
+</script>
+
+@endpush
