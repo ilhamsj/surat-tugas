@@ -105,8 +105,11 @@
           Nota Dinas {{-- $item->undangan->pengundang--}}
           Nomor {{-- $item->undangan->no_surat--}} ,
           perihal {{-- $item->undangan->perihal--}},
-          memberikan tugas
       </td>
+    </tr>
+
+    <tr>
+      <td>memberikan tugas</td>
     </tr>
 
     <tr>

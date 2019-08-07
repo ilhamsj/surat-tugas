@@ -26,8 +26,5 @@ Route::resource('surat_undangan', 'SuratUndanganController');
 Route::resource('surat_tugas', 'SuratTugasController');
 Route::resource('kegiatan', 'LaporanKegiatanController');
 
-// ajax
-
-
 // middleware
 // admin_kepegawaian, admin_bagian, pegawai
