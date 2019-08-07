@@ -12,7 +12,7 @@ class SuratUndanganController extends Controller
 
     public function __construct() {
         $this->middleware('auth');
-        // $this->middleware('pegawai')->except('create');
+        $this->middleware('admin_kepegawaian')->except('create');
     }
     /**
      * Display a listing of the resource.

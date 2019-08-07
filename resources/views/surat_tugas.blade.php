@@ -4,8 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 mb-4">
-            <h3>Data Surat Tugas</h3>
-            <a href="{{route('surat_tugas.create')}}">Buat Surat Tugas</a>
+            <h3>Hi, {{ Auth::user()->name}}</h3>
         </div>
         <div class="col">
             <table class="table table-bordered">

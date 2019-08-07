@@ -26,5 +26,8 @@ Route::resource('surat_undangan', 'SuratUndanganController');
 Route::resource('surat_tugas', 'SuratTugasController');
 Route::resource('kegiatan', 'LaporanKegiatanController');
 
+Route::get('admin_bagian', function () {
+    return 'halaman admin bagian';
+});
 // middleware
 // admin_kepegawaian, admin_bagian, pegawai
