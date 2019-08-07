@@ -3,14 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col">
-            <table class="table table-bordered" id="users-table">
+        <div class="col-md">
+            <table class="table table-bordered table-responsive" id="users-table">
                 <thead>
                     <tr>
                         <th>id</th>
                         <th>Nama</th>
                         <th>Golongan</th>
                         <th>Jabatan</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
             </table>
@@ -33,6 +34,7 @@ $(function() {
             { data: 'name', name: 'name' },
             { data: 'golongan', name: 'golongan' },
             { data: 'jabatan', name: 'jabatan' },
+            { data: 'email', name: 'email' },
         ]
     });
 });
