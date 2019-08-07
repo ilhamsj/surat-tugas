@@ -58,8 +58,6 @@ class SuratUndanganController extends Controller
             'file'          => $request->file('file')->hashName(),
         ]);
         $request->file('file')->store('files', 'public');
-
-        // $item = SuratUndangan::create($request->all());
         return redirect(route('surat_undangan.index'))->with('success', 'Data berhasil ditambahkan');
     }
 
