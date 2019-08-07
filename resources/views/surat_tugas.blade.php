@@ -12,9 +12,7 @@
                 <tr>
                     <td>No Surat</td>
                     <td>Undangan</td>
-                    <td>Pegawai</td>
-                    <td>Disetujui Oleh</td>
-                    <td>Tanggal Verivikasi</td>
+                    <td>Waktu Mulai</td>
                     <td>Action</td>
                 </tr>
 
@@ -22,9 +20,7 @@
                     <tr>
                         <td>{{ $item->no_surat }}</td>
                         <td><a href="">{{ $item->undangan->pengundang }}</a></td>
-                        <td>{{ $item->user->name }}</td>
-                        <td>{{ $item->user->name }}</td>
-                        <td></td>
+                        <td><a href="">{{ $item->undangan->waktu_mulai }}</a></td>
                         <td>
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,12 +29,7 @@
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">Cetak</a>
-                                    <a class="dropdown-item" href="{{ route('surat_tugas.edit', $item->id) }}">Edit</a>
-                                    <form action="{{ route('surat_tugas.destroy', $item->id) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="dropdown-item">Delete</button>
-                                    </form>
+                                    <a class="dropdown-item" href="#">Lapor Kegiatan</a>
                                 </div>
                             </div>
                         </td>

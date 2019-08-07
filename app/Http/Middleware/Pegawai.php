@@ -23,11 +23,11 @@ class Pegawai
         
         elseif(Auth::check() && Auth::user()->role == 'admin_bagian')
         {
-            return redirect('/admin_bagian');
+            return redirect(route('surat_undangan.create'));
         }
         
         else {
-            return redirect('/admin_kepegawaian');
+            return redirect(route('surat_tugas.index'));
         }   
     }
 }

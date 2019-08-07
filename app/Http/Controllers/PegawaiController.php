@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Validator;
 
 use App\User;
+use App\SuratTugas;
+use Auth;
 
 class PegawaiController extends Controller
 {
@@ -25,8 +27,8 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = User::all();
-        return view('pegawai.index')->with(['pegawai' => $pegawai]); 
+        $pegawai = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
+        return view('pegawai.index')->with(['items' => $pegawai]); 
     }
 
     /**

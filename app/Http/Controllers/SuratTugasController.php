@@ -14,6 +14,8 @@ class SuratTugasController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('admin_kepegawaian');
+        $this->middleware('admin_bagian')->except('create', 'index');
     }
     /**
      * Display a listing of the resource.
