@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md">
-            <table class="table table-bordered table-responsive" id="users-table">
+            <table class="table table-bordered" id="users-table">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -12,6 +12,7 @@
                         <th>Golongan</th>
                         <th>Jabatan</th>
                         <th>Email</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
             </table>
@@ -35,6 +36,7 @@ $(function() {
             { data: 'golongan', name: 'golongan' },
             { data: 'jabatan', name: 'jabatan' },
             { data: 'email', name: 'email' },
+            { data: 'action', name: 'action', orderable: false, searchable: false }
         ]
     });
 });

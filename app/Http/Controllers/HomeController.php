@@ -54,6 +54,12 @@ class HomeController extends Controller
     }
 
     public function pegawai() {
-        return datatables()->of(User::all())->toJson();
+        $user = User::all();
+
+        return Datatables::of($user)
+            ->addColumn('action', function($user) {
+                return '<a href="'.route('pegawai.edit', $user->id).'">Edit</a>';
+            })
+            ->toJson();
     }
 }

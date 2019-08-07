@@ -24,10 +24,7 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
-        return view('pegawai.index')->with([
-            'items' => $pegawai
-        ]); 
+        return view('pegawai.index');
     }
 
     /**
