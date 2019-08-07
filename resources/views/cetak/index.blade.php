@@ -14,6 +14,7 @@
     }
 
     table, tr, td {
+      /* border: 1px solid black; */
       border-collapse: collapse;
     }
     .main {
@@ -71,7 +72,7 @@
       <h2>
         <u>SURAT TUGAS</u>
       </h2>
-      Nomor : {{$surat->no_surat}}/Kw.12.1/2/KP.01.1/{{$surat->no_surat}}
+      Nomor : {{$surat->no_surat}}
 
   </div>
 
@@ -80,13 +81,12 @@
     <tr>
       <td>Menimbang</td>
       <td>
-          {{-- -- a. Bidang Urusan Agama Islam dan Pembinaan Syariah Kanwil Kementerian Agama Daerah Istimewa Yogyakarta, akan menyelenggarakan kegiatan       </td> ----}}
         <ol type="a"> 
           <li>
-            {{-- $item->undangan->pengundang--}}
+            {{$surat->undangan->pengundang}}
             Akan menyelenggarakan 
             kegiatan
-            {{-- $item->undangan->nama_acara--}}
+            {{$surat->undangan->nama_acara}}
           <li>
               Bahwa mereka yang namanya tercantum disurat tugas ini dipandang
               mampu, cakap serta bertanggung jawab sepenuhnya dalam
@@ -95,20 +95,20 @@
           <li>
               Berdasarkan pertimbangan sebagaimana dimaksud huruf a dan b, perlu
               menetapkan surat tugas;
-              
           </li>
         </ol>
       </tr>
     <tr>
       <td>Dasar</td>
       <td>
-          Nota Dinas {{-- $item->undangan->pengundang--}}
-          Nomor {{-- $item->undangan->no_surat--}} ,
-          perihal {{-- $item->undangan->perihal--}},
+          {{$surat->undangan->type}} {{$surat->undangan->pengundang}}
+          Nomor {{$surat->undangan->no_surat}}
+          perihal {{$surat->undangan->perihal}},
       </td>
     </tr>
 
     <tr>
+      <td></td>
       <td>memberikan tugas</td>
     </tr>
 
@@ -147,17 +147,17 @@
               <tr>
                 <td>1. Hari/Tanggal </td>
                 <td> : </td>
-                <td>{{-- $item->undangan->waktu_mulai--}} - {{-- $item->undangan->waktu_selesai--}}</td>
+                <td>{{$surat->undangan->waktu_mulai}} - {{ $surat->undangan->waktu_selesai }}</td>
               </tr>
               <tr>
                 <td>2. Tempat </td>
                 <td>:</td>
-                <td>{{-- $item->undangan->tempat--}}</td>
+                <td>{{ $surat->undangan->tempat }}</td>
               </tr>
 
               <tr>
                 <td colspan="3" class="kepala">
-                  <p>Yogyakarta, {{--  $ttd --}}</p>
+                  <p>Yogyakarta, {{ date('d M Y') }}</p>
                 </td>
               </tr>
               <tr>

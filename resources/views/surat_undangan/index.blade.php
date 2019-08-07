@@ -27,7 +27,9 @@
                             <td>{{ $item->pengundang }}</td>
                             <td>{{ $item->perihal }}</td>
                             <td>{{ $item->nama_acara }}</td>
-                            <td>{{ $item->waktu_mulai . ' - ' . $item->waktu_selesai }}</td>
+                            <td>
+                                {{ $item->waktu_mulai . ' - ' . $item->waktu_selesai }}
+                            </td>
                             <td>{{ $item->tempat }}</td>
 
                             <td>

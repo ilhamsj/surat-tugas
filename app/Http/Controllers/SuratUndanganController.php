@@ -22,6 +22,7 @@ class SuratUndanganController extends Controller
     public function index()
     {
         $undangan = SuratUndangan::all();
+
         return view('surat_undangan.index')->with([
             'items' => $undangan,
         ]);
@@ -48,6 +49,7 @@ class SuratUndanganController extends Controller
         $undangan = SuratUndangan::create([
             'pengundang'    => $request->pengundang,
             'admin_id'      => $request->admin_id,
+            'type'          => $request->type,
             'no_surat'      => $request->no_surat,
             'pengundang'    => $request->pengundang,
             'perihal'       => $request->perihal,
@@ -70,6 +72,7 @@ class SuratUndanganController extends Controller
     public function show($id)
     {
         $undangan = SuratUndangan::find($id);
+
         return view('surat_undangan.show')->with(['undangan' => $undangan]);
     }
 
@@ -84,7 +87,7 @@ class SuratUndanganController extends Controller
         $undangan = SuratUndangan::find($id);
 
         Carbon::macro('toAtomStringWithNoTimezone', function () {
-            return $this->format('Y-m-d\TH:i:s');
+            return $this->format('Y-m-d');
         });
         
         return view('surat_undangan.edit')->with([

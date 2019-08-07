@@ -47,11 +47,11 @@
                     <label for="confirmed">Surat</label>
                     <select name="confirmed" class="form-control">
                         @if ($surat_tugas->confirmed == 1)
-                            <option value="{{ $surat_tugas->confirmed }}">True</option>
-                            <option value="0">False</option>
+                            <option value="{{ $surat_tugas->confirmed }}">Terverivikasi</option>
+                            <option value="0">Belum Terverivikasi</option>
                         @else
-                            <option value="{{ $surat_tugas->confirmed }}">False</option>
-                            <option value="1">True</option>
+                            <option value="{{ $surat_tugas->confirmed }}">Belum Terverivikasi</option>
+                            <option value="1">Terverivikasi</option>
                         @endif
                     </select>
                 </div>

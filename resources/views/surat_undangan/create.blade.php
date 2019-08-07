@@ -22,6 +22,19 @@
                 @enderror
 
                 <div class="form-group">
+                    <div class="form-group">
+                      <label for="">Jenis Surat</label>
+                      <select class="form-control" name="type">
+                        <option value="Nota Dinas">Nota Dinas</option>
+                        <option value="Surat">Surat</option>
+                      </select>
+                    </div>
+                </div>
+                @error('type')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <div class="form-group">
                     <label for="pengundang">Asal Undangan</label>
                     <input type="text" name="pengundang" class="form-control @error('pengundang') is-invalid @enderror" value="{{ old('pengundang') }}" autocomplete="pengundang" autofocus>
                 </div>
@@ -48,7 +61,7 @@
                 
                 <div class="form-group">
                     <label for="waktu_mulai">waktu_mulai</label>
-                    <input type="datetime-local" name="waktu_mulai" class="form-control @error('waktu_mulai') is-invalid @enderror" value="{{ old('waktu_mulai') }}" autocomplete="waktu_mulai" autofocus>
+                    <input type="date" name="waktu_mulai" class="form-control @error('waktu_mulai') is-invalid @enderror" value="{{ old('waktu_mulai') }}" autocomplete="waktu_mulai" autofocus>
                 </div>
                 @error('waktu_mulai')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -56,7 +69,7 @@
 
                 <div class="form-group">
                     <label for="waktu_selesai">waktu_selesai</label>
-                    <input type="datetime-local" name="waktu_selesai" class="form-control @error('waktu_selesai') is-invalid @enderror" value="{{ old('waktu_selesai') }}" autocomplete="waktu_selesai" autofocus>
+                    <input type="date" name="waktu_selesai" class="form-control @error('waktu_selesai') is-invalid @enderror" value="{{ old('waktu_selesai') }}" autocomplete="waktu_selesai" autofocus>
                 </div>
                 @error('waktu_selesai')
                     <div class="alert alert-danger">{{ $message }}</div>

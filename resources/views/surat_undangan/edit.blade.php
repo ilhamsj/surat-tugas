@@ -60,7 +60,7 @@
                         {{-- waktu_mulai --}}
                         <div class="form-group">
                             <label for="waktu_mulai">waktu_mulai</label>
-                        <input type="datetime-local" name="waktu_mulai" class="form-control @error('waktu_mulai') is-invalid @enderror" value="{{$waktu_mulai}}" autocomplete="waktu_mulai" autofocus>
+                        <input type="date" name="waktu_mulai" class="form-control @error('waktu_mulai') is-invalid @enderror" value="{{$waktu_mulai}}" autocomplete="waktu_mulai" autofocus>
                         </div>
                         @error('waktu_mulai')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -70,7 +70,7 @@
                         {{-- waktu_selesai --}}
                         <div class="form-group">
                             <label for="waktu_selesai">waktu_selesai</label>
-                            <input type="datetime-local" name="waktu_selesai" class="form-control @error('waktu_selesai') is-invalid @enderror" value="{{$waktu_selesai}}" autocomplete="waktu_selesai" autofocus>
+                            <input type="date" name="waktu_selesai" class="form-control @error('waktu_selesai') is-invalid @enderror" value="{{$waktu_selesai}}" autocomplete="waktu_selesai" autofocus>
                         </div>
                         @error('waktu_selesai')
                             <div class="alert alert-danger">{{ $message }}</div>
