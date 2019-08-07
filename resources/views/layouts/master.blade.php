@@ -11,18 +11,9 @@
     </head>
     <body>
 
-
-        <header>
-            <div class="container">
-                <h1>Kementrian Agama</h1>
-            </div>
-        </header>
-
-        <main>
+        <main class="mt-4 mb-4">
             @yield('content')
         </main>
-
-        <hr>
 
         <footer>
             <div class="container">
