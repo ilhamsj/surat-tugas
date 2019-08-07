@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\AjaxCrud;
 use Validator;
 
 use App\User;
