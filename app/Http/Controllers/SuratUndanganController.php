@@ -12,7 +12,6 @@ class SuratUndanganController extends Controller
 
     public function __construct() {
         $this->middleware('auth');
-        $this->middleware('admin_kepegawaian')->except('create');
     }
     /**
      * Display a listing of the resource.
@@ -46,10 +45,11 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->tipe_surat);
         $undangan = SuratUndangan::create([
             'pengundang'    => $request->pengundang,
             'admin_id'      => $request->admin_id,
-            'type'          => $request->type,
+            'tipe_surat'    => $request->tipe_surat,
             'no_surat'      => $request->no_surat,
             'pengundang'    => $request->pengundang,
             'perihal'       => $request->perihal,

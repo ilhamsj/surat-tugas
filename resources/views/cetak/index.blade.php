@@ -101,7 +101,7 @@
     <tr>
       <td>Dasar</td>
       <td>
-          {{$surat->undangan->type}} {{$surat->undangan->pengundang}}
+          {{$surat->undangan->tipe_surat}} {{$surat->undangan->pengundang}}
           Nomor {{$surat->undangan->no_surat}}
           perihal {{$surat->undangan->perihal}},
       </td>
@@ -165,7 +165,7 @@
               </tr>
               <tr>
                 <td colspan="3" class="kepala">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Tanda_tangan_bapak.png/240px-Tanda_tangan_bapak.png" alt="" srcset="">
+                  <img src="{{ asset('images/ttd/ttd_kepala.jpg')}}" alt="" srcset="" style="width:100px">
                 </td>
               </tr>
               <tr>

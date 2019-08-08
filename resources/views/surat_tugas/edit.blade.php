@@ -31,7 +31,10 @@
                 <div class="form-group">
                     <label for="penanda_tangan_id">Atasan</label>
                     <select name="penanda_tangan_id" class="form-control">
-                        <option value="{{ $surat_tugas->ttd->id }}">{{ $surat_tugas->ttd->name }}</option>
+                        @if ($item->penanda_tangan_id != null)
+                            <option value="{{ $surat_tugas->ttd->id }}">{{ $surat_tugas->ttd->name }}</option>
+                        @endif
+                        
                         @foreach ($pegawai as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach

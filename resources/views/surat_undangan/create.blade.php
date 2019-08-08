@@ -23,11 +23,11 @@
 
                 <div class="form-group">
                     <div class="form-group">
-                      <label for="">Jenis Surat</label>
-                      <select class="form-control" name="type">
-                        <option value="Nota Dinas">Nota Dinas</option>
-                        <option value="Surat">Surat</option>
-                      </select>
+                      <label for="type">Jenis Surat</label>
+                      <select class="form-control" name="tipe_surat">
+                          <option value="Nota Dinas">Nota Dinas</option>
+                          <option value="Surat">Surat</option>
+                    </select>
                     </div>
                 </div>
                 @error('type')

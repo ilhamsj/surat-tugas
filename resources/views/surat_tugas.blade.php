@@ -21,16 +21,13 @@
                         <td><a href="">{{ $item->undangan->pengundang }}</a></td>
                         <td><a href="">{{ $item->undangan->waktu_mulai }}</a></td>
                         <td>
-                            <div class="dropdown show">
-                                <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Details
+                            @if ($item->confirmed)
+                                <i class="fi-cwsuxl-check"></i>
+                                <a class="d-inline" target="_blank" href="{{ route('cetak_surat', $item->undangan_id) }}">
+                                    <i class="fi-xwsuxl-external-link-solid"></i>
                                 </a>
-                                
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Cetak</a>
-                                    <a class="dropdown-item" href="#">Lapor Kegiatan</a>
-                                </div>
-                            </div>
+                            @endif
+                            <a class="" href="#">Lapor Kegiatan</a>
                         </td>
                     </tr>
 

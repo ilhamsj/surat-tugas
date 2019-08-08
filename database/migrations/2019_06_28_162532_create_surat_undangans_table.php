@@ -17,11 +17,12 @@ class CreateSuratUndangansTable extends Migration
             $table->bigIncrements('id');
             $table->integer('admin_id');
             $table->string('no_surat', 30);
+            $table->enum('tipe_surat', ['Nota Dinas', 'Surat']);
             $table->string('pengundang', 50);
             $table->string('perihal', 30);
             $table->string('nama_acara', 50);
-            $table->timestamp('waktu_mulai');
-            $table->timestamp('waktu_selesai')->nullable();
+            $table->date('waktu_mulai');
+            $table->date('waktu_selesai')->nullable();
             $table->string('tempat', 100);
             $table->text('file');
             $table->timestamps();

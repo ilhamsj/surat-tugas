@@ -33,7 +33,12 @@
                             </a>
                         </td>
                         <td>{{ $item->confirmed }}</td>
-                        <td>{{ $item->ttd->name }}</td>
+
+                        <td>
+                            @if ($item->penanda_tangan_id == !null)
+                                {{ $item->ttd->name }}
+                            @endif
+                        </td>
                         <td>
                                 @if ($item->confirmed)
                                     <i class="fi-cwsuxl-check"></i>
