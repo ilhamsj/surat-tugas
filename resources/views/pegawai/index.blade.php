@@ -3,6 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+                <h3>Data Pegawai</h3>
+                <a href="">Tambah data pegawai</a>
+        </div>
         <div class="col-md">
             <table class="table table-bordered" id="users-table">
                 <thead>

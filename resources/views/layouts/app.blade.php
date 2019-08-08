@@ -11,6 +11,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
 </head>
 <body>
     <div id="app">
@@ -81,7 +82,6 @@
             <div class="row">
                 <div class="col">
                     <ul class="list-group">
-
                         @auth                            
                         @if (Auth::user()->role == 'pegawai' || Auth::user()->role == 'admin_bagian' || Auth::user()->role == 'admin_kepegawaian')
                             <li class="list-group-item disabled">Pegawai</li>
