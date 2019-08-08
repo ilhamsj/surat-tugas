@@ -12,6 +12,7 @@
                     <tr>
                         <td>Nomor Undangan</td>
                         <td>Pengundang</td>
+                        <td>Tipe Surat</td>
                         <td>Perihal</td>
                         <td>Nama Acara</td>
                         <td>Waktu</td>
@@ -24,10 +25,13 @@
                                 <a href="{{ route('surat_undangan.show', $item->id) }}">{{$item->no_surat}}</a>
                             </td>
 
+                            <td>{{ $item->tipe_surat }}</td>
                             <td>{{ $item->pengundang }}</td>
                             <td>{{ $item->perihal }}</td>
                             <td>{{ $item->nama_acara }}</td>
-                            <td>{{ $item->waktu_mulai . ' - ' . $item->waktu_selesai }}</td>
+                            <td>
+                                {{ $item->waktu_mulai . ' - ' . $item->waktu_selesai }}
+                            </td>
                             <td>{{ $item->tempat }}</td>
 
                             <td>

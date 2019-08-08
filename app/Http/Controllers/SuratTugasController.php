@@ -14,7 +14,6 @@ class SuratTugasController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('admin_kepegawaian')->except('create');
     }
     /**
      * Display a listing of the resource.
@@ -23,9 +22,6 @@ class SuratTugasController extends Controller
      */
     public function index()
     {
-        // $surat_tugas = SuratTugas::all();
-        // dd($surat_tugas->laporan_kegiatans);
-        // $surat_tugas = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
         $surat_tugas = SuratTugas::orderBy('created_at', 'desc')->get();
         
         return view('surat_tugas.index')->with([

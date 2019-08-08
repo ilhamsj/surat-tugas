@@ -12,7 +12,6 @@ class SuratUndanganController extends Controller
 
     public function __construct() {
         $this->middleware('auth');
-        $this->middleware('admin_kepegawaian')->except('create');
     }
     /**
      * Display a listing of the resource.
@@ -22,6 +21,7 @@ class SuratUndanganController extends Controller
     public function index()
     {
         $undangan = SuratUndangan::all();
+
         return view('surat_undangan.index')->with([
             'items' => $undangan,
         ]);
@@ -45,9 +45,11 @@ class SuratUndanganController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->tipe_surat);
         $undangan = SuratUndangan::create([
             'pengundang'    => $request->pengundang,
             'admin_id'      => $request->admin_id,
+            'tipe_surat'    => $request->tipe_surat,
             'no_surat'      => $request->no_surat,
             'pengundang'    => $request->pengundang,
             'perihal'       => $request->perihal,
@@ -70,6 +72,7 @@ class SuratUndanganController extends Controller
     public function show($id)
     {
         $undangan = SuratUndangan::find($id);
+
         return view('surat_undangan.show')->with(['undangan' => $undangan]);
     }
 
@@ -84,7 +87,7 @@ class SuratUndanganController extends Controller
         $undangan = SuratUndangan::find($id);
 
         Carbon::macro('toAtomStringWithNoTimezone', function () {
-            return $this->format('Y-m-d\TH:i:s');
+            return $this->format('Y-m-d');
         });
         
         return view('surat_undangan.edit')->with([

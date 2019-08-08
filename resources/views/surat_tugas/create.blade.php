@@ -25,7 +25,8 @@
                         @endforeach
                     </select>
                 </div>
-
+                    
+                @if (Auth::user()->role == 'admin_kepegawaian')
                 <div class="form-group">
                     <label for="penanda_tangan_id">Atasan</label>
                     <select name="penanda_tangan_id" class="form-control">
@@ -35,10 +36,12 @@
                     </select>
                 </div>
 
+
                 <div class="form-group">
                     <label for="no_surat">Nomor Surat</label>
                     <input type="text" name="no_surat" class="form-control">
                 </div>
+                @endif
 
                 <button type="submit" class="btn btn-success btn-block">Save</button>
             </form>

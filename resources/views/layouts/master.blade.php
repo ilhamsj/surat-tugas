@@ -10,26 +10,20 @@
         <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     </head>
     <body>
+        @include('layouts._nav')
+        <div class="container mt-4 mb-4" style="min-height:100vh">
+            <div class="row">
+                <div class="col">
+                    @include('layouts._left_nav')
+                </div>
 
-
-        <header>
-            <div class="container">
-                <h1>Kementrian Agama</h1>
+                <div class="col-md-9 border">
+                    <main class="mt-4 mb-4">
+                        @yield('content')
+                    </main>
+                </div>
             </div>
-        </header>
-
-        <main>
-            @yield('content')
-        </main>
-
-        <hr>
-
-        <footer>
-            <div class="container">
-                Kementrian Agama Yogyakarta{{date('Y')}}
-            </div>
-        </footer>
-
+        </div>
         <!-- jQuery -->
         <script src="{{asset('js/app.js')}}"></script>
 

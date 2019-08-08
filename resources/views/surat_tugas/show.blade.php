@@ -17,7 +17,13 @@
                 </tr>
                 <tr>
                     <td>Oleh</td>
-                    <td>{{$item->ttd->name}}</td>
+                    <td>
+                        @if ($item->penanda_tangan_id != null)
+                            {{$item->ttd->name}}
+                        @else
+                            Null <a href="">Edit</a>
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <td>confirmed</td>

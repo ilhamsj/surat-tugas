@@ -1,8 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container mt-4">
+<div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+                <h3>Data Pegawai</h3>
+                <a href="">Tambah data pegawai</a>
+        </div>
         <div class="col-md">
             <table class="table table-bordered" id="users-table">
                 <thead>
@@ -13,6 +17,7 @@
                         <th>Jabatan</th>
                         <th>Email</th>
                         <th>Action</th>
+                        {{-- <th>Delete</th> --}}
                     </tr>
                 </thead>
             </table>
@@ -37,6 +42,7 @@ $(function() {
             { data: 'jabatan', name: 'jabatan' },
             { data: 'email', name: 'email' },
             { data: 'action', name: 'action', orderable: false, searchable: false }
+            // { data: 'delete', name: 'delete', orderable: false, searchable: false }
         ]
     });
 });

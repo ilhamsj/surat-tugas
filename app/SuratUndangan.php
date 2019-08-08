@@ -11,6 +11,7 @@ class SuratUndangan extends Model
         'admin_id',
         'pengundang',
         'no_surat',
+        'tipe_surat',
         'nama_acara',
         'perihal',
         'waktu_mulai',

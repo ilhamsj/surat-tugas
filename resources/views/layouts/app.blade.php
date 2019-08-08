@@ -3,22 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
 </head>
 <body>
     <div id="app">
@@ -89,7 +82,6 @@
             <div class="row">
                 <div class="col">
                     <ul class="list-group">
-
                         @auth                            
                         @if (Auth::user()->role == 'pegawai' || Auth::user()->role == 'admin_bagian' || Auth::user()->role == 'admin_kepegawaian')
                             <li class="list-group-item disabled">Pegawai</li>
@@ -133,7 +125,8 @@
             </div>
         </div>
     </div>
-    {{-- icon --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script defer src="https://friconix.com/cdn/friconix-0.695.js"></script>
     @stack('scripts')
 </body>
