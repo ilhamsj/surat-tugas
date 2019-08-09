@@ -36,7 +36,9 @@ class HomeController extends Controller
     }
     public function surat_tugas()
     {
-        $items = SuratTugas::where('pegawai_id', Auth::user()->id)->get();
+        $items = SuratTugas::where('pegawai_id', Auth::user()->id)
+                            ->where('confirmed', 1)
+                            ->get();
         return view('surat_tugas')->with(['items' => $items]);
     }
 

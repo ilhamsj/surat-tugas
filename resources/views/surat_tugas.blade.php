@@ -21,13 +21,11 @@
                         <td><a href="">{{ $item->undangan->pengundang }}</a></td>
                         <td><a href="">{{ $item->undangan->waktu_mulai }}</a></td>
                         <td>
-                            @if ($item->confirmed)
                                 <i class="fi-cwsuxl-check"></i>
                                 <a class="d-inline" target="_blank" href="{{ route('cetak_surat', $item->undangan_id) }}">
                                     <i class="fi-xwsuxl-external-link-solid"></i>
                                 </a>
-                            @endif
-                            <a class="" href="#">Lapor Kegiatan</a>
+                                <a class="" href="#">Lapor Kegiatan</a>
                         </td>
                     </tr>
 

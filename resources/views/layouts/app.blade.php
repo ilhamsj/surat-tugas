@@ -97,14 +97,14 @@
                                 <li class="list-group-item">
                                     <a href="{{ route('surat_tugas.create') }}">Buat Surat Tugas</a>
                                 </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('surat_undangan.index') }}">Data Undangan</a>
+                                </li>
 
                                 @if (Auth::user()->role == 'admin_kepegawaian')
                                     <li class="list-group-item disabled">Superadmin</li>
                                     <li class="list-group-item">
                                         <a href="{{ route('pegawai.index') }}">Data Pegawai</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="{{ route('surat_undangan.index') }}">Data Undangan</a>
                                     </li>
                                     <li class="list-group-item">
                                         <a href="{{ route('surat_tugas.index') }}">Data Surat Tugas</a>

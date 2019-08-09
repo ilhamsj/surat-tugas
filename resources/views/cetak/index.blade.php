@@ -123,9 +123,12 @@
             <td>Jabatan</td>
           </tr>
 
+          @php
+              $no = 1;
+          @endphp
           @forelse ($items as $item)
             <tr>
-              <td>{{ $item->id }}</td>
+              <td>{{ $no++ }}</td>
               <td>{{ $item->user->name }}</td>
               <td>
                   {{ $item->user->jabatan }}
