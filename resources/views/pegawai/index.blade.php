@@ -51,6 +51,22 @@ $(function() {
             { data: 'action', name: 'action', orderable: false, searchable: false }
         ]
     });
+
+    $('body').on('click', '.deleteUser', function () {
+        var user_id = $(this).data("id");
+        confirm("Are You sure want to delete " + user_id);
+
+        $.ajax({
+            type: "DELETE",
+            url: "pegawai/"+user_id,
+            success: function (data) {
+                table.draw();
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        });
+    });
 });
 
 </script>
