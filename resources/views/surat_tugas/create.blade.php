@@ -28,10 +28,10 @@
                     
                 @if (Auth::user()->role == 'admin_kepegawaian')
                 <div class="form-group">
-                    <label for="penanda_tangan_id">Atasan</label>
+                    <label for="penanda_tangan_id">Tanda Tangan</label>
                     <select name="penanda_tangan_id" class="form-control">
-                        @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @foreach ($paraf as $item)
+                            <option value="{{ $item->id }}">{{ $item->name}} - {{$item->pangkat}}</option>
                         @endforeach
                     </select>
                 </div>

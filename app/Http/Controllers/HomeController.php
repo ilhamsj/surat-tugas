@@ -49,6 +49,7 @@ class HomeController extends Controller
             'items'         => $item->get(),
             'surat'         => $item->first(),
             'penanda_tangan'=> $item->first()->ttd->name,
+            'pangkat'       => $item->first()->ttd->pangkat,
             'ttd'           => Carbon::now()->isoFormat('d MMMM Y'),
             'tgl_terbit'    => Carbon::now()->isoFormat('M/Y'),
         ]);

@@ -39,9 +39,13 @@ class SuratTugasController extends Controller
     {
         $undangan = SuratUndangan::all();
         $pegawai = User::all();
+        $paraf = User::where('pangkat', 'kabag')
+                        ->orWhere('pangkat', 'kanwil')
+                        ->get();
         return view('surat_tugas.create')->with([
             'undangan' => $undangan,
-            'pegawai' => $pegawai
+            'pegawai' => $pegawai,
+            'paraf' => $paraf,
         ]);
     }
 

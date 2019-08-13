@@ -44,7 +44,7 @@
     }
 
     table img {
-      width: 150px;
+      /* width: 150px; */
     }
 
     .text-center {
@@ -146,7 +146,7 @@
       <td>Untuk</td>
       <td>
           Melaksanakan tugas pada kegiatan tersebut diatas, pada
-            <table class="peserta ttd">
+            <table class="peserta ttd" style="width: 450px">
               <tr>
                 <td>1. Hari/Tanggal </td>
                 <td> : </td>
@@ -164,16 +164,36 @@
                 </td>
               </tr>
               <tr>
-                <td colspan="3" class="kepala">Kepala</td>
+                <td></td>
+                <td></td>
+                <td class="kepala">Kepala</td>
               </tr>
               <tr>
-                <td colspan="3" class="kepala">
-                  <img src="{{ asset('images/ttd/ttd_kepala.jpg')}}" alt="" srcset="" style="width:100px">
+                <td></td>
+                <td></td>
+                <td class="kepala">
+                  @if ($pangkat == 'kanwil')
+                    <img src="{{ asset('images/ttd/ttd_kepala.jpg')}}" alt="" srcset="" style="width:100px">
+                  @else
+                    <img src="{{ asset('images/ttd/ttd_kepala_bagian.jpg')}}" alt="" srcset="" style="width:200px">
+                  @endif
                 </td>
               </tr>
               <tr>
-                <td colspan="3" class="kepala">
+                <td></td>
+                <td></td>
+                <td class="kepala">
                   {{ $penanda_tangan }}
+                </td>
+              </tr>
+              <tr style="text-align:right">
+                <td colspan="3">
+                  @if ($pangkat == 'kanwil')
+                    <img src="{{ asset('images/ttd/paraf_kasubag.jpg')}}" alt="" srcset="" style="max-width:20px; margin-right:100px">
+                    <img src="{{ asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg')}}" alt="" srcset="" style="max-width:20px">
+                  @else
+                    <img src="{{ asset('images/ttd/paraf_kasubag.jpg')}}" alt="" srcset="" style="max-width:20px;">
+                  @endif
                 </td>
               </tr>
             </table>
