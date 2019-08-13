@@ -10,7 +10,7 @@
                 
                 <div class="form-group">
                     <label for="pegawai_id">Pegawai</label>
-                    <select name="pegawai_id" id="" class="form-control">
+                    <select name="pegawai_id" id="" class="form-control js-example-basic-single">
                         @foreach ($pegawai as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
@@ -29,7 +29,7 @@
                 @if (Auth::user()->role == 'admin_kepegawaian')
                 <div class="form-group">
                     <label for="penanda_tangan_id">Tanda Tangan</label>
-                    <select name="penanda_tangan_id" class="form-control">
+                    <select name="penanda_tangan_id" class="form-control js-example-basic-single">
                         @foreach ($paraf as $item)
                             <option value="{{ $item->id }}">{{ $item->name}} - {{$item->pangkat}}</option>
                         @endforeach
@@ -49,3 +49,11 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+@endpush

@@ -10,6 +10,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    {{-- selec2 --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
@@ -123,9 +126,12 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script defer src="https://friconix.com/cdn/friconix-0.695.js"></script>
+    {{-- select2 --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+
     @stack('scripts')
 </body>
 </html>

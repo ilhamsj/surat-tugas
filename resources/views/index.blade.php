@@ -25,7 +25,7 @@
                                 <a class="d-inline" target="_blank" href="{{ route('cetak_surat', $item->undangan_id) }}">
                                     <i class="fi-xwsuxl-external-link-solid"></i>
                                 </a>
-                                <a class="" href="#">Lapor Kegiatan</a>
+                                <a class="laporin" id="target" href="">Lapor Kegiatan</a>
                         </td>
                     </tr>
 
@@ -35,3 +35,12 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script>
+        var selector = '#target';
+        $(selector).click(function () { 
+            console.log('helo');
+        });
+    </script>
+@endpush
