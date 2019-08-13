@@ -19,11 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('golongan', 10);
             $table->string('jabatan');
-            $table->string('eselon');
-            $table->string('telp');
+            $table->string('pangkat');
+            $table->string('telp')->nullable();
             $table->string('email')->unique();
             $table->enum('role', ['pegawai', 'admin_bagian', 'admin_kepegawaian'])->default('pegawai');
-            $table->string('password');
+            $table->string('password')->default('$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -60,7 +60,9 @@ class HomeController extends Controller
 
         return Datatables::of($user)
             ->addColumn('action', function($user) {
-                return '<a href="'.route('pegawai.edit', $user->id).'">Edit</a>';
+                $btn = '<a href="'.route('pegawai.edit', $user->id).'"><i class="fa fa-edit"></i></a>';
+                $btn = $btn.'<a href="'.route('pegawai.destroy', $user->id).'"><i class="fa fa-trash"></i></a>';
+                return $btn;
             })
             ->toJson();
     }

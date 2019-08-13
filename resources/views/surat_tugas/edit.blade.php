@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="no_surat">Nomor Surat</label>
-                    <input type="text" name="no_surat" class="form-control" value="/Kw.12.1/2/KP.01.1/{{date('m/Y')}}">
+                    <input type="text" name="no_surat" class="form-control" value="{{ $surat_tugas->no_surat }}">
                 </div>
     
                 <div class="form-group">

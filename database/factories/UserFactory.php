@@ -23,7 +23,7 @@ $factory->define(User::class, function (Faker $faker) {
         // 'golongan' => $faker->randomElement(['IA','IB','IIA', 'IIB', 'IIIA', 'IIIB', 'IVA', 'IVB', 'VA']),
         'golongan' => $faker->randomElement(['I', 'II', 'III', 'IV', 'V']),
         'jabatan' => $faker->jobTitle,
-        'eselon' => $faker->unique()->randomDigit,
+        'pangkat' => $faker->randomElement(['Kepala','Kabag','Kasubag']),
         'telp' => $faker->phoneNumber,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),

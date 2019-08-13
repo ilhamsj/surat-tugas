@@ -45,7 +45,8 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        User::create($request->all());
+        return redirect(route('pegawai.index'));
     }
 
     /**
@@ -68,7 +69,9 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pegawai.edit')->with([
+            'item' => User::find($id),
+        ]);
     }
 
     /**
@@ -80,7 +83,9 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $items = User::find($id);
+        $items->update($request->all());
+        return redirect(route('pegawai.index'));
     }
 
     /**
@@ -92,7 +97,6 @@ class PegawaiController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        // $user->surat_undangan()->surat_tugas()->delete();
         $user->surat_undangan()->delete();
         $user->delete();
 
