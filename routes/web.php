@@ -15,6 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', 'PelaksanaController@index');
 Route::get('/dashboard', 'SuratTugasController@index');
 Route::get('/dashboard/{id}', 'SuratTugasController@show');

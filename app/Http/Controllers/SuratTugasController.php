@@ -28,7 +28,10 @@ class SuratTugasController extends Controller
 
     public function show($id)
     {
-        $surats = SuratTugas::find($id); 
+        $item = SuratTugas::find($id); 
+        return view('print')->with([
+            'item' => $item
+        ]);
     }
 
     public function edit($id)
