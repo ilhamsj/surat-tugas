@@ -3,21 +3,21 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2>Data surat tugas </h2>
-            {{ $item->nomor }}
+        <div class="col-md-6 border">
+            <b>Data surat tugas :</b>
+            {{ $item->nomor }} <br/>
 
-            <h2>Data Undangan</h2>
-            {{ $item->Undangan->perihal }}
+            <b>Data Undangan :</b>
+            {{ $item->Undangan->perihal }} <br/>
             
-            <h2>Data Pegawai</h2>
-            <ul>
-                @foreach ($item->Pelaksana as $pelaksana)
-                    <li>
-                        {{$pelaksana->user->name}}
-                    </li>
-                @endforeach
-            </ul>
+            <b>Pegawai : </b>
+            @foreach ($item->Pelaksana as $pelaksana)
+                {{$pelaksana->user->name}}, 
+            @endforeach
+            <br/>
+
+            <b>Paraf :</b>
+            {{ $item->Paraf->name }} <br/>
         </div>
     </div>
 </div>
