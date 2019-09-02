@@ -15,6 +15,12 @@ class CreateSuratTugasTable extends Migration
     {
         Schema::create('surat_tugas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('undangan_id')->unsigned()->index();
+            $table->foreign('undangan_id')
+                    ->references('id')
+                    ->on('undangans')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
             $table->string('nomor');
             $table->timestamps();
         });
