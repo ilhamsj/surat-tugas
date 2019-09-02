@@ -9,7 +9,10 @@ class PelaksanaController extends Controller
 {
     public function index()
     {
-        return Pelaksana::all();
+        $collection = Pelaksana::all();
+        return view('index')->with([
+            'collection'  => $collection
+        ]);
     }
 
     public function create()

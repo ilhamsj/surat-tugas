@@ -11,7 +11,17 @@
 <body>
     
     <div id="app">
-        <example-component></example-component>
+        <div class="container">
+            @forelse ($collection as $item)
+                <div>
+                    Undangan : {{ $item->SuratTugas->Undangan->perihal }} <br/>
+                    No Surat : {{ $item->SuratTugas->nomor }} <br/>
+                    Pegawai : {{ $item->user->name }}
+                </div>
+            @empty
+                
+            @endforelse
+        </div>
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
