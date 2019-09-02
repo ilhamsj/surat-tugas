@@ -11,8 +11,8 @@
         <table class="table table-bordered" id="example">
             <thead>
                 <tr>
-                    <th>Undangan</th>
                     <th>Nomor</th>
+                    <th>Undangan</th>
                     <th>Pelaksana</th>
                 </tr>
             </thead>
@@ -48,14 +48,14 @@
 @push('scripts')
 <script>
 
-$(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'pdf', 
-        ]
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'pdf', 
+            ]
+        } );
     } );
-} );
 
 </script>
 @endpush
