@@ -8,6 +8,22 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+require('datatables.net');
+require('datatables.net-bs4');
+require('datatables.net-buttons-bs4');
+
+require( 'datatables.net-buttons/js/buttons.colVis.js' );
+require( 'datatables.net-buttons/js/buttons.flash.js' );
+
+require( 'datatables.net-buttons/js/buttons.html5.js' );
+require( 'datatables.net-buttons/js/buttons.print.js' );
+
+// node_modules\pdfmake\build\vfs_fonts.js
+// node_modules\pdfmake\build\pdfmake.min.js
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

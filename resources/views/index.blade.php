@@ -4,52 +4,58 @@
 <div class="container">
     <p id="user">
         Salam
+        <a href="" id="link">Next</a>
     </p>
-    @forelse ($collection as $item)
-        <div>
-            Nomor : {{ $item->nomor }} <br/>
-            Undangan : {{ $item->Undangan->perihal }} <br/>
-            <ul>
-                @forelse ($item->Pelaksana as $pelaksana)
-                    <li>
-                        {{$pelaksana->user->name}}
-                    </li>
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="example">
+            <thead>
+                <tr>
+                    <th>Undangan</th>
+                    <th>Nomor</th>
+                    <th>Pelaksana</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($collection as $item)
+                    <tr>
+                        <td>{{ $item->nomor }}</td>
+                        <td>{{ $item->Undangan->perihal }}</td>
+                        <td>
+                            <ul>
+                                @forelse ($item->Pelaksana as $pelaksana)
+                                    <li>
+                                        {{$pelaksana->user->name}}
+                                    </li>
+                                @empty
+                                    
+                                @endforelse
+                            </ul>
+                        </td>
+                    </tr>
                 @empty
-                    <li><i>No user available</i></li>
+                    <tr>
+                        <td colspan="3">Tidak ada data</td>
+                    </tr>
                 @endforelse
-            </ul>
-        </div>
-        <hr>
-    @empty
-        Tidak ada data
-    @endforelse
+            </tbody>
+        </table>
+    </div>
 </div>
+
 @endsection
 
 @push('scripts')
 <script>
-    // $.get("http://surat-tugas.test/api/user", function (data) 
-    // {
-    //     for (const i in data) 
-    //     {
-    //         $("p").append(data[i].name);
-    //     }
-    // }, "json");
 
-    $.ajax({
-        type: "GET",
-        url: "http://surat-tugas.test/api/user",
-        data: "data",
-        dataType: "json",
-        success: function (response) {
-            console.log(response)
-            var user = response.data;
-            var link = response.links;
-            for (const i in user) {
-                console.log(user[i].name)
-            }
-            console.log(response.links.next)
-        }
-    });
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'pdf', 
+        ]
+    } );
+} );
+
 </script>
 @endpush
