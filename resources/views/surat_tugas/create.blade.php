@@ -10,16 +10,16 @@
                 
                 <div class="form-group">
                     <label for="pegawai_id">Pegawai</label>
-                    <select name="pegawai_id" id="" class="form-control js-example-basic-single">
+                    <select name="pegawai_id[]" class="form-control js-example-basic-single" multiple="multiple">
                         @foreach ($pegawai as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            <option value="{{ $item->id }}">{{ $item->name }} - {{ $item->nip }}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="undangan_id">Undangan</label>
-                    <select name="undangan_id" id="" class="form-control">
+                    <select name="undangan_id" id="" class="form-control js-example-basic-single">
                         @foreach ($undangan as $item)
                             <option value="{{ $item->id }}">{{ $item->pengundang }}</option>
                         @endforeach

@@ -57,10 +57,17 @@ class SuratTugasController extends Controller
      */
     public function store(Request $request)
     {
-        $suratTugas = new SuratTugas;
-        $suratTugas->fill($request->all());
-        $suratTugas->save();
-        
+        // dd($request->all());
+
+        foreach ($request->pegawai_id as $pegawai) {
+            SuratTugas::create([
+                'pegawai_id' => $pegawai,
+                'undangan_id' => $request->undangan_id,
+                'penanda_tangan_id' => $request->penanda_tangan_id,
+                'no_surat' => $request->no_surat,
+            ]);
+        }
+
         return redirect(route('surat_tugas.index'))->with('success', 'Surat tugas berhasil ditambahkan');
     }
 
