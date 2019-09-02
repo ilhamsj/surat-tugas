@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Http\Resources\UserCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('undangan', 'UndanganController');
+Route::resource('surat-tugas', 'SuratTugasController');
+Route::resource('pelaksana', 'PelaksanaController');
+
+Route::get('/user', function() {
+    return new UserCollection(User::all());
+});
+
+Route::get('/user/{id}', function($id) {
+    return new UserCollection(User::where('id', $id)->get());
+});

@@ -9,7 +9,7 @@ class PelaksanaController extends Controller
 {
     public function index()
     {
-        //
+        return Pelaksana::all();
     }
 
     public function create()
