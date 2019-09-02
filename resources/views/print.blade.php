@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6 border">
+        <div id="surat" class="col-md-6 border">
             <b>Data surat tugas :</b>
             {{ $item->nomor }} <br/>
 
@@ -18,6 +18,7 @@
 
             <b>Paraf :</b>
             {{ $item->Paraf->name }} <br/>
+
         </div>
     </div>
 </div>
