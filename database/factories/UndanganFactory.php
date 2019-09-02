@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Undangan::class, function (Faker $faker) {
     return [
-        //
+        'perihal' => $faker->word,
     ];
 });
