@@ -9,7 +9,11 @@ class SuratTugasController extends Controller
 {
     public function index()
     {
-        //
+        $collection = SuratTugas::all();
+        return view('index')->with([
+            'collection'  => $collection
+        ]);
+        
     }
 
     public function create()
@@ -24,7 +28,7 @@ class SuratTugasController extends Controller
 
     public function show($id)
     {
-        //
+        $surats = SuratTugas::find($id); 
     }
 
     public function edit($id)

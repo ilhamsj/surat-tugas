@@ -24,8 +24,9 @@ Route::resource('surat-tugas', 'SuratTugasController');
 Route::resource('pelaksana', 'PelaksanaController');
 
 Route::get('/user', function() {
-    return new UserCollection(User::all());
-});
+    return new UserCollection(User::paginate());
+    // return User::all();
+})->name('user.api.index');
 
 Route::get('/user/{id}', function($id) {
     return new UserCollection(User::where('id', $id)->get());

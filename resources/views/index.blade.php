@@ -1,29 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ env('app_name') }}</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body>
-    
-    <div id="app">
-        <div class="container">
-            @forelse ($collection as $item)
-                <div>
-                    Undangan : {{ $item->SuratTugas->Undangan->perihal }} <br/>
-                    No Surat : {{ $item->SuratTugas->nomor }} <br/>
-                    Pegawai : {{ $item->user->name }}
-                </div>
-            @empty
-                
-            @endforelse
-        </div>
-    </div>
+@extends('layouts.master')
 
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
-</html>
+@section('content')
+<div class="container">
+    <p id="user">
+        Salam
+    </p>
+    @forelse ($collection as $item)
+        <div>
+            Nomor : {{ $item->nomor }} <br/>
+            Undangan : {{ $item->Undangan->perihal }} <br/>
+            <ul>
+                @forelse ($item->Pelaksana as $pelaksana)
+                    <li>
+                        {{$pelaksana->user->name}}
+                    </li>
+                @empty
+                    <li><i>No user available</i></li>
+                @endforelse
+            </ul>
+        </div>
+        <hr>
+    @empty
+        Tidak ada data
+    @endforelse
+</div>
+@endsection
+
+@push('scripts')
+<script>
+    // $.get("http://surat-tugas.test/api/user", function (data) 
+    // {
+    //     for (const i in data) 
+    //     {
+    //         $("p").append(data[i].name);
+    //     }
+    // }, "json");
+
+    $.ajax({
+        type: "GET",
+        url: "http://surat-tugas.test/api/user",
+        data: "data",
+        dataType: "json",
+        success: function (response) {
+            console.log(response)
+            var user = response.data;
+            var link = response.links;
+            for (const i in user) {
+                console.log(user[i].name)
+            }
+            console.log(response.links.next)
+        }
+    });
+</script>
+@endpush
