@@ -9,7 +9,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        //
+        $items = User::orderBy('id', 'desc')->get();
+        return view('pegawai')->with([
+            'items'  => $items,
+        ]);
     }
 
     public function create()

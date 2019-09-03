@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md">
-                @include('include/surat_tugas/index')
+                @include('include/pegawai/index')
             </div>
             <div class="col-md">
-                @include('include/surat_tugas/create')
+                @include('include/pegawai/create')
             </div>
         </div>
     </div>

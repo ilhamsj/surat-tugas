@@ -12,16 +12,3 @@
         </div>
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        $(document).ready(function() {
-            $('#example, #tabelUndangan').DataTable( {
-                dom: 'Bfrtip',
-                buttons: [
-                    'pdf', 
-                ]
-            } );
-        } );
-    </script>
-@endpush

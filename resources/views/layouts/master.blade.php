@@ -15,6 +15,12 @@
         <div class="container">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('pegawai.index') }}">Pegawai</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('undangan.index') }}">Undangan</a>
                 </li>
                 <li class="nav-item">
@@ -22,9 +28,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pelaksana.index') }}">Pelaksana</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('pegawai.index') }}">Pegawai</a>
                 </li>
             </ul>
         </div>
@@ -35,6 +38,16 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example, #tabelUndangan').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'pdf', 
+                ]
+            } );
+        } );
+    </script>
     @stack('scripts')
 </body>
 </html>
