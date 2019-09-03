@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use App\SuratTugas;
 use Illuminate\Http\Request;
 
+use App\Undangan;
+
 class SuratTugasController extends Controller
 {
     public function index()
     {
         $collection = SuratTugas::all();
+        $undangan = Undangan::all();
+        
         return view('index')->with([
-            'collection'  => $collection
+            'collection'  => $collection,
+            'undangan'  => $undangan,
         ]);
         
     }

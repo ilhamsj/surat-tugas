@@ -19,7 +19,18 @@ class UndanganController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'perihal' => 'required',
+        ]);
+
+        return redirect()->route('dashboard')->with([
+            'session' => 'Data berhasil ditambahkan'
+        ]);
+
+        // Undangan::create($request->all());
+        // return redirect()->route('dashboard', ['parameterKey' => 'value']);
+
+        // dd($request->all());
     }
 
     public function show($id)

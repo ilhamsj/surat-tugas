@@ -19,9 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('undangan', 'UndanganController');
-Route::resource('surat-tugas', 'SuratTugasController');
-Route::resource('pelaksana', 'PelaksanaController');
+// Route::resource('undangan', 'UndanganController');
+// Route::resource('surat-tugas', 'SuratTugasController');
+// Route::resource('pelaksana', 'PelaksanaController');
 
 Route::get('/user', function() {
     return new UserCollection(User::paginate());
