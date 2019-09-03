@@ -7,19 +7,18 @@
         'Data Surat Tugas',
     ];
 @endphp
-
 @section('content')
     <div class="container">
         <div class="row">
 
-            @foreach ($data as $key => $value)            
-            <div class="col-md mb-4">
-                <div class="card p shadow border-0 ">
+            @foreach ($total as $key => $value)            
+            <div class="col-md">
+                <div class="card shadow">
+                    <div class="card-header">
+                        {{$key}}
+                    </div>
                     <div class="card-body">
-                        <h4 class="card-title">{{$value}}</h4>
-                        <p class="card-text">
-                            Lorem ipsum 
-                        </p>
+                            <h1>{{$value}} {{$key}}</h4>
                     </div>
                 </div>
             </div>
