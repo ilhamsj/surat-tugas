@@ -30,14 +30,9 @@ class UndanganController extends Controller
 
         Undangan::create($request->all());
 
-        return redirect()->route('dashboard')->with([
+        return redirect()->route('undangan.index')->with([
             'status' => $request->perihal . " berhasil ditambahkan"
         ]);
-
-        // Undangan::create($request->all());
-        // return redirect()->route('dashboard', ['parameterKey' => 'value']);
-
-        // dd($request->all());
     }
 
     public function show($id)
