@@ -15,8 +15,9 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 require('datatables.net');
 require('datatables.net-bs4');
 require('datatables.net-buttons-bs4');
-require( 'datatables.net-buttons/js/buttons.html5.js' );
+require('datatables.net-buttons/js/buttons.html5.js' );
 
+require('select2');
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

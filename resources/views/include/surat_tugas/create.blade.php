@@ -32,7 +32,7 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="undangan_id">Undangan</label>
-                    <select class="form-control" name="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
+                    <select name="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
                         @forelse ($undangans as $undangan)
                             <option value="{{ $undangan->id }}">{{$undangan->perihal}}</option>
                         @empty
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="paraf_id">Paraf</label>
-                    <select class="form-control" name="paraf_id" class="form-control @error('paraf_id') is-invalid  @enderror">
+                    <select name="paraf_id" class="form-control @error('paraf_id') is-invalid  @enderror ">
                         @forelse ($parafs as $paraf)
                             <option value="{{ $paraf->id }}">{{$paraf->name}}</option>
                         @empty
