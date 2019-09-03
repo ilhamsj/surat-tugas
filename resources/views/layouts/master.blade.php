@@ -53,6 +53,7 @@
             $('select').select2({
                 theme: 'bootstrap4',
                 placeholder: "Pilih Opsi",
+                allowClear: true,
             });
         });
     </script>

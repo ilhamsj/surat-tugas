@@ -19,7 +19,7 @@
             @csrf
 
             <div class="form-group">
-                <label for="">Perihal</label>
+                <label for="perihal">Perihal</label>
                 <input type="text" name="perihal" class="form-control @error('perihal') is-invalid  @enderror" value="{{ old('perihal') ? old('perihal') : ' '}}">
 
                 @error('perihal')

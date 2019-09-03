@@ -7,7 +7,7 @@
             <table class="table table-bordered" id="tabelUndangan">
                 <thead>
                     <tr>
-                        <th>Nomor</th>
+                        <th>Perihal</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
