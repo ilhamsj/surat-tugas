@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::resource('dashboard/undangan', 'UndanganController');
 Route::resource('dashboard/surat-tugas', 'SuratTugasController');
 Route::resource('dashboard/pelaksana', 'PelaksanaController');
+Route::resource('dashboard/pegawai', 'UserController');

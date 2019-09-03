@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Pelaksana;
 use Illuminate\Http\Request;
+use App\User;
 
-class PelaksanaController extends Controller
+class UserController extends Controller
 {
     public function index()
     {

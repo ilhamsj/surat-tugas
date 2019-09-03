@@ -15,7 +15,7 @@
     </div>
     <div class="card-body">
         <h4 class="title">Undangan Baru</h4>
-        <form method="POST" action="{{ route('surat-tugas.store') }}">
+        <form method="POST" action="{{ route('undangan.store') }}">
             @csrf
 
             <div class="form-group">
@@ -29,9 +29,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
 </div>
