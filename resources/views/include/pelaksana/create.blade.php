@@ -14,7 +14,7 @@
         <b>Pegawai</b>
     </div>
     <div class="card-body">
-        <h4 class="title">Tambah Pegawai</h4>
+        <h4 class="title">Tambah Pelaksana</h4>
         <form method="POST" action="{{ route('undangan.store') }}">
             @csrf
 

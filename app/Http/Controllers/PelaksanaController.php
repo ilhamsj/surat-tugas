@@ -9,7 +9,10 @@ class PelaksanaController extends Controller
 {
     public function index()
     {
-        //
+        $items = Pelaksana::all();
+        return view('pelaksana')->with([
+            'items' => $items,
+        ]);
     }
 
     public function create()

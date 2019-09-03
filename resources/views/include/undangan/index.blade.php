@@ -1,4 +1,4 @@
-<div class="card shadow bordered">
+<div class="card shadow">
     <div class="card-header text-primary">
         <b>Data Undangan</b>
     </div>
