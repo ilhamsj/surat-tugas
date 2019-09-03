@@ -52,6 +52,7 @@ class UndanganController extends Controller
 
     public function destroy($id)
     {
-        //
+        Undangan::destroy($id);
+        return redirect()->route('undangan.index');
     }
 }

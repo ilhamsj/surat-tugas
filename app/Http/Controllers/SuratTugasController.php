@@ -6,15 +6,20 @@ use App\SuratTugas;
 use Illuminate\Http\Request;
 
 use App\Undangan;
+use App\User;
 
 class SuratTugasController extends Controller
 {
     public function index()
     {
-        $collection = SuratTugas::all();
+        $items = SuratTugas::all();
+        $undangan = Undangan::all();
+        $parafs = User::all();
 
         return view('surat_tugas')->with([
-            'collection'  => $collection,
+            'items'  => $items,
+            'undangans'  => $undangan,
+            'parafs'  => $parafs,
         ]);
     }
 
@@ -25,15 +30,22 @@ class SuratTugasController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'undangan_id' => 'required',
+            'paraf_id' => 'required',
+            'nomor' => 'required',
+        ]);
+
+        SuratTugas::create($request->all());
+
+        return redirect()->route('surat-tugas.index')->with([
+            'status' => $request->nomor . " berhasil ditambahkan"
+        ]);
     }
 
     public function show($id)
     {
-        $item = SuratTugas::find($id); 
-        return view('print')->with([
-            'item' => $item
-        ]);
+        //
     }
 
     public function edit($id)

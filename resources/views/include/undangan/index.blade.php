@@ -9,6 +9,7 @@
                     <tr>
                         <th>Nomor</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -16,6 +17,13 @@
                         <tr>
                             <td>{{ $item->perihal }}</td>
                             <td>{{ $item->created_at }}</td>
+                            <td>
+                                <form action="{{ route('undangan.destroy', $item->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     @empty
                         <tr>

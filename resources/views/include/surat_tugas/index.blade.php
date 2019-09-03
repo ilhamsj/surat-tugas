@@ -14,7 +14,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($collection as $item)
+                    @forelse ($items as $item)
                         <tr>
                             <td>{{ $item->nomor }}</td>
                             <td>{{ $item->Undangan->perihal }}</td>

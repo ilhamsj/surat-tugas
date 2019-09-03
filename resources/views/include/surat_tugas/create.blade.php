@@ -11,18 +11,56 @@
 
 <div class="card shadow bordered mb-4">
     <div class="card-header text-primary">
-        <b>Undangan</b>
+        <b>Surat Tugas</b>
     </div>
     <div class="card-body">
-        <h4 class="title">Undangan Baru</h4>
-        <form method="POST" action="{{ route('undangan.store') }}">
+        <h4 class="title">Surat Tugas Baru</h4>
+        <form method="POST" action="{{ route('surat-tugas.store') }}">
             @csrf
 
             <div class="form-group">
-                <label for="">Perihal</label>
-                <input type="text" name="perihal" class="form-control @error('perihal') is-invalid  @enderror" value="{{ old('perihal') ? old('perihal') : ' '}}">
+                <label for="nomor">Nomor</label>
+                <input type="text" name="nomor" class="form-control @error('nomor') is-invalid  @enderror" value="{{ old('nomor') ? old('nomor') : ' '}}">
 
-                @error('perihal')
+                @error('nomor')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="undangan_id">Undangan</label>
+                    <select class="form-control" name="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
+                        @forelse ($undangans as $undangan)
+                            <option value="{{ $undangan->id }}">{{$undangan->perihal}}</option>
+                        @empty
+                            <option>404</option>
+                        @endforelse
+                    </select>
+                </div>
+
+                @error('undangan_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="paraf_id">Paraf</label>
+                    <select class="form-control" name="paraf_id" class="form-control @error('paraf_id') is-invalid  @enderror">
+                        @forelse ($parafs as $paraf)
+                            <option value="{{ $paraf->id }}">{{$paraf->name}}</option>
+                        @empty
+                            <option>404</option>
+                        @endforelse
+                    </select>
+                </div>
+
+                @error('undangan_id')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
