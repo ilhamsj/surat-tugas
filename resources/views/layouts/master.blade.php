@@ -7,6 +7,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ env('app_name') }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <style>
+        body {
+            background-image: url(../images/undraw_visual_data_b1wx.svg);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position-y: bottom;
+            background-position-x: right;
+            min-height: 100vh;
+        }
+    </style>
     @stack('styles')
 </head>
 <body>

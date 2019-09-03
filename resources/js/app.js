@@ -18,6 +18,9 @@ require('datatables.net-buttons-bs4');
 require('datatables.net-buttons/js/buttons.html5.js' );
 
 require('select2');
+const feather = require('feather-icons')
+feather.replace()
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

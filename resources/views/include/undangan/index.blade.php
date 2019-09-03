@@ -17,11 +17,12 @@
                         <tr>
                             <td>{{ $item->perihal }}</td>
                             <td>{{ $item->created_at }}</td>
-                            <td>
+                            <td class="text-center">
+                                <span class="text-danger"><i data-feather="x-circle"></i></span>
+                                <span class="text-primary"><i data-feather="edit"></i></span>
                                 <form action="{{ route('undangan.destroy', $item->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                 </form>
                             </td>
                         </tr>

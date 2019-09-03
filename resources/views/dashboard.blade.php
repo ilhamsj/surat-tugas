@@ -7,7 +7,9 @@
             <div class="col-md mb-4">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body">
-                        <h4 class="card-title">Total Pegawai</h4>
+                        <i data-feather="plus-square"></i>
+                        <i data-feather="edit"></i>
+                        <h4 class="card-title">Total Pegawai </h4>
                         <p class="card-text">Text</p>
                     </div>
                 </div>

@@ -29,7 +29,9 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">
+                    <i data-feather="save"></i> Save
+            </button>
         </form>
     </div>
 </div>
