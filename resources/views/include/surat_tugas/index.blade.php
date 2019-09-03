@@ -1,6 +1,6 @@
 <div class="card shadow bordered">
     <div class="card-header text-primary">
-        <b>Table Pelaksana</b>
+        <b>Data Surat Tugas</b>
     </div>
     <div class="card-body">
         <div class="table-responsive">

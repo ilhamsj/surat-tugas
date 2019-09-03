@@ -10,7 +10,23 @@
     @stack('styles')
 </head>
 <body>
-    
+
+    <nav class="navbar navbar-expand bg-primary navbar-dark shadow-sm">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('undangan.index') }}">Undangan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('surat-tugas.index') }}">Surat Tugas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('pelaksana.index') }}">Pelaksana</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        
     <div id="app" class="py-4">
         @yield('content')
     </div>
