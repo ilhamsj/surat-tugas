@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::resource('dashboard/undangan', 'UndanganController');
-Route::resource('surat-tugas', 'SuratTugasController');
-Route::resource('pelaksana', 'PelaksanaController');
+Route::resource('dashboard/surat-tugas', 'SuratTugasController');
+Route::resource('dashboard/pelaksana', 'PelaksanaController');
