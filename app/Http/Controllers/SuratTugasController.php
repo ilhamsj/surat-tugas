@@ -12,13 +12,10 @@ class SuratTugasController extends Controller
     public function index()
     {
         $collection = SuratTugas::all();
-        $undangan = Undangan::orderBy('id', 'desc')->get();
 
-        return view('index')->with([
+        return view('surat_tugas')->with([
             'collection'  => $collection,
-            'undangan'  => $undangan,
         ]);
-        
     }
 
     public function create()
