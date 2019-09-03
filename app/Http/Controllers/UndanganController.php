@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Undangan;
 use Illuminate\Http\Request;
+use App\SuratTugas;
 
 class UndanganController extends Controller
 {
     public function index()
     {
-        //
+        $undangan = Undangan::orderBy('id', 'desc')->get();
+
+        return view('undangan')->with([
+            'undangan'  => $undangan,
+        ]);
     }
 
     public function create()
@@ -23,7 +28,7 @@ class UndanganController extends Controller
             'perihal' => 'required',
         ]);
 
-        Undangan::updateOrCreate($request->all());
+        Undangan::create($request->all());
 
         return redirect()->route('dashboard')->with([
             'status' => $request->perihal . " berhasil ditambahkan"

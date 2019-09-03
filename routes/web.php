@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', 'SuratTugasController@index')->name('dashboard');
-Route::get('/dashboard/{id}', 'SuratTugasController@show');
-
-Route::resource('undangan', 'UndanganController');
+Route::resource('dashboard/undangan', 'UndanganController');
 Route::resource('surat-tugas', 'SuratTugasController');
 Route::resource('pelaksana', 'PelaksanaController');
