@@ -12,8 +12,8 @@ class SuratTugasController extends Controller
     public function index()
     {
         $collection = SuratTugas::all();
-        $undangan = Undangan::all();
-        
+        $undangan = Undangan::orderBy('id', 'desc')->get();
+
         return view('index')->with([
             'collection'  => $collection,
             'undangan'  => $undangan,

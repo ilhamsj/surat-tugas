@@ -23,8 +23,10 @@ class UndanganController extends Controller
             'perihal' => 'required',
         ]);
 
+        Undangan::updateOrCreate($request->all());
+
         return redirect()->route('dashboard')->with([
-            'session' => 'Data berhasil ditambahkan'
+            'status' => $request->perihal . " berhasil ditambahkan"
         ]);
 
         // Undangan::create($request->all());

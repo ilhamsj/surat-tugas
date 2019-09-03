@@ -1,5 +1,5 @@
 <div class="card shadow bordered">
-    <div class="card-header">
+    <div class="card-header text-primary">
         <b>Table Pelaksana</b>
     </div>
     <div class="card-body">
