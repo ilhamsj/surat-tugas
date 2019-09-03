@@ -1,20 +1,29 @@
 @extends('layouts.master')
 
+@php
+    $data = [
+        'Data Pegawai',
+        'Data Undangan',
+        'Data Surat Tugas',
+    ];
+@endphp
+
 @section('content')
     <div class="container">
         <div class="row">
-            @for ($i = 0; $i < 4; $i++)
+
+            @foreach ($data as $key => $value)            
             <div class="col-md mb-4">
-                <div class="card border-0 shadow-sm">
+                <div class="card p shadow border-0 ">
                     <div class="card-body">
-                        <i data-feather="plus-square"></i>
-                        <i data-feather="edit"></i>
-                        <h4 class="card-title">Total Pegawai </h4>
-                        <p class="card-text">Text</p>
+                        <h4 class="card-title">{{$value}}</h4>
+                        <p class="card-text">
+                            Lorem ipsum 
+                        </p>
                     </div>
                 </div>
             </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 @endsection
