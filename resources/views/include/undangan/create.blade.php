@@ -15,12 +15,12 @@
     </div>
     <div class="card-body">
         <h4 class="title">Undangan Baru</h4>
-        <form method="POST" action="{{ route('undangan.store') }}">
+        <form id="createForm" method="POST" action="{{ route('undangan.store') }}">
             @csrf
 
             <div class="form-group">
                 <label for="perihal">Perihal</label>
-                <input type="text" name="perihal" class="form-control @error('perihal') is-invalid  @enderror" value="{{ old('perihal') ? old('perihal') : ' '}}">
+                <input type="text" name="perihal" id="perihal" class="form-control @error('perihal') is-invalid  @enderror" value="{{ old('perihal') ? old('perihal') : ' '}}">
 
                 @error('perihal')
                     <span class="invalid-feedback" role="alert">
@@ -30,8 +30,33 @@
             </div>
 
             <button type="submit" class="btn btn-primary">
-                    <i data-feather="save"></i> Save
+                Save
             </button>
         </form>
+
+        {{-- Edit --}}
+        <form id="updateForm" method="POST">
+            @csrf
+            @method('PATCH')
+
+            <div class="form-group">
+                <label for="perihal">Perihal</label>
+                <input type="text" name="perihalEdit" id="perihalEdit" class="form-control @error('perihalEdit') is-invalid  @enderror" value="{{ old('perihalEdit') ? old('perihalEdit') : ' '}}">
+        
+                @error('perihalEdit')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        
+            <button type="submit" class="btn btn-primary">
+                Update
+            </button>
+            <button type="button" id="reset" class="btn btn-primary">
+                Cancel
+            </button>
+        </form>
+        {{-- End Edit Form --}}
     </div>
 </div>

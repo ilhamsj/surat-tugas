@@ -47,7 +47,17 @@ class UndanganController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'perihalEdit' => 'required',
+        ]);
+
+        $item = Undangan::find($id);
+        $item->update([
+            'perihal' => $request->perihalEdit
+        ]);
+        return redirect()->route('undangan.index')->with([
+            'status' => $request->perihalEdit . " berhasil Di Update" 
+        ]);
     }
 
     public function destroy($id)
