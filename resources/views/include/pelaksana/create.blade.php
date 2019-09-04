@@ -8,10 +8,10 @@
 
 <div class="card shadow bordered mb-4">
     <div class="card-header text-primary">
-        <b>Surat Tugas</b>
+        <b>Form Tambah Petugas</b>
     </div>
     <div class="card-body">
-        <h4 class="title">Surat Tugas Baru</h4>
+        <h4 class="title">Pilih Pegawai</h4>
         <form method="POST" action="{{ route('pelaksana.store') }}">
             @csrf
 

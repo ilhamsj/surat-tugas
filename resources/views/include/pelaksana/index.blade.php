@@ -7,7 +7,7 @@
             <table class="table table-bordered" id="tabelUndangan">
                 <thead>
                     <tr>
-                        <th>Surat Tugas</th>
+                        <th>Nomor Surat Tugas</th>
                         <th>Pegawai</th>
                     </tr>
                 </thead>

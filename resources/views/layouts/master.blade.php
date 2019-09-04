@@ -34,13 +34,30 @@
     </nav>
         
     <div id="app" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            <strong>
+                                    {{ session('status') }}
+                            </strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+
         @yield('content')
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('#example, #tabelUndangan').DataTable( {
+            $('#example, #tabelUndangan, #tabelPegawai').DataTable( {
                 dom: 'Bfrtip',
                 buttons: [
                     'pdf',

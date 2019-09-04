@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Undangan;
 use App\SuratTugas;
+use App\Pelaksana;
 
 class DashboardController extends Controller
 {
