@@ -6,17 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ env('app_name') }}</title>
-    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @stack('styles')
 </head>
 <body>
-
     <nav class="navbar navbar-expand bg-primary navbar-dark shadow-sm">
         <div class="container">
-            <ul class="nav navbar-nav">
+
+            <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a>
                 </li>
+            </ul>
+
+            <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pegawai.index') }}">Pegawai</a>
                 </li>
@@ -29,9 +32,35 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pelaksana.index') }}">Pelaksana</a>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @auth
+                            {{ Auth::user()->name }}
+                        @endauth
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
+                        @guest
+                            <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                            <a class="dropdown-item" href="{{ route('register') }}">Register</a>
+                        @else
+                            <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                        @endguest
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
+    
         
     <div id="app" class="py-4">
         <div class="container">
@@ -54,7 +83,7 @@
         @yield('content')
     </div>
 
-    <script src="{{ secure_asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#example, #tabelUndangan, #tabelPegawai').DataTable( {
