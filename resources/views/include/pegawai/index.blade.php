@@ -7,6 +7,7 @@
             <table class="table table-bordered" id="tabelUndangan">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nomor</th>
                         <th>Email</th>
                     </tr>
@@ -14,6 +15,7 @@
                 <tbody>
                     @forelse ($items as $item)
                         <tr>
+                            <td>{{ $item->id }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
                         </tr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Undangan;
 use Illuminate\Http\Request;
 use App\SuratTugas;
+use App\Pelaksana;
 
 class UndanganController extends Controller
 {
@@ -28,8 +29,8 @@ class UndanganController extends Controller
             'perihal' => 'required',
         ]);
 
-        Undangan::create($request->all());
-
+        $undangan = Undangan::create($request->all());
+        
         return redirect()->route('undangan.index')->with([
             'status' => "Create Success"
         ]);
