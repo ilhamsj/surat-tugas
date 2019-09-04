@@ -67,9 +67,8 @@
             $("#createForm").hide();
             $("#updateForm").show();
             $("#perihalEdit").val(perihal);
-            $("#id").val(id);
             $("#updateForm").attr("action", url);
-            $("#titlezzz").html('Edit ' + perihal);
+            $("#title").html('Edit ' + perihal);
         }
 
         $("#reset").click(function (e) { 

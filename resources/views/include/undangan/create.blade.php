@@ -14,7 +14,7 @@
         <b>Undangan</b>
     </div>
     <div class="card-body">
-        <h4 class="title">Undangan Baru</h4>
+        <h4 id="title" class="title">Undangan Baru</h4>
         <form id="createForm" method="POST" action="{{ route('undangan.store') }}">
             @csrf
 
