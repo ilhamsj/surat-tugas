@@ -43,7 +43,7 @@
             $('#example, #tabelUndangan').DataTable( {
                 dom: 'Bfrtip',
                 buttons: [
-                    'pdf', 'colvis',
+                    'pdf',
                 ]
             } );
         });

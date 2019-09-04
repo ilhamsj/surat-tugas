@@ -63,18 +63,11 @@
         function editPost(id, perihal, url)
         {
             event.preventDefault(); 
-            console.log(id, perihal, url);
-            $("#createForm").hide();
-            $("#updateForm").show();
-            $("#perihalEdit").val(perihal);
-            $("#updateForm").attr("action", url);
-            $("#title").html('Edit ' + perihal);
-        }
 
-        $("#reset").click(function (e) { 
-            e.preventDefault();
-            $("#createForm").show();
-            $("#updateForm").hide();
-        });
+            $("#title").html('Edit ' + perihal);
+            $("#perihal").val(perihal);
+            $("#createForm form").attr("action", url);
+            $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
+        }
     </script>
 @endpush

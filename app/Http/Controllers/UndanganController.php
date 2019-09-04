@@ -31,7 +31,7 @@ class UndanganController extends Controller
         Undangan::create($request->all());
 
         return redirect()->route('undangan.index')->with([
-            'status' => $request->perihal . " berhasil ditambahkan"
+            'status' => "Create Success"
         ]);
     }
 
@@ -48,15 +48,13 @@ class UndanganController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'perihalEdit' => 'required',
+            'perihal' => 'required',
         ]);
 
         $item = Undangan::find($id);
-        $item->update([
-            'perihal' => $request->perihalEdit
-        ]);
+        $item->update($request->all());
         return redirect()->route('undangan.index')->with([
-            'status' => $request->perihalEdit . " berhasil Di Update" 
+            'status' => "Update Success"
         ]);
     }
 
