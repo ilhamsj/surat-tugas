@@ -14,7 +14,7 @@
     }
 
     table, tr, td {
-      border: 1px solid black;
+      /* border: 1px solid black; */
       border-collapse: collapse;
     }
     .main {
@@ -38,13 +38,8 @@
       border: 1px solid black;
     }
 
-
     .ttd .kepala {
       text-align: right
-    }
-
-    table img {
-      /* width: 150px; */
     }
 
     .text-center {
@@ -72,7 +67,7 @@
       <h2>
         <u>SURAT TUGAS</u>
       </h2>
-      Nomor :  {{-- {{ $surat->no_surat }} --}}
+      Nomor :  <u>{{$item->surattugas->nomor}}</u>
 
   </div>
 
@@ -103,7 +98,8 @@
       <td>
            {{-- {{ $surat->undangan->tipe_surat }} --}}  {{-- {{ $surat->undangan->pengundang }} --}}
           Nomor  {{-- {{ $surat->undangan->no_surat }} --}}
-          perihal  {{-- {{ $surat->undangan->perihal }} --}},
+          perihal  {{$item->surattugas->undangan->perihal}},
+
       </td>
     </tr>
 
@@ -117,26 +113,24 @@
       <td>
 
         <table class="peserta list">
-          <tr>
-            <td>No</td>
-            <td>Nama</td>
-            <td>Jabatan</td>
-          </tr>
-
-          @php
-              $no = 1;
-          @endphp
-          {{-- @forelse ($items as $item) --}}
             <tr>
-              <td> {{-- {{  $no++  }} --}}</td>
-              <td> {{-- {{  $item->user->name  }} --}}</td>
-              <td>
-                   {{-- {{  $item->user->jabatan  }} --}}
-              </td>
+                <td>No</td>
+                <td>Nama</td>
+                <td>Jabatan</td>
             </tr>
-          {{-- @empty --}}
-              
-          {{-- @endforelse --}}
+
+            @php
+                $no = 1;
+            @endphp
+
+            @foreach ($item->surattugas->pelaksana as $pegawai)
+                <tr>
+                    <td>{{$no++}}</td>
+                    <td>{{$pegawai->user->name}}</td>
+                    <td>{{$pegawai->user->email}}</td>
+                </tr>
+            @endforeach
+
         </table>
         
       </td>
@@ -172,11 +166,11 @@
                 <td></td>
                 <td></td>
                 <td class="kepala">
-                  {{-- @if ($pangkat == 'kanwil') --}}
-                    <img src=" {{-- {{  asset('images/ttd/ttd_kepala.jpg') }} --}}" alt="" srcset="" style="width:100px">
-                  {{-- @else --}}
-                    <img src=" {{-- {{  asset('images/ttd/ttd_kepala_bagian.jpg') }} --}}" alt="" srcset="" style="width:200px">
-                  {{-- @endif --}}
+                  {{-- @if ($pangkat == 'kanwil')
+                    <img src=" {{  asset('images/ttd/ttd_kepala.jpg') }}" alt="" srcset="" style="width:100px">
+                  @else
+                    <img src=" {{  asset('images/ttd/ttd_kepala_bagian.jpg') }}" alt="" srcset="" style="width:200px">
+                  @endif --}}
                 </td>
               </tr>
               <tr>
@@ -188,12 +182,12 @@
               </tr>
               <tr style="text-align:right">
                 <td colspan="3">
-                  {{-- @if ($pangkat == 'kanwil') --}}
-                    <img src=" {{-- {{  asset('images/ttd/paraf_kasubag.jpg') }} --}}" alt="" srcset="" style="max-width:20px; margin-right:100px">
-                    <img src=" {{-- {{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }} --}}" alt="" srcset="" style="max-width:20px">
-                  {{-- @else --}}
-                    <img src=" {{-- {{  asset('images/ttd/paraf_kasubag.jpg') }} --}}" alt="" srcset="" style="max-width:20px;">
-                  {{-- @endif --}}
+                  {{-- @if ($pangkat == 'kanwil')
+                    <img src=" {{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
+                    <img src=" {{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
+                  @else
+                    <img src=" {{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px;">
+                  @endif --}}
                 </td>
               </tr>
             </table>
