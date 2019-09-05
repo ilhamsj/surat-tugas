@@ -10,6 +10,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Role</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -19,6 +20,11 @@
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
+                                <td>
+                                    @foreach ($item->Role as $role)
+                                        {{$role->role}}
+                                    @endforeach
+                                </td>
                                 <td class="text-center">
                                     <a class="text-danger" href="{{ route('pegawai.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
                                         <i data-feather="x-circle"></i>
