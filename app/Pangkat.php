@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pangkat extends Model
 {
     protected $fillable = [
-        'user_id', 'pangkat'
+        'user_id', 'nama'
     ];
 
     public function user()

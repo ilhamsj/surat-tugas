@@ -21,7 +21,7 @@ class CreatePangkatsTable extends Migration
                     ->on('users')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
-            $table->enum('name', ['kakanwil', 'kabag', 'kasubag']);
+            $table->enum('nama', ['kakanwil', 'kabag', 'kasubag']);
             $table->timestamps();
         });
     }

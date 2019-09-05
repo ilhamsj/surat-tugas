@@ -39,7 +39,7 @@
                 <select name="paraf_id" class="form-control @error('paraf_id') is-invalid  @enderror ">
                     @forelse ($pangkats as $pangkat)
                         <option value="{{ $pangkat->id }}">
-                            {{$pangkat->name}} - 
+                            {{$pangkat->nama}} - 
                             {{$pangkat->user->name}}
                         </option>
                     @empty

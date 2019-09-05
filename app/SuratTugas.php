@@ -17,7 +17,7 @@ class SuratTugas extends Model
 
     public function Pangkat()
     {
-        return $this->belongsTo(Pangkat::class, 'pangkat_id', 'id');
+        return $this->belongsTo(Pangkat::class);
     }
 
     public function Pelaksana()

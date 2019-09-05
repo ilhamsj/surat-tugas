@@ -24,7 +24,7 @@ class CreateSuratTugasTable extends Migration
             $table->bigInteger('pangkat_id')->unsigned()->index();
             $table->foreign('pangkat_id')
                     ->references('id')
-                    ->on('users')
+                    ->on('pangkats')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
             $table->string('nomor');

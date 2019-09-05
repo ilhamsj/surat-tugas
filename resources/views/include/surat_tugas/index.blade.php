@@ -30,7 +30,7 @@
                                 </ul>
                             </td>
                             <td>
-                                {{ $item->Pangkat->name }} - 
+                                {{ $item->Pangkat->nama }} - 
                                 {{ $item->Pangkat->user->name }}
                             </td>
                         </tr>

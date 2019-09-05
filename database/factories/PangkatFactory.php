@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Pangkat::class, function (Faker $faker) {
     return [
         'user_id' => $faker->numberBetween($min = 1, $max = 20),
-        'name' => $faker->randomElement(['kakanwil', 'kabag', 'kasubag']),
+        'nama' => $faker->randomElement(['kakanwil', 'kabag', 'kasubag']),
     ];
 });
