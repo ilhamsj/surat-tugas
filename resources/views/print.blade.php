@@ -178,7 +178,8 @@
                 <td></td>
                 <td class="kepala">
                    {{-- {{  $penanda_tangan  }} --}}
-                   {{$item->SuratTugas->pangkat_id}}
+                   {{$item->SuratTugas->pangkat->nama}}
+                   {{$item->SuratTugas->pangkat->user->name}}
                 </td>
               </tr>
               <tr style="text-align:right">
