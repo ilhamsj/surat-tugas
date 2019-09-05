@@ -46,6 +46,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Role::class);
     }
-
+    
+    public function Pangkat()
+    {
+        return $this->hasMany(Pangkat::class);
+    }
 
 }

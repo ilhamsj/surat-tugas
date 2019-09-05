@@ -12,6 +12,6 @@ class PangkatsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Pangkat::class, 20)->create();
+        factory(Pangkat::class, 3)->create();
     }
 }

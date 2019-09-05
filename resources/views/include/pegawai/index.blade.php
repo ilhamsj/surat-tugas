@@ -11,6 +11,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Pangkat</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -23,6 +24,11 @@
                                 <td>
                                     @foreach ($item->Role as $role)
                                         {{$role->name}}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($item->Pangkat as $pangkat)
+                                        {{$pangkat->name}}
                                     @endforeach
                                 </td>
                                 <td class="text-center">

@@ -15,9 +15,9 @@ class SuratTugas extends Model
         return $this->belongsTo(Undangan::class);
     }
 
-    public function Paraf()
+    public function Pangkat()
     {
-        return $this->belongsTo(User::class, 'paraf_id', 'id');
+        return $this->belongsTo(Pangkat::class, 'pangkat_id', 'id');
     }
 
     public function Pelaksana()

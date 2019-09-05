@@ -37,8 +37,11 @@
             <div class="form-group">
                 <label for="paraf_id">Paraf</label>
                 <select name="paraf_id" class="form-control @error('paraf_id') is-invalid  @enderror ">
-                    @forelse ($parafs as $paraf)
-                        <option value="{{ $paraf->id }}">{{$paraf->name}}</option>
+                    @forelse ($pangkats as $pangkat)
+                        <option value="{{ $pangkat->id }}">
+                            {{$pangkat->name}} - 
+                            {{$pangkat->user->name}}
+                        </option>
                     @empty
                         <option>404</option>
                     @endforelse

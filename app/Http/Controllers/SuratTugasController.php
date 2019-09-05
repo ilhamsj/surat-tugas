@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\SuratTugas;
-use Illuminate\Http\Request;
+use App\User;
+use App\Pangkat;
 
 use App\Undangan;
-use App\User;
+use App\SuratTugas;
+use Illuminate\Http\Request;
 
 class SuratTugasController extends Controller
 {
@@ -14,12 +15,12 @@ class SuratTugasController extends Controller
     {
         $items = SuratTugas::all();
         $undangan = Undangan::all();
-        $parafs = User::all();
+        $pangkat = Pangkat::all();
 
         return view('surat_tugas')->with([
             'items'  => $items,
             'undangans'  => $undangan,
-            'parafs'  => $parafs,
+            'pangkats'  => $pangkat,
         ]);
     }
 

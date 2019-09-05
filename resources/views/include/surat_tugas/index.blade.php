@@ -29,7 +29,10 @@
                                     @endforelse
                                 </ul>
                             </td>
-                            <td>{{ $item->Paraf->name }}</td>
+                            <td>
+                                {{ $item->Pangkat->name }} - 
+                                {{ $item->Pangkat->user->name }}
+                            </td>
                         </tr>
                     @empty
                         <tr>
