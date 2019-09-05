@@ -31,7 +31,7 @@
                             </td>
                             <td class="text-center">
                                 <span class="text-success"><i data-feather="check"></i></span>
-                                <a href="{{route('surat.cetak', $item->id)}}">
+                                <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
                                     <i data-feather="printer"></i>
                                 </a>
                             </td>
