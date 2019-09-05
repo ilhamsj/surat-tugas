@@ -1,11 +1,3 @@
-@if (session('status'))
-    <div class="alert alert-success" role="alert" data-auto-dismiss="500">
-        <strong>
-                {{ session('status') }}
-        </strong>
-    </div>
-@endif
-
 <div class="card shadow bordered mb-4">
     <div class="card-header text-primary">
         <b>Form Tambah Petugas</b>

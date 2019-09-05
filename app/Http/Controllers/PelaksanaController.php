@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Pelaksana;
 use App\SuratTugas;
 use App\User;
-use Illuminate\Http\Request;
+use Auth;
 
 class PelaksanaController extends Controller
 {
     public function index()
     {
         $items = Pelaksana::all();
+        // $items = Pelaksana::where('user_id', Auth::user()->id)->get();
         $itemsSurat = SuratTugas::all();
         $itemsUser = User::all();
 

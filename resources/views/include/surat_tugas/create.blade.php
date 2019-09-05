@@ -1,14 +1,3 @@
-@if (session('status'))
-    <div class="alert alert-success" role="alert">
-        <strong>
-                {{ session('status') }}
-        </strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-@endif
-
 <div class="card shadow bordered mb-4">
     <div class="card-header text-primary">
         <b>Surat Tugas</b>
