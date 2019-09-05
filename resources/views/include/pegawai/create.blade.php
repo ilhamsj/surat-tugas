@@ -18,9 +18,44 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">
-                Save
-            </button>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid  @enderror" value="{{ old('email') ? old('email') : ''}}">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid  @enderror" value="{{ old('password') ? old('password') : ''}}">
+
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group" id="role">
+                <label for="role">Role</label>
+                <select name="role" class="form-control @error('role') is-invalid  @enderror" required>
+                    <option value="pegawai">Pegawai</option>
+                    <option value="admin_bagian">Admin Bagian</option>
+                    <option value="admin_kepegawaian">Admin Kepegawaian</option>
+                </select>
+                @error('role')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
         </form>
     </div>
 </div>

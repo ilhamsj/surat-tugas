@@ -29,7 +29,7 @@
                                     <a class="text-danger" href="{{ route('pegawai.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
                                         <i data-feather="x-circle"></i>
                                     </a>
-                                    <a href="" onclick="editPost({{$item->id}}, '{{$item->name}}', '{{route('pegawai.update', $item->id)}}')">
+                                    <a href="" onclick="editPost({{$item->id}}, '{{$item->name}}', '{{$item->email}}', '{{$item->password}}', '{{route('pegawai.update', $item->id)}}')">
                                         <i data-feather="edit"></i>
                                     </a>
     
@@ -58,12 +58,15 @@
                 document.getElementById(id).submit();
             }
     
-            function editPost(id, name, url)
+            function editPost(id, name, email, password, url)
             {
                 event.preventDefault(); 
-    
+
                 $("#title").html('Edit ' + name);
                 $("#name").val(name);
+                $("#email").val(email);
+                $("#password").val(password);
+                $("form #role").hide();
                 $("#createForm form").attr("action", url);
                 $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
             }
