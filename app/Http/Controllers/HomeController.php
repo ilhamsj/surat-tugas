@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Pelaksana;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $items = Pelaksana::where('user_id', Auth::user()->id)->get();
+
+        return view('home')->with([
+            'items'  => $items,
+        ]);
     }
 }
