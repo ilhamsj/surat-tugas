@@ -22,9 +22,9 @@ require('select2');
 const feather = require('feather-icons')
 feather.replace()
 
-import html2canvas from 'html2canvas'
-import jsPdf from 'jspdf'
- 
+// import html2canvas from 'html2canvas'
+// import jsPdf from 'jspdf'
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

@@ -7,6 +7,7 @@
             <table class="table table-bordered" id="example">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nomor Surat</th>
                         <th>Undangan</th>
                         <th>Pelaksana</th>
@@ -16,6 +17,7 @@
                 <tbody>
                     @forelse ($items as $item)
                         <tr>
+                            <td>{{ $item->id }}</td>
                             <td>{{ $item->surattugas->nomor }}</td>
                             <td>{{ $item->surattugas->undangan->perihal }}</td>
                             <td>
@@ -27,8 +29,11 @@
                                     @endforeach
                                 </ul>
                             </td>
-                            <td class="text-success text-center">
-                                <i data-feather="check"></i>
+                            <td class="text-center">
+                                <span class="text-success"><i data-feather="check"></i></span>
+                                <a href="{{route('surat.cetak', $item->id)}}">
+                                    <i data-feather="printer"></i>
+                                </a>
                             </td>
                         </tr>
                     @empty

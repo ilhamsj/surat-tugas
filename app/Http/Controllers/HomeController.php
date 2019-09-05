@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pelaksana;
 use Illuminate\Http\Request;
 use Auth;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -30,5 +31,15 @@ class HomeController extends Controller
         return view('home')->with([
             'items'  => $items,
         ]);
+    }
+
+    public function print($id)
+    {
+        $item = Pelaksana::find($id);
+    
+        $pdf = PDF::loadview('print', [
+            'item' => $item,
+        ]);
+        return $pdf->setPaper('a4')->stream();
     }
 }
