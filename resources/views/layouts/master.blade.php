@@ -107,6 +107,11 @@
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');
         });
+
+        $(".card-header").click(function (e) { 
+            e.preventDefault();
+            $(this).next().toggle("slow", "swing");
+        });
     </script>
     @stack('scripts')
 </body>
