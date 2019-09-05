@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Role::class, function (Faker $faker) {
     return [
         'user_id' => $faker->numberBetween($min = 1, $max = 20),
-        'role' => $faker->randomElement(['pegawai', 'admin_bagian', 'admin_kepegawaian']),
+        'name' => $faker->randomElement(['pegawai', 'admin_bagian', 'admin_kepegawaian']),
     ];
 });

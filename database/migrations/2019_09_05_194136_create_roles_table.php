@@ -21,7 +21,7 @@ class CreateRolesTable extends Migration
                     ->on('users')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
-            $table->enum('role', ['pegawai', 'admin_bagian', 'admin_kepegawaian'])->default('pegawai');
+            $table->enum('name', ['pegawai', 'admin_bagian', 'admin_kepegawaian'])->default('pegawai');
             $table->timestamps();
         });
     }

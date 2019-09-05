@@ -22,7 +22,7 @@
                                 <td>{{ $item->email }}</td>
                                 <td>
                                     @foreach ($item->Role as $role)
-                                        {{$role->role}}
+                                        {{$role->name}}
                                     @endforeach
                                 </td>
                                 <td class="text-center">
