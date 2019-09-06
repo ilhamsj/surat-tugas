@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SuratTugas extends Model
 {
     protected $fillable = [
-        'undangan_id', 'nomor', 'paraf_id'
+        'undangan_id', 'nomor', 'pangkat_id'
     ];
 
     public function Undangan()

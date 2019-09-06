@@ -38,7 +38,7 @@ class PelaksanaController extends Controller
             ]);
         }
         return redirect()->route('pelaksana.index')->with([
-            'status' => $request->surat_tugas_id . ' Berhasil ditambahkan'
+            'status' => 'Create Success'
         ]);
     }
 

@@ -19,8 +19,8 @@
                         @forelse ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->email }}</td>
+                                <td class="name">{{ $item->name }}</td>
+                                <td class="email">{{ $item->email }}</td>
                                 <td>
                                     @foreach ($item->Role as $role)
                                         {{$role->name}}
@@ -28,7 +28,7 @@
                                 </td>
                                 <td>
                                     @foreach ($item->Pangkat as $pangkat)
-                                        {{$pangkat->name}}
+                                        {{$pangkat->nama}}
                                     @endforeach
                                 </td>
                                 <td class="text-center">
@@ -76,5 +76,14 @@
                 $("#createForm form").attr("action", url);
                 $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
             }
+
+            $("td").click(function (e) { 
+                e.preventDefault();
+                // var content = $(this).val();
+                // var content = $(this).html();
+                var content = $(this).attr("class");
+                console.log(content);
+                
+            });
         </script>
     @endpush

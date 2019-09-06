@@ -36,7 +36,7 @@
             
             <div class="form-group">
                 <label for="paraf_id">Paraf</label>
-                <select name="paraf_id" class="form-control @error('paraf_id') is-invalid  @enderror ">
+                <select name="pangkat_id" class="form-control @error('pangkat_id') is-invalid  @enderror ">
                     @forelse ($pangkats as $pangkat)
                         <option value="{{ $pangkat->id }}">
                             {{$pangkat->nama}} - 
@@ -47,7 +47,7 @@
                     @endforelse
                 </select>
 
-                @error('undangan_id')
+                @error('pangkat_id')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

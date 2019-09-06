@@ -154,7 +154,7 @@
 
               <tr>
                 <td colspan="3" class="kepala">
-                  <p>Yogyakarta,  {{-- {{  date('d M Y')  }} --}}</p>
+                  <p>Yogyakarta,  {{  date('d M Y')  }}</p>
                 </td>
               </tr>
               <tr>
@@ -166,30 +166,31 @@
                 <td></td>
                 <td></td>
                 <td class="kepala">
-                  {{-- @if ($pangkat == 'kanwil')
+                  @php
+                      $pangkat = $item->SuratTugas->pangkat->nama;
+                  @endphp
+                  @if ($pangkat == 'kakanwil')
                     <img src=" {{  asset('images/ttd/ttd_kepala.jpg') }}" alt="" srcset="" style="width:100px">
                   @else
                     <img src=" {{  asset('images/ttd/ttd_kepala_bagian.jpg') }}" alt="" srcset="" style="width:200px">
-                  @endif --}}
+                  @endif
                 </td>
               </tr>
               <tr>
                 <td></td>
                 <td></td>
                 <td class="kepala">
-                   {{-- {{  $penanda_tangan  }} --}}
-                   {{$item->SuratTugas->pangkat->nama}}
                    {{$item->SuratTugas->pangkat->user->name}}
                 </td>
               </tr>
               <tr style="text-align:right">
                 <td colspan="3">
-                  {{-- @if ($pangkat == 'kanwil')
+                  @if ($pangkat == 'kakanwil')
                     <img src=" {{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
                     <img src=" {{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
                   @else
                     <img src=" {{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px;">
-                  @endif --}}
+                  @endif
                 </td>
               </tr>
             </table>

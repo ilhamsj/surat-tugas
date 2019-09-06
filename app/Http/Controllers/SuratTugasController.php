@@ -32,15 +32,15 @@ class SuratTugasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'undangan_id' => 'required',
-            'paraf_id' => 'required',
             'nomor' => 'required',
+            'undangan_id' => 'required',
+            'pangkat_id' => 'required',
         ]);
 
         SuratTugas::create($request->all());
 
         return redirect()->route('surat-tugas.index')->with([
-            'status' => $request->nomor . " berhasil ditambahkan"
+            'status' => "Create Success"
         ]);
     }
 
