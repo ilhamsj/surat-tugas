@@ -3,7 +3,6 @@
         <b>Pegawai</b>
     </div>
     <div class="card-body">
-        <h4 id="title" class="title">Pegawai Baru</h4>
         <form method="POST" action="{{ route('pegawai.store') }}">
             @csrf
 
@@ -56,6 +55,7 @@
 
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="reset" class="btn btn-primary">Reset</button>
+            <button type="button" id="closeForm" class="btn btn-danger">Close</button>
         </form>
     </div>
 </div>

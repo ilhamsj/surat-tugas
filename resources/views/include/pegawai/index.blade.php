@@ -1,6 +1,9 @@
 <div class="card shadow">
         <div class="card-header text-primary">
-            <b>Data Pegawai</b>
+            <b class="ml auto">Data Pegawai</b>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -67,12 +70,11 @@
             function editPost(id, name, email, password, url)
             {
                 event.preventDefault(); 
-
+                $("#createCard").show();
                 $("#title").html('Edit ' + name);
                 $("#name").val(name);
                 $("#email").val(email);
                 $("#password").val(password);
-                $("form #role").hide();
                 $("#createForm form").attr("action", url);
                 $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
             }
@@ -81,9 +83,18 @@
                 e.preventDefault();
                 // var content = $(this).val();
                 // var content = $(this).html();
-                var content = $(this).attr("class");
-                console.log(content);
+                // var content = $(this).attr("class");
+                // var content = $(this).html();
+                // $(this).remove();
                 
+                
+                // console.log(content);
+                
+            });
+
+            $("#closeForm").click(function (e) { 
+                e.preventDefault();
+                $("#createCard").hide();
             });
         </script>
     @endpush

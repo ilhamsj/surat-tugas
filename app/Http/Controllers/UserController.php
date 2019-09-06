@@ -24,8 +24,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $role = $request->role
-        ;
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -61,6 +59,13 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'role' => 'required'
+        ]);
+        
         $item = User::find($id);
         $item->update($request->all());
         return redirect()->route('pegawai.index')->with([

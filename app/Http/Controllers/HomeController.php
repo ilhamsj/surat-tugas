@@ -37,12 +37,12 @@ class HomeController extends Controller
     {
         $item = Pelaksana::find($id);
     
-        // $pdf = PDF::loadview('print', [
-        //     'item' => $item,
-        // ]);
-        // return $pdf->setPaper('a4')->stream();
-        return view('print')->with([
-            'item' => $item
+        $pdf = PDF::loadview('print', [
+            'item' => $item,
         ]);
+        return $pdf->setPaper('a4')->stream();
+        // return view('print')->with([
+        //     'item' => $item
+        // ]);
     }
 }

@@ -7,15 +7,18 @@
             <table class="table table-bordered" id="example">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nomor</th>
                         <th>Undangan</th>
                         <th>Pelaksana</th>
                         <th>Paraf</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($items as $item)
                         <tr>
+                            <td>{{ $item->id }}</td>
                             <td>{{ $item->nomor }}</td>
                             <td>{{ $item->Undangan->perihal }}</td>
                             <td>
@@ -32,6 +35,11 @@
                             <td>
                                 {{ $item->Pangkat->nama }} - 
                                 {{ $item->Pangkat->user->name }}
+                            </td>
+                            <td>
+                                <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
+                                    <i data-feather="printer"></i>
+                                </a>
                             </td>
                         </tr>
                     @empty

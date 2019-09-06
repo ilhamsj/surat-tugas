@@ -170,9 +170,9 @@
                       $pangkat = $item->SuratTugas->pangkat->nama;
                   @endphp
                   @if ($pangkat == 'kakanwil')
-                    <img src=" {{  asset('images/ttd/ttd_kepala.jpg') }}" alt="" srcset="" style="width:100px">
+                    <img src="{{asset('images/ttd/ttd_kepala.jpg')}}" style="width:100px">
                   @else
-                    <img src=" {{  asset('images/ttd/ttd_kepala_bagian.jpg') }}" alt="" srcset="" style="width:200px">
+                    <img src="{{asset('images/ttd/ttd_kepala_bagian.jpg')}}" style="width:200px">
                   @endif
                 </td>
               </tr>
@@ -186,10 +186,10 @@
               <tr style="text-align:right">
                 <td colspan="3">
                   @if ($pangkat == 'kakanwil')
-                    <img src=" {{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
-                    <img src=" {{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
+                    <img src="{{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
+                    <img src="{{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
                   @else
-                    <img src=" {{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px;">
+                    <img src="{{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px;">
                   @endif
                 </td>
               </tr>
