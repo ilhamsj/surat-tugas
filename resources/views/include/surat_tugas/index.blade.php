@@ -48,7 +48,7 @@
                                         '{{$item->nomor}}', 
                                         '{{$item->undangan_id}}', 
                                         '{{$item->pangkat_id}}', 
-                                        '{{$item->undangan->pengundang . ' - ' . $item->undangan->acara}}', 
+                                        '{{Str::title($item->undangan->pengundang) . ' | ' . $item->undangan->nomor}}', 
                                         '{{$item->pangkat->nama . ' - ' . $item->pangkat->user->name}}', 
                                         '{{route('surat-tugas.update', $item->id)}}'
                                     )">

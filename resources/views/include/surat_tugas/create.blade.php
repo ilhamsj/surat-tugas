@@ -22,7 +22,7 @@
                 <label for="undangan_id">Undangan</label>
                 <select name="undangan_id" id="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
                     @foreach ($undangans as $undangan)
-                        <option value="{{ $undangan->id }}">{{Str::title($undangan->pengundang . '-' .$undangan->acara)}}</option>
+                        <option value="{{ $undangan->id }}">{{Str::title($undangan->pengundang) . ' | ' .$undangan->nomor}}</option>
                     @endforeach
                 </select>
                 @error('undangan_id')
