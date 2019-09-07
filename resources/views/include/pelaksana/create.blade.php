@@ -31,7 +31,7 @@
                 <label for="user_id">Pelaksana</label>
                 <select name="user_id[]" multiple="multiple" class="form-control @error('user_id') is-invalid  @enderror" required>
                     @forelse ($itemsUser as $user)
-                        <option value="{{ $user->id }}">{{$user->name}}</option>
+                        <option value="{{ $user->id }}">{{$user->nip}} - {{$user->name}}</option>
                     @empty
                         <option>404</option>
                     @endforelse
