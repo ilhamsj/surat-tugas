@@ -33,8 +33,6 @@
                                 <a class="text-danger" href="{{ route('undangan.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
                                     <i data-feather="x-circle"></i>
                                 </a>
-                                {{-- pengundang, nomor, tipe, acara, perihal, tempat, waktu, --}}
-                                {{-- <a href="" onclick="editPost({{$item->id}}, '{{$item->pengundang}}', '{{$item->nomor}}', '{{$item->tipe}}', '{{$item->acara}}', '{{$item->perihal}}', '{{$item->tempat}}', '{{$item->waktu}}', '{{route('undangan.update', $item->id)}}')"> --}}
                                 <a href="" onclick="editPost(
                                     {{$item->id}}, 
                                     '{{$item->pengundang}}', 
