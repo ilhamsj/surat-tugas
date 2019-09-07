@@ -13,6 +13,6 @@ class Undangan extends Model
         'acara',
         'perihal',
         'tempat',
-        'waktu'
+        'waktu',
     ];
 }

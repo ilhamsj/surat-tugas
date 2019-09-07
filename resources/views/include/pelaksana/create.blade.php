@@ -12,9 +12,7 @@
                 <select name="surat_tugas_id" class="form-control @error('surat_tugas_id') is-invalid  @enderror" required>
                     @forelse ($itemsSurat as $item)
                         <option value="{{ $item->id }}">
-                            {{$item->pangkat->user->name}} -
-                            {{$item->nomor}} -
-                            {{$item->undangan->perihal}}
+                            {{Str::title($item->nomor . ' - ' . $item->undangan->pengundang . ',' .$item->undangan->acara)}}
                         </option>
                     @empty
                         <option>404</option>

@@ -26,7 +26,13 @@ class UndanganController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'pengundang'=> 'required',
+            'nomor' => 'required',
+            'tipe' => 'required',
+            'acara' => 'required',
             'perihal' => 'required',
+            'tempat' => 'required',
+            'waktu' => 'required',
         ]);
 
         $undangan = Undangan::create($request->all());

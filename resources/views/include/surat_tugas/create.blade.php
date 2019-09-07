@@ -22,7 +22,7 @@
                 <label for="undangan_id">Undangan</label>
                 <select name="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
                     @forelse ($undangans as $undangan)
-                        <option value="{{ $undangan->id }}">{{$undangan->perihal}}</option>
+                        <option value="{{ $undangan->id }}">{{Str::title($undangan->pengundang . '-' .$undangan->acara)}}</option>
                     @empty
                         <option>404</option>
                     @endforelse
@@ -39,8 +39,7 @@
                 <select name="pangkat_id" class="form-control @error('pangkat_id') is-invalid  @enderror ">
                     @forelse ($pangkats as $pangkat)
                         <option value="{{ $pangkat->id }}">
-                            {{$pangkat->nama}} - 
-                            {{$pangkat->user->name}}
+                            {{Str::title($pangkat->nama . ' - ' . $pangkat->user->name)}}
                         </option>
                     @empty
                         <option>404</option>
