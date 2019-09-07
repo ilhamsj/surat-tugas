@@ -7,6 +7,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Undangan::class, function (Faker $faker) {
     return [
-        'perihal' => $faker->word,
+        'pengundang'    => $faker->company,
+        'nomor'         => $faker->swiftBicNumber,
+        'perihal'       => $faker->catchPhrase,
+        'tempat'        => $faker->address,
+        'waktu'         => $faker->date($format = 'Y-m-d', $max = 'now'),
     ];
 });

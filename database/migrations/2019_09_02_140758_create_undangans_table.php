@@ -15,7 +15,11 @@ class CreateUndangansTable extends Migration
     {
         Schema::create('undangans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('pengundang');
+            $table->string('nomor');
             $table->string('perihal');
+            $table->string('tempat');
+            $table->date('waktu');
             $table->timestamps();
         });
     }

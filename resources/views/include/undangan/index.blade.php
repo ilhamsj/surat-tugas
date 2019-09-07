@@ -8,8 +8,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Nomor</th>
+                        <th>Pengundang</th>
                         <th>Perihal</th>
-                        <th>Date</th>
+                        <th>Tempat</th>
+                        <th>Waktu</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -17,8 +20,11 @@
                     @forelse ($undangan as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
+                            <td>{{ $item->nomor }}</td>
+                            <td>{{ $item->pengundang }}</td>
                             <td>{{ $item->perihal }}</td>
-                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->tempat }}</td>
+                            <td>{{ $item->waktu }}</td>
                             <td class="text-center">
                                 <a class="text-danger" href="{{ route('undangan.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
                                     <i data-feather="x-circle"></i>
