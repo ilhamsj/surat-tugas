@@ -25,5 +25,6 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'nip' => $faker->bankAccountNumber,
         'jabatan' => $faker->jobTitle,
+        'role' => $faker->randomElement(['admin_bagian', 'admin_kepegawaian', 'pegawai']),
     ];
 });

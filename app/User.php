@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nip', 'name', 'jabatan', 'email', 'password',
+        'nip', 'name', 'jabatan', 'email', 'password', 'role',
     ];
 
     /**
@@ -40,11 +40,6 @@ class User extends Authenticatable
     public function pelaksana()
     {
         return $this->hasMany(Pelaksana::class);
-    }
-
-    public function Role()
-    {
-        return $this->hasMany(Role::class);
     }
     
     public function Pangkat()

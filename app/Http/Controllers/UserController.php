@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -28,18 +27,18 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'jabatan' => 'required',
+            'nip' => 'required',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]);
-
-        Role::create([
-            'user_id' => $user->id,
-            'name' => "admin_kepegawaian",
+            'role' => $request->role,
+            'jabatan' => $request->jabatan,
+            'nip' => $request->nip,
         ]);
 
         return redirect()->route('pegawai.index')->with([
@@ -63,7 +62,9 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'jabatan' => 'required',
+            'nip' => 'required',
         ]);
         
         $item = User::find($id);

@@ -6,7 +6,7 @@
             <div class="col-md mb-4">
                 @include('include/pegawai/index')
             </div>
-            <div class="col-md" id="createCard">
+            <div id="createCard" class="col-md">
                 @include('include/pegawai/create')
             </div>
         </div>
