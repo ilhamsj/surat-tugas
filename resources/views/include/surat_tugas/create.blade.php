@@ -9,7 +9,7 @@
 
             <div class="form-group">
                 <label for="nomor">Nomor</label>
-                <input type="text" name="nomor" class="form-control @error('nomor') is-invalid  @enderror" value="{{ old('nomor') ? old('nomor') : ' '}}">
+                <input type="text" name="nomor" id="nomor" class="form-control @error('nomor') is-invalid  @enderror" value="{{ old('nomor') ? old('nomor') : ' '}}">
 
                 @error('nomor')
                     <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <label for="undangan_id">Undangan</label>
-                <select name="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
+                <select name="undangan_id" id="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
                     @foreach ($undangans as $undangan)
                         <option value="{{ $undangan->id }}">{{Str::title($undangan->pengundang . '-' .$undangan->acara)}}</option>
                     @endforeach
@@ -34,7 +34,7 @@
             
             <div class="form-group">
                 <label for="paraf_id">Paraf</label>
-                <select name="pangkat_id" class="form-control @error('pangkat_id') is-invalid  @enderror ">
+                <select name="pangkat_id" id="pangkat_id" class="form-control @error('pangkat_id') is-invalid  @enderror ">
                     @foreach ($pangkats as $pangkat)
                         <option value="{{ $pangkat->id }}">
                             {{Str::title($pangkat->nama . ' - ' . $pangkat->user->name)}}

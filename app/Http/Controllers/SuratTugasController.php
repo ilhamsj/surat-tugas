@@ -56,11 +56,24 @@ class SuratTugasController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nomor' => 'required',
+            'undangan_id' => 'required',
+            'pangkat_id' => 'required',
+        ]);
+
+        $item = SuratTugas::find($id);
+        $item->update($request->all());
+        return redirect()->route('surat-tugas.index')->with([
+            'status' => "Update Success"
+        ]);
     }
 
     public function destroy($id)
     {
-        //
+        SuratTugas::destroy($id);
+        return redirect()->route('surat-tugas.index')->with([
+            'status' => 'Delete Success'
+        ]);
     }
 }

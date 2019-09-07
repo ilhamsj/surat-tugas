@@ -20,7 +20,9 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->nomor }}</td>
-                            <td>{{ $item->Undangan->perihal }}</td>
+                            <td>
+                                {{ $item->Undangan->pengundang }} ({{ $item->Undangan->acara }})
+                            </td>
                             <td>
                                 <ul>
                                     @forelse ($item->Pelaksana as $pelaksana)
@@ -36,10 +38,27 @@
                                 {{ $item->Pangkat->nama }} - 
                                 {{ $item->Pangkat->user->name }}
                             </td>
-                            <td>
-                                <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
-                                    <i data-feather="printer"></i>
+                            <td class="text-center">
+                                <a class="text-danger" href="{{ route('surat-tugas.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
+                                    <i data-feather="x-circle"></i>
                                 </a>
+                                <a href="" 
+                                    onclick="editPost(
+                                        {{$item->id}}, 
+                                        '{{$item->nomor}}', 
+                                        '{{$item->undangan_id}}', 
+                                        '{{$item->pangkat_id}}', 
+                                        '{{$item->undangan->pengundang . ' - ' . $item->undangan->acara}}', 
+                                        '{{$item->pangkat->nama . ' - ' . $item->pangkat->user->name}}', 
+                                        '{{route('surat-tugas.update', $item->id)}}'
+                                    )">
+                                    <i data-feather="edit"></i>
+                                </a>
+
+                                <form id="{{$item->id}}" action="{{ route('surat-tugas.destroy', $item->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                             </td>
                         </tr>
                     @empty
@@ -52,3 +71,26 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+    function deletePost(id)
+    {
+        event.preventDefault(); 
+        document.getElementById(id).submit();
+    }
+
+    function editPost(id, nomor, undangan_id, pangkat_id, undangan, pangkat, url)
+    {
+        event.preventDefault(); 
+        $("#dataCard").toggle("slow", "swing");
+        $("form").attr("action", url);
+        $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
+
+        $(".title").html('Edit ' + nomor);
+        $("#nomor").val(nomor);
+        $("#undangan_id option:first-child").before("<option value='"+undangan_id+"' selected>"+undangan+"</option>");
+        $("#pangkat_id option:first-child").before("<option value='"+pangkat_id+"' selected>"+pangkat+"</option>");
+    }
+</script>
+@endpush
