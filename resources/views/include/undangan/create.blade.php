@@ -31,7 +31,7 @@
 
             <div class="form-group">
                 <label for="tipe">Undangan</label>
-                <select name="tipe" class="form-control @error('tipe') is-invalid  @enderror">
+                <select id="tipe" name="tipe" class="form-control @error('tipe') is-invalid  @enderror">
                     <option value="Surat Undangan">Surat Undangan</option>
                     <option value="Nota Dinas">Nota Dinas</option>
                 </select>

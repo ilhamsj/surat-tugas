@@ -85,15 +85,17 @@
             event.preventDefault(); 
 
             $("#title").html('Edit ' + pengundang);
+            $("#createForm form").attr("action", url);
+            $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
             $("#pengundang").val(pengundang);
             $("#nomor").val(nomor);
-            $("select option:first-child").before("<option value='"+tipe+"' selected>"+tipe+"</option>");
             $("#acara").val(acara);
             $("#perihal").val(perihal);
             $("#tempat").val(tempat);
             $("#waktu").val(waktu);
-            $("#createForm form").attr("action", url);
-            $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
+            
+            $("#tipe [value='"+tipe+"']").remove();
+            $("select option:first-child").before("<option value='"+tipe+"' selected>"+tipe+"</option>");
         }
     </script>
 @endpush
