@@ -10,6 +10,8 @@
                         <th>ID</th>
                         <th>Nomor</th>
                         <th>Pengundang</th>
+                        <th>Tipe</th>
+                        <th>Acara</th>
                         <th>Perihal</th>
                         <th>Tempat</th>
                         <th>Waktu</th>
@@ -22,6 +24,8 @@
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->nomor }}</td>
                             <td>{{ $item->pengundang }}</td>
+                            <td>{{ $item->tipe }}</td>
+                            <td>{{ $item->acara }}</td>
                             <td>{{ $item->perihal }}</td>
                             <td>{{ $item->tempat }}</td>
                             <td>{{ $item->waktu }}</td>

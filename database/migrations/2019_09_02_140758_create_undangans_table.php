@@ -17,6 +17,8 @@ class CreateUndangansTable extends Migration
             $table->bigIncrements('id');
             $table->string('pengundang');
             $table->string('nomor');
+            $table->enum('tipe', ['Surat Undangan', 'Nota Dinas']);
+            $table->string('acara');
             $table->string('perihal');
             $table->string('tempat');
             $table->date('waktu');

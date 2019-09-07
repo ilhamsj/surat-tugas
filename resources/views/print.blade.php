@@ -78,10 +78,10 @@
       <td>
         <ol type="a"> 
           <li>
-             {{-- {{ $surat->undangan->pengundang }} --}}
+             <u>{{ $item->surattugas->undangan->pengundang }}</u>
             Akan menyelenggarakan 
             kegiatan
-             {{-- {{ $surat->undangan->nama_acara }} --}}
+            <u>{{ $item->surattugas->undangan->acara }}</u>
           <li>
               Bahwa mereka yang namanya tercantum disurat tugas ini dipandang
               mampu, cakap serta bertanggung jawab sepenuhnya dalam
@@ -96,9 +96,10 @@
     <tr>
       <td>Dasar</td>
       <td>
-           {{-- {{ $surat->undangan->tipe_surat }} --}}  {{-- {{ $surat->undangan->pengundang }} --}}
-          Nomor  {{-- {{ $surat->undangan->no_surat }} --}}
-          perihal  {{$item->surattugas->undangan->perihal}},
+           <u>{{ $item->surattugas->undangan->tipe }}</u>
+           <u>{{ $item->surattugas->undangan->pengundang }}</u>
+          Nomor  <u>{{ $item->surattugas->undangan->nomor }}</u>
+          perihal  <u>{{$item->surattugas->undangan->perihal}}</u>,
 
       </td>
     </tr>
@@ -144,12 +145,14 @@
               <tr>
                 <td>1. Hari/Tanggal </td>
                 <td> : </td>
-                <td> {{-- {{ $surat->undangan->waktu_mulai }} --}} -  {{-- {{  $surat->undangan->waktu_selesai  }} --}}</td>
+                <td> <u>{{$item->surattugas->undangan->waktu}}</u></td>
               </tr>
               <tr>
                 <td>2. Tempat </td>
                 <td>:</td>
-                <td> {{-- {{  $surat->undangan->tempat  }} --}}</td>
+                <td> 
+                    <u>{{$item->surattugas->undangan->tempat}}</u>,
+                </td>
               </tr>
 
               <tr>

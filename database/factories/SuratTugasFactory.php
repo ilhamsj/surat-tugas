@@ -9,6 +9,6 @@ $factory->define(SuratTugas::class, function (Faker $faker) {
     return [
         'undangan_id' => $faker->numberBetween($min = 1, $max = 20),
         'pangkat_id' => $faker->numberBetween($min = 1, $max = 3),
-        'nomor' => $faker->numberBetween($min = 1000, $max = 9000),
+        'nomor' => $faker->swiftBicNumber,
     ];
 });

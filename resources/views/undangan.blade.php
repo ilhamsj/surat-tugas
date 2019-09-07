@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md">
+            <div class="col-md mb-4">
                 @include('include/undangan/index')
             </div>
             <div class="col-md">                
