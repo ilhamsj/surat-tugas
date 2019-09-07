@@ -80,7 +80,6 @@
             document.getElementById(id).submit();
         }
 
-        // function editPost(id, pengundang, nomor, tipe, acara, perihal, tempat, waktu, url)
         function editPost(id, pengundang, nomor, tipe, acara, perihal, tempat, waktu, url)
         {
             event.preventDefault(); 
