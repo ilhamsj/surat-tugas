@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="form-group col-md" id="role">
                     <label for="role">Role</label>
-                    <select name="role" class="form-control @error('role') is-invalid  @enderror" required>
+                    <select id="role" name="role" class="form-control @error('role') is-invalid  @enderror" required>
                         <option value="pegawai">Pegawai</option>
                         <option value="admin_bagian">Admin Bagian</option>
                         <option value="admin_kepegawaian">Admin Kepegawaian</option>

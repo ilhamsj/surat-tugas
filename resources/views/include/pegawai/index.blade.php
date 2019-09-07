@@ -70,15 +70,18 @@
                 event.preventDefault(); 
                 $("#dataCard").toggle("slow", "swing");
                 $("#createCard").show();
+                $("#createForm form").attr("action", url);
+                $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
                 $("#title").html('Edit ' + name);
                 $("#name").val(name);
                 $("#email").val(email);
                 $("#password").val(password);
                 $("#nip").val(nip);
                 $("#jabatan").val(jabatan);
-                $("select option:first-child").before("<option value='"+role+"' selected>"+role+"</option>");
-                $("#createForm form").attr("action", url);
-                $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
+
+                var roleText = $("#role [value='"+role+"']").html();
+                $("#role [value='"+role+"']").remove();
+                $("select option:first-child").before("<option value='"+role+"' selected>"+roleText+"</option>");
             }
 
             $("td").click(function (e) { 

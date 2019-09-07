@@ -89,7 +89,11 @@
 
         $(".title").html('Edit ' + nomor);
         $("#nomor").val(nomor);
+
+        $("#undangan_id [value='"+undangan_id+"']").remove();
         $("#undangan_id option:first-child").before("<option value='"+undangan_id+"' selected>"+undangan+"</option>");
+        
+        $("#pangkat_id [value='"+pangkat_id+"']").remove();
         $("#pangkat_id option:first-child").before("<option value='"+pangkat_id+"' selected>"+pangkat+"</option>");
     }
 </script>
