@@ -21,11 +21,9 @@
             <div class="form-group">
                 <label for="undangan_id">Undangan</label>
                 <select name="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">
-                    @forelse ($undangans as $undangan)
+                    @foreach ($undangans as $undangan)
                         <option value="{{ $undangan->id }}">{{Str::title($undangan->pengundang . '-' .$undangan->acara)}}</option>
-                    @empty
-                        <option>404</option>
-                    @endforelse
+                    @endforeach
                 </select>
                 @error('undangan_id')
                     <span class="invalid-feedback" role="alert">
@@ -37,13 +35,11 @@
             <div class="form-group">
                 <label for="paraf_id">Paraf</label>
                 <select name="pangkat_id" class="form-control @error('pangkat_id') is-invalid  @enderror ">
-                    @forelse ($pangkats as $pangkat)
+                    @foreach ($pangkats as $pangkat)
                         <option value="{{ $pangkat->id }}">
                             {{Str::title($pangkat->nama . ' - ' . $pangkat->user->name)}}
                         </option>
-                    @empty
-                        <option>404</option>
-                    @endforelse
+                    @endforeach
                 </select>
 
                 @error('pangkat_id')
