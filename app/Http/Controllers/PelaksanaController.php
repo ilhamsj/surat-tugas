@@ -54,11 +54,27 @@ class PelaksanaController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->all());
+        // dd($request->input());
+        // dd(count($request->input('user_id')));
+        // $a = count($request->input('user_id'));
+        // $nilai = 0;
+        // for ($i=0; $i < $a; $i++) { 
+        //     # code...
+        // }
+
+        $item = Pelaksana::find($id);
+        $item->update($request->all());
+        return redirect()->route('pelaksana.index')->with([
+            'status' => "Update Success"
+        ]);
     }
 
     public function destroy($id)
     {
-        //
+        Pelaksana::destroy($id);
+        return redirect()->route('pelaksana.index')->with([
+            'status' => 'Delete Success'
+        ]);
     }
 }

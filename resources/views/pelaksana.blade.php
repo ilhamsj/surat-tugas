@@ -6,7 +6,7 @@
             <div class="col-md">
                 @include('include/pelaksana/index')
             </div>
-            <div class="col-md">
+            <div class="col-md" id="createForm">
                 @include('include/pelaksana/create')
             </div>
         </div>

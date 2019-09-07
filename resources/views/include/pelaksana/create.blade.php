@@ -9,10 +9,10 @@
 
             <div class="form-group">
                 <label for="surat_tugas_id">Surat</label>
-                <select name="surat_tugas_id" class="form-control @error('surat_tugas_id') is-invalid  @enderror" required>
+                <select id="surat_tugas_id" name="surat_tugas_id" class="form-control @error('surat_tugas_id') is-invalid  @enderror" required>
                     @forelse ($itemsSurat as $item)
                         <option value="{{ $item->id }}">
-                            {{Str::title($item->nomor . ' - ' . $item->undangan->pengundang . ',' .$item->undangan->acara)}}
+                            {{$item->nomor . ' - ' . $item->undangan->pengundang . ',' .$item->undangan->nomor}}
                         </option>
                     @empty
                         <option>404</option>
@@ -27,16 +27,14 @@
 
             <div class="form-group">
                 <label for="user_id">Pelaksana</label>
-                <select name="user_id[]" multiple="multiple" class="form-control @error('user_id') is-invalid  @enderror" required>
-                    @forelse ($itemsUser as $user)
+                <select id="user_id" name="user_id[]" multiple="multiple" class="form-control @error('user_id') is-invalid  @enderror" required>
+                    @foreach ($itemsUser as $user)
                         <option value="{{ $user->id }}">{{$user->nip}} - {{$user->name}}</option>
-                    @empty
-                        <option>404</option>
-                    @endforelse
+                    @endforeach
                 </select>
             </div>
 
-            @error('undangan_id')
+            @error('user_id')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
