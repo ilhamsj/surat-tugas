@@ -12,7 +12,7 @@ $factory->define(Undangan::class, function (Faker $faker) {
         'nomor'         => $faker->swiftBicNumber,
         'acara'         => $faker->catchPhrase,
         'perihal'       => $faker->bs,
-        'tempat'        => $faker->address,
+        'tempat'        => $faker->country,
         'waktu'         => $faker->date($format = 'Y-m-d', $max = 'now'),
     ];
 });

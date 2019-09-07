@@ -33,7 +33,19 @@
                                 <a class="text-danger" href="{{ route('undangan.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
                                     <i data-feather="x-circle"></i>
                                 </a>
-                                <a href="" onclick="editPost({{$item->id}}, '{{$item->perihal}}', '{{route('undangan.update', $item->id)}}')">
+                                {{-- pengundang, nomor, tipe, acara, perihal, tempat, waktu, --}}
+                                {{-- <a href="" onclick="editPost({{$item->id}}, '{{$item->pengundang}}', '{{$item->nomor}}', '{{$item->tipe}}', '{{$item->acara}}', '{{$item->perihal}}', '{{$item->tempat}}', '{{$item->waktu}}', '{{route('undangan.update', $item->id)}}')"> --}}
+                                <a href="" onclick="editPost(
+                                    {{$item->id}}, 
+                                    '{{$item->pengundang}}', 
+                                    '{{$item->nomor}}', 
+                                    '{{$item->tipe}}', 
+                                    '{{$item->acara}}',
+                                    '{{$item->perihal}}',
+                                    '{{$item->tempat}}',
+                                    '{{$item->waktu}}',
+                                    '{{route('undangan.update', $item->id)}}')
+                                    ">
                                     <i data-feather="edit"></i>
                                 </a>
 
@@ -70,12 +82,19 @@
             document.getElementById(id).submit();
         }
 
-        function editPost(id, perihal, url)
+        // function editPost(id, pengundang, nomor, tipe, acara, perihal, tempat, waktu, url)
+        function editPost(id, pengundang, nomor, tipe, acara, perihal, tempat, waktu, url)
         {
             event.preventDefault(); 
 
-            $("#title").html('Edit ' + perihal);
+            $("#title").html('Edit ' + pengundang);
+            $("#pengundang").val(pengundang);
+            $("#nomor").val(nomor);
+            $("select option:first-child").before("<option value='"+tipe+"' selected>"+tipe+"</option>");
+            $("#acara").val(acara);
             $("#perihal").val(perihal);
+            $("#tempat").val(tempat);
+            $("#waktu").val(waktu);
             $("#createForm form").attr("action", url);
             $("form input:first-child").after("<input type='hidden' name='_method' value='PUT'/>");
         }
