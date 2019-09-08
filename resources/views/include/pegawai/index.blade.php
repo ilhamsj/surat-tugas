@@ -33,9 +33,7 @@
                                 <td class="email">{{ $item->email }}</td>
                                 <td class="create">{{ $item->created_at }}</td>
                                 <td class="text-center">
-                                    <a class="text-danger" href="{{ route('pegawai.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
-                                        <i data-feather="x-circle"></i>
-                                    </a>
+ 
                                     <a href="" onclick="editPost({{$item->id}}, '{{$item->name}}', '{{$item->email}}', 'password', '{{$item->nip}}', '{{$item->role}}', '{{$item->jabatan}}', '{{route('pegawai.update', $item->id)}}')">
                                         <i data-feather="edit"></i>
                                     </a>

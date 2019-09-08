@@ -43,18 +43,32 @@
                                 @if (count($item->dokumentasi) != null)
                                     @foreach ($item->dokumentasi as $dokumentasi)
                                         <span class="badge badge-success">Success</span>
-                                        {{-- <a href="" 
+                                        <a  data-toggle="modal" data-target="#modelId" href="" 
                                         onclick="editPost(
                                             {{$item->id}}, 
                                             '{{route('home.update', $dokumentasi->id)}}',
                                             '{{$dokumentasi->judul}}', 
                                             '{{$dokumentasi->deskripsi}}', 
                                         )">
-                                        <i data-feather="edit"></i> --}}
+                                        <span class="badge badge-warning">Edit</span>
+                                        <a class="badge badge-danger" href="{{ route('home.destroy', $dokumentasi->id) }}" onclick="deletePost({{$dokumentasi->id}})"> 
+                                            Delete
+                                        </a>
+                                        <form id="{{$dokumentasi->id}}" action="{{ route('home.destroy', $dokumentasi->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     @endforeach
                                 @else
                                     <a href="" class="buatLaporan" id="{{$item->id}}">
-                                            <span class="badge badge-primary">Buat laporan</span>
+                                        <span class="badge badge-primary" data-toggle="modal" data-target="#modelId">
+                                            Buat laporan
+                                        </span>
+                                        @error('judul')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </a>
                                 @endif
                             </td>
@@ -77,6 +91,12 @@
 
 @push('scripts')
     <script>
+        function deletePost(id)
+        {
+            event.preventDefault(); 
+            document.getElementById(id).submit();
+        }
+
         $(".buatLaporan").click(function (e) { 
             e.preventDefault();
             $("#pelaksana_id").val($(this).attr("id"));
@@ -93,7 +113,6 @@
             $("#deskripsi").val(deskripsi);
             
             console.log(judul);
-            
         }
     </script>
 @endpush

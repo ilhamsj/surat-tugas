@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md mb-4" id="capture">
+            <div class="col-md-12 mb-4" id="capture">
                 @include('include/dashboard_pegawai/index')
             </div>
             <div class="col-md">

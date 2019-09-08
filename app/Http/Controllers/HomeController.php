@@ -54,11 +54,18 @@ class HomeController extends Controller
     }
 
     public function updateDokumentasi(Request $request, $id){
-        // dd($request->all());
         $item = Dokumentasi::find($id);
         $item->update($request->all());
         return redirect()->route('home')->with([
             'status' => "Update Success"
+        ]);
+    }
+
+    public function destroyDokumentasi($id)
+    {
+        Dokumentasi::destroy($id);
+        return redirect()->route('home')->with([
+            'status' => 'Delete Success'
         ]);
     }
 }
