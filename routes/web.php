@@ -24,4 +24,7 @@ Route::post('dashboard', 'DashboardController@store')->name('dashboard.store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@storeDokumentasi')->name('home.store');
+Route::put('/home/dokumentasi/{id}', 'HomeController@updateDokumentasi')->name('home.update');
+
 Route::get('/home/cetak/{id}', 'HomeController@print')->name('surat.cetak');

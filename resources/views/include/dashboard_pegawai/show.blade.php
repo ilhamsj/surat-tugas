@@ -3,14 +3,26 @@
         <b>Dokumentasi</b>
     </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('surat-tugas.store') }}">
+        <form method="POST" action="{{ route('home.store') }}">
             @csrf
+            <input type="text" name="pelaksana_id" id="pelaksana_id" class="@error('pelaksana_id') is-invalid  @enderror" value="{{ old('pelaksana_id') ? old('pelaksana_id') : ' '}}" hidden>
 
             <div class="form-group">
-                <label for="nomor">Nomor</label>
-                <input type="text" name="nomor" id="nomor" class="form-control @error('nomor') is-invalid  @enderror" value="{{ old('nomor') ? old('nomor') : ' '}}">
+                <label for="judul">Judul</label>
+                <input type="text" name="judul" id="judul" class="form-control @error('judul') is-invalid  @enderror" value="{{ old('judul') ? old('judul') : ' '}}">
 
-                @error('nomor')
+                @error('judul')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi</label>
+                <textarea class="form-control @error('deskripsi') is-invalid  @enderror" name="deskripsi" id="deskripsi" rows="3">{{ old('deskripsi') ? old('deskripsi') : ''}}</textarea>
+
+                @error('deskripsi')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

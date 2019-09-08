@@ -10,7 +10,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            @foreach ($total as $key => $value)            
+            @foreach ($total as $key => $value)
             <div class="col-md mb-4">
                 <div class="card shadow">
                     <div class="card-header">

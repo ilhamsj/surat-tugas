@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Pelaksana;
-use Illuminate\Http\Request;
-use Auth;
 use PDF;
+use Auth;
+use App\Pelaksana;
+use App\Dokumentasi;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $items = Pelaksana::where('user_id', Auth::user()->id)->get();
@@ -43,6 +34,31 @@ class HomeController extends Controller
         // return $pdf->setPaper('a4')->stream();
         return view('print')->with([
             'item' => $item
+        ]);
+    }
+
+    public function storeDokumentasi(Request $request)
+    {
+
+        $request->validate([
+            'pelaksana_id' => 'required',
+            'judul' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        Dokumentasi::create($request->all());
+
+        return redirect()->route('home')->with([
+            'status' => "Create Success"
+        ]);
+    }
+
+    public function updateDokumentasi(Request $request, $id){
+        // dd($request->all());
+        $item = Dokumentasi::find($id);
+        $item->update($request->all());
+        return redirect()->route('home')->with([
+            'status' => "Update Success"
         ]);
     }
 }
