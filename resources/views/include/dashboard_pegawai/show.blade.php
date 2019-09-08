@@ -1,13 +1,23 @@
-<div class="card shadow bordered mb-4">
+<div class="card shadow bordered">
     <div class="card-header text-primary">
-        <b>Lapor Kegiatan</b>
+        <b>Dokumentasi</b>
     </div>
     <div class="card-body">
-        <h4 class="title">Title</h4>
-        <p class="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure necessitatibus, quas labore consectetur odit quisquam ipsam autem quam aspernatur non voluptatem praesentium repudiandae, reprehenderit perferendis commodi rem consequuntur quaerat illo.
-        </p>
+        <form method="POST" action="{{ route('surat-tugas.store') }}">
+            @csrf
 
-        <button type="button" id="buttonPrint" class="btn btn-primary">Print</button>
+            <div class="form-group">
+                <label for="nomor">Nomor</label>
+                <input type="text" name="nomor" id="nomor" class="form-control @error('nomor') is-invalid  @enderror" value="{{ old('nomor') ? old('nomor') : ' '}}">
+
+                @error('nomor')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
     </div>
 </div>

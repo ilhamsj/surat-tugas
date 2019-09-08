@@ -19,4 +19,9 @@ class Pelaksana extends Model
     {
         return $this->belongsTo(SuratTugas::class);
     }
+
+    public function Dokumentasi()
+    {
+        return $this->hasMany(Dokumentasi::class);
+    }
 }
