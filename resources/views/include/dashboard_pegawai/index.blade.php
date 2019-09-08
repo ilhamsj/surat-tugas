@@ -7,49 +7,58 @@
             <table class="table table-bordered" id="example">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nomor Surat</th>
-                        <th>Undangan</th>
+                        <th>No</th>
+                        <th>Acara</th>
+                        <th>Pengundang</th>
+                        <th>Waktu</th>
+                        <th>Tempat</th>
                         <th>Pelaksana</th>
                         <th>Status</th>
                         <th>Print</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
                     @forelse ($items as $item)
                         <tr>
-                            <td>{{ $item->id }}</td>
-                            <td>{{ $item->surattugas->nomor }}</td>
-                            <td>{{ $item->surattugas->undangan->perihal }}</td>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $item->surattugas->undangan->acara }}</td>
+                            <td>{{ $item->surattugas->undangan->pengundang }}</td>
                             <td>
-                                <ul>
+                                {{\Carbon\Carbon::parse($item->surattugas->undangan->waktu)->format('d/M/Y')}} - Selesai
+                            </td>
+                            <td>{{ $item->surattugas->undangan->tempat }}</td>
+                            <td>
+                                <ol type="1">
                                     @foreach ($item->surattugas->pelaksana as $pegawai)
                                         <li>
                                             {{$pegawai->user->name}}
                                         </li>
                                     @endforeach
-                                </ul>
+                                </ol>
                             </td>
                             <td class="text-center">
                                 @if (count($item->dokumentasi) != null)
                                     @foreach ($item->dokumentasi as $dokumentasi)
-                                        <span class="text-success"><i data-feather="check"></i></span>
-                                        <a href="" 
+                                        <span class="badge badge-success">Success</span>
+                                        {{-- <a href="" 
                                         onclick="editPost(
                                             {{$item->id}}, 
                                             '{{route('home.update', $dokumentasi->id)}}',
                                             '{{$dokumentasi->judul}}', 
                                             '{{$dokumentasi->deskripsi}}', 
                                         )">
-                                        <i data-feather="edit"></i>
+                                        <i data-feather="edit"></i> --}}
                                     @endforeach
                                 @else
                                     <a href="" class="buatLaporan" id="{{$item->id}}">
-                                        Buat laporan
+                                            <span class="badge badge-primary">Buat laporan</span>
                                     </a>
                                 @endif
                             </td>
-                            <td>
+                            <td class="text-center">
                                 <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
                                     <i data-feather="printer"></i>
                                 </a>
@@ -71,7 +80,6 @@
         $(".buatLaporan").click(function (e) { 
             e.preventDefault();
             $("#pelaksana_id").val($(this).attr("id"));
-            $("div.form-group").first().hide();
         });
 
         function editPost(id, url, judul, deskripsi) 

@@ -148,7 +148,6 @@
                   <td> : </td>
                   <td> 
                       {{\Carbon\Carbon::parse($item->surattugas->undangan->waktu)->format('d M Y')}} - Selesai
-                    {{-- <u>{{$item->surattugas->undangan->waktu}}</u> --}}
                   </td>
                 </tr>
                 <tr>
