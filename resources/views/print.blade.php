@@ -146,7 +146,10 @@
                 <tr>
                   <td>1. Hari/Tanggal </td>
                   <td> : </td>
-                  <td> <u>{{$item->surattugas->undangan->waktu}}</u></td>
+                  <td> 
+                      {{\Carbon\Carbon::parse($item->surattugas->undangan->waktu)->format('d M Y')}} - Selesai
+                    {{-- <u>{{$item->surattugas->undangan->waktu}}</u> --}}
+                  </td>
                 </tr>
                 <tr>
                   <td>2. Tempat </td>
