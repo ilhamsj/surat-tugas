@@ -84,8 +84,8 @@
             <div class="row">
                 <div class="form-group col-md" id="roleTTD">
                     <label for="roleTTD">Pangkat</label>
-                    <select id="roleTTD" name="roleTTD" class="form-control @error('roleTTD') is-invalid  @enderror" required>
-                        <option value="null">-- Pilih --</option>
+                    <select id="roleTTD" name="roleTTD" class="form-control @error('roleTTD') is-invalid  @enderror">
+                        <option></option>
                         <option value="kakanwil">kakanwil</option>
                         <option value="kabag">kabag</option>
                         <option value="kasubag">kasubag</option>

@@ -39,7 +39,17 @@
                                 <td class="create">{{ $item->created_at }}</td>
                                 <td class="text-center">
  
-                                    <a href="" onclick="editPost({{$item->id}}, '{{$item->name}}', '{{$item->email}}', 'password', '{{$item->nip}}', '{{$item->role}}', '{{$item->jabatan}}', '{{route('pegawai.update', $item->id)}}')">
+                                    <a href="" 
+                                    onclick="editPost(
+                                        {{$item->id}}, 
+                                        '{{$item->name}}', 
+                                        '{{$item->email}}', 
+                                        'password', 
+                                        '{{$item->nip}}', 
+                                        '{{$item->role}}', 
+                                        '{{$item->jabatan}}', 
+                                        '{{route('pegawai.update', $item->id)}}',
+                                        )">
                                         <i data-feather="edit"></i>
                                     </a>
                                     <a class="text-danger" href="{{ route('pegawai.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
@@ -84,6 +94,9 @@
                 $("#password").val(password);
                 $("#nip").val(nip);
                 $("#jabatan").val(jabatan);
+                var x = $(".badge").html();
+                console.log(x);
+                
 
                 var roleText = $("#role [value='"+role+"']").html();
                 $("#role [value='"+role+"']").remove();

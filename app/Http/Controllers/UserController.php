@@ -47,11 +47,13 @@ class UserController extends Controller
             'jabatan' => $request->jabatan,
             'nip' => $request->nip,
         ]);
-
-        $user = Pangkat::create([
-            'user_id' => $user->id,
-            'nama' => $request->roleTTD,
-        ]);
+            
+        if ($request->roleTTD != null) {
+            Pangkat::create([
+                'user_id' => $user->id,
+                'nama' => $request->roleTTD,
+            ]);
+        }
 
         return redirect()->route('pegawai.index')->with([
             'status' => "Success Added"
@@ -91,7 +93,7 @@ class UserController extends Controller
         
         $pangkat = Pangkat::where('user_id', $id)->get();
 
-        if (count($pangkat) == null) {
+        if (count($pangkat) == null && $request->roleTTD != null) {
             Pangkat::create([
                 'user_id' => $id,
                 'nama' => $request->roleTTD,
@@ -101,7 +103,7 @@ class UserController extends Controller
         {
             foreach ($pangkat as $item) 
             {
-                if ($request->roleTTD == 'null') 
+                if ($request->roleTTD == null) 
                 {
                     Pangkat::destroy($item->id);
                 }
