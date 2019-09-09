@@ -7,6 +7,7 @@
         <form method="POST" action="{{ route('surat-tugas.store') }}">
             @csrf
 
+            @if (Auth::user()->role == 'admin_kepegawaian')                
             <div class="form-group">
                 <label for="nomor">Nomor</label>
                 <input type="text" name="nomor" id="nomor" class="form-control @error('nomor') is-invalid  @enderror" value="{{ old('nomor') ? old('nomor') : ' '}}">
@@ -17,7 +18,8 @@
                     </span>
                 @enderror
             </div>
-
+            @endif
+            
             <div class="form-group">
                 <label for="undangan_id">Undangan</label>
                 <select name="undangan_id" id="undangan_id" class="form-control @error('undangan_id') is-invalid  @enderror">

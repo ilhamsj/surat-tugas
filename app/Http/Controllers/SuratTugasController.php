@@ -37,7 +37,6 @@ class SuratTugasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nomor' => 'required',
             'undangan_id' => 'required',
             'pangkat_id' => 'required',
         ]);
@@ -62,7 +61,6 @@ class SuratTugasController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nomor' => 'required',
             'undangan_id' => 'required',
             'pangkat_id' => 'required',
         ]);
