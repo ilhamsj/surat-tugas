@@ -9,6 +9,11 @@ use App\Pelaksana;
 
 class UndanganController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $undangan = Undangan::orderBy('id', 'desc')->get();
