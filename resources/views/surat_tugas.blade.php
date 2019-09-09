@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md">
+            <div class="col-md-8">
                 @include('include/surat_tugas/index')
             </div>
             <div class="col-md">

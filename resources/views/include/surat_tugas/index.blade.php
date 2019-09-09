@@ -12,6 +12,7 @@
                         <th>Undangan</th>
                         <th>Pelaksana</th>
                         <th>Paraf</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -38,10 +39,26 @@
                                 {{ $item->Pangkat->nama }} - 
                                 {{ $item->Pangkat->user->name }}
                             </td>
+                            <td>
+                                @if ($item->nomor == null)                                    
+                                    <span class="badge badge-primary">
+                                        Verivikasi
+                                    </span>
+                                @else
+                                    <span class="badge badge-success">
+                                        Sukses
+                                    </span>
+                                    
+                                @endif
+                            </td>
                             <td class="text-center">
-                                <a class="text-danger" href="{{ route('surat-tugas.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
-                                    <i data-feather="x-circle"></i>
-                                </a>
+
+                                @if (Auth::user()->role == 'admin_kepegawaian')
+                                    <a class="text-danger" href="{{ route('surat-tugas.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
+                                        <i data-feather="x-circle"></i>
+                                    </a>
+                                @endif
+
                                 <a href="" 
                                     onclick="editPost(
                                         {{$item->id}}, 
