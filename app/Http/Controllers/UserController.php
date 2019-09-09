@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Pangkat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -41,6 +42,11 @@ class UserController extends Controller
             'nip' => $request->nip,
         ]);
 
+        $user = Pangkat::create([
+            'user_id' => $user->id,
+            'nama' => $request->roleTTD,
+        ]);
+
         return redirect()->route('pegawai.index')->with([
             'status' => "Success Added"
         ]);
@@ -69,6 +75,32 @@ class UserController extends Controller
         
         $item = User::find($id);
         $item->update($request->all());
+        
+
+        $pangkat = Pangkat::where('user_id', $id)->get();
+
+        if (count($pangkat) == null) {
+            Pangkat::create([
+                'user_id' => $id,
+                'nama' => $request->roleTTD,
+            ]);
+        } else {
+            foreach ($pangkat as $item) {
+                if ($request->roleTTD == 'null') 
+                {
+                    Pangkat::destroy($item->id);
+                }
+                else
+                {
+                    $updatePangkat = Pangkat::find($item->id);
+                    $updatePangkat->update([
+                        'user_id' => $id,
+                        'nama' => $request->roleTTD
+                    ]);
+                }
+            }
+        }
+                
         return redirect()->route('pegawai.index')->with([
             'status' => "Update Success"
         ]);

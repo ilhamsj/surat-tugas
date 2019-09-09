@@ -79,6 +79,23 @@
                         </span>
                     @enderror
                 </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-md" id="roleTTD">
+                    <label for="roleTTD">Pangkat</label>
+                    <select id="roleTTD" name="roleTTD" class="form-control @error('roleTTD') is-invalid  @enderror" required>
+                        <option value="null">-- Pilih --</option>
+                        <option value="kakanwil">kakanwil</option>
+                        <option value="kabag">kabag</option>
+                        <option value="kasubag">kasubag</option>
+                    </select>
+                    @error('roleTTD')
+                        <span class="invalid-feedback" roleTTD="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="reset" class="btn btn-primary">Reset</button>

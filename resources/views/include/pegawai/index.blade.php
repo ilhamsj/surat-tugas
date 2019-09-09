@@ -29,13 +29,21 @@
                                 <td class="nip">{{ $item->nip }}</td>
                                 <td class="name">{{ $item->name }}</td>
                                 <td class="jabatan">{{ $item->jabatan }}</td>
-                                <td class="role">{{ $item->role }}</td>
+                                <td class="role">
+                                    {{Str::title($item->role)}}
+                                    @foreach ($item->pangkat as $pangkat)
+                                        <span class="badge badge-warning">{{ Str::title($pangkat->nama)}}</span>
+                                    @endforeach
+                                </td>
                                 <td class="email">{{ $item->email }}</td>
                                 <td class="create">{{ $item->created_at }}</td>
                                 <td class="text-center">
  
                                     <a href="" onclick="editPost({{$item->id}}, '{{$item->name}}', '{{$item->email}}', 'password', '{{$item->nip}}', '{{$item->role}}', '{{$item->jabatan}}', '{{route('pegawai.update', $item->id)}}')">
                                         <i data-feather="edit"></i>
+                                    </a>
+                                    <a class="text-danger" href="{{ route('pegawai.destroy', $item->id) }}" onclick="deletePost({{$item->id}})"> 
+                                        <i data-feather="x-circle"></i>
                                     </a>
     
                                     <form id="{{$item->id}}" action="{{ route('pegawai.destroy', $item->id) }}" method="post">
@@ -79,7 +87,7 @@
 
                 var roleText = $("#role [value='"+role+"']").html();
                 $("#role [value='"+role+"']").remove();
-                $("select option:first-child").before("<option value='"+role+"' selected>"+roleText+"</option>");
+                $("#role option:first-child").before("<option value='"+role+"' selected>"+roleText+"</option>");
             }
 
             $("td").click(function (e) { 
