@@ -66,13 +66,17 @@
                                             Buat laporan
                                         </span>
                                     </a>
+                                    @else
+                                    <span class="badge badge-primary">
+                                        Dalam Verivikasi
+                                    </span>
                                     @endif
                                 @endif
                             </td>
                             <td class="text-center">
                                 @if ($item->surattugas->nomor == null)
-                                    <span class="badge badge-primary" data-toggle="modal" data-target="#modelId">
-                                        Dalam Verivikasi
+                                    <span class="badge badge-primary">
+                                        Belum Tersedia
                                     </span>
                                 @else
                                     <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
