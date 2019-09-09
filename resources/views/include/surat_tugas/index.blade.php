@@ -40,15 +40,16 @@
                                 {{ $item->Pangkat->user->name }}
                             </td>
                             <td>
-                                @if ($item->nomor == null)                                    
+                                @if ($item->nomor == null)
                                     <span class="badge badge-primary">
                                         Verivikasi
                                     </span>
+                                @elseif(count($item->pelaksana) == null)
+                                <a href="{{route('pelaksana.index')}}" class="badge badge-danger">Tambah Pelaksana</a>
                                 @else
                                     <span class="badge badge-success">
                                         Sukses
                                     </span>
-                                    
                                 @endif
                             </td>
                             <td class="text-center">
