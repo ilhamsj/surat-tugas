@@ -53,7 +53,7 @@
   </head>
   <body>
     <div class="text-center">
-      <img src="{{asset('images/logo2019.png')}}" alt="" srcset="" style="max-width:120px">
+      <img src="{{secure_asset('images/logo2019.png')}}" alt="" srcset="" style="max-width:120px">
         <h1>
           KEMENTERIAN AGAMA REPUBLIK INDONESIA <br/>
           KANTOR WILAYAH KEMENTERIAN AGAMA <br/>
@@ -176,9 +176,9 @@
                         $pangkat = $item->SuratTugas->pangkat->nama;
                     @endphp
                     @if ($pangkat == 'kakanwil')
-                      <img src="{{asset('images/ttd/ttd_kepala.jpg')}}" style="width:100px">
+                      <img src="{{secure_asset('images/ttd/ttd_kepala.jpg')}}" style="width:100px">
                     @else
-                      <img src="{{asset('images/ttd/ttd_kepala_bagian.jpg')}}" style="width:200px">
+                      <img src="{{secure_asset('images/ttd/ttd_kepala_bagian.jpg')}}" style="width:200px">
                     @endif
                   </td>
                 </tr>
@@ -192,10 +192,10 @@
                 <tr style="text-align:right">
                   <td colspan="3">
                     @if ($pangkat == 'kakanwil')
-                      <img src="{{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
-                      <img src="{{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
+                      <img src="{{  secure_asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
+                      <img src="{{  secure_asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
                     @else
-                      <img src="{{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px;">
+                      <img src="{{  secure_asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px;">
                     @endif
                   </td>
                 </tr>
