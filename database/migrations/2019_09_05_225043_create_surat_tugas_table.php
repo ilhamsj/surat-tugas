@@ -27,7 +27,7 @@ class CreateSuratTugasTable extends Migration
                     ->on('pangkats')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
-            $table->string('nomor');
+            $table->string('nomor')->nullable();
             $table->timestamps();
         });
     }

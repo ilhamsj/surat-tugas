@@ -60,22 +60,25 @@
                                         </form>
                                     @endforeach
                                 @else
+                                    @if ($item->surattugas->nomor != null)
                                     <a href="" class="buatLaporan" id="{{$item->id}}">
                                         <span class="badge badge-primary" data-toggle="modal" data-target="#modelId">
                                             Buat laporan
                                         </span>
-                                        @error('judul')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
                                     </a>
+                                    @endif
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
-                                    <i data-feather="printer"></i>
-                                </a>
+                                @if ($item->surattugas->nomor == null)
+                                    <span class="badge badge-primary" data-toggle="modal" data-target="#modelId">
+                                        Dalam Verivikasi
+                                    </span>
+                                @else
+                                    <a href="{{route('surat.cetak', $item->id)}}" target="_blank">
+                                        <i data-feather="printer"></i>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @empty
