@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('dashboard/undangan', 'UndanganController')->middleware('admin');
-Route::resource('dashboard/surat-tugas', 'SuratTugasController')->middleware('admin');
-Route::resource('dashboard/pelaksana', 'PelaksanaController')->middleware('admin');
-Route::resource('dashboard/pegawai', 'UserController')->middleware('admin');
+Route::resource('dashboard/undangan', 'UndanganController');
+Route::resource('dashboard/surat-tugas', 'SuratTugasController');
+Route::resource('dashboard/pelaksana', 'PelaksanaController');
+Route::resource('dashboard/pegawai', 'UserController');
 
-Route::get('dashboard', 'DashboardController@index')->name('dashboard.index')->middleware('admin'); 
-Route::post('dashboard', 'DashboardController@store')->name('dashboard.store')->middleware('admin'); 
+Route::get('dashboard', 'DashboardController@index')->name('dashboard.index'); 
+Route::post('dashboard', 'DashboardController@store')->name('dashboard.store'); 
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@storeDokumentasi')->name('home.store');

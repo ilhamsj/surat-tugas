@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
-class AdminKepegawaian
+class AdminBagian
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class AdminKepegawaian
     public function handle($request, Closure $next)
     {
         $role = Auth::user()->role;
-        if ($role == 'admin_kepegawaian') 
+        if ($role == 'admin_bagian' || $role == 'admin_kepegawaian') 
         {
             return $next($request);
         }

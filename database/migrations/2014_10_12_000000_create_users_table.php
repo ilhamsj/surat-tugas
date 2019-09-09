@@ -21,9 +21,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->string('nip')->nullable();;
+            $table->enum('role', ['pegawai', 'admin_bagian', 'admin_kepegawaian']);
             $table->string('jabatan')->nullable();
-            $table->enum('role', ['admin_bagian', 'admin_kepegawaian', 'pegawai']);
+            $table->string('nip')->nullable();;
         });
     }
 

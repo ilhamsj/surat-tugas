@@ -12,6 +12,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('super_admin');
     }
 
     public function index()
@@ -79,9 +80,15 @@ class UserController extends Controller
         ]);
         
         $item = User::find($id);
-        $item->update($request->all());
+        $item->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+            'jabatan' => $request->jabatan,
+            'nip' => $request->nip,
+        ]);
         
-
         $pangkat = Pangkat::where('user_id', $id)->get();
 
         if (count($pangkat) == null) {
@@ -89,8 +96,11 @@ class UserController extends Controller
                 'user_id' => $id,
                 'nama' => $request->roleTTD,
             ]);
-        } else {
-            foreach ($pangkat as $item) {
+        } 
+        else 
+        {
+            foreach ($pangkat as $item) 
+            {
                 if ($request->roleTTD == 'null') 
                 {
                     Pangkat::destroy($item->id);
