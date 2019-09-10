@@ -23,7 +23,7 @@ class AdminKepegawaian
         }
         else
         {
-            return redirect()->route('home')->with([
+            return redirect()->route('pegawai.show', Auth::user()->id)->with([
                 'status' => 'You have no admin access'
             ]);
         }

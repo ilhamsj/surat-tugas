@@ -17,10 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('dashboard/undangan', 'UndanganController');
-Route::resource('dashboard/surat-tugas', 'SuratTugasController');
-Route::resource('dashboard/pelaksana', 'PelaksanaController');
-Route::resource('dashboard/pegawai', 'UserController');
+Route::resource('undangan', 'UndanganController');
+Route::resource('surat-tugas', 'SuratTugasController');
+Route::resource('pelaksana', 'PelaksanaController');
+Route::resource('pegawai', 'UserController');
 
 Route::get('dashboard', 'DashboardController@index')->name('dashboard.index')->middleware('admin'); 
 Route::post('dashboard', 'DashboardController@store')->name('dashboard.store'); 

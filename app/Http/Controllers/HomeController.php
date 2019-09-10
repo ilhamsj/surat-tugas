@@ -45,7 +45,7 @@ class HomeController extends Controller
 
         Dokumentasi::create($request->all());
 
-        return redirect()->route('home')->with([
+        return redirect()->back()->with([
             'status' => "Create Success"
         ]);
     }
@@ -53,7 +53,7 @@ class HomeController extends Controller
     public function updateDokumentasi(Request $request, $id){
         $item = Dokumentasi::find($id);
         $item->update($request->all());
-        return redirect()->route('home')->with([
+        return redirect()->back()->with([
             'status' => "Update Success"
         ]);
     }
@@ -61,7 +61,7 @@ class HomeController extends Controller
     public function destroyDokumentasi($id)
     {
         Dokumentasi::destroy($id);
-        return redirect()->route('home')->with([
+        return redirect()->back()->with([
             'status' => 'Delete Success'
         ]);
     }
