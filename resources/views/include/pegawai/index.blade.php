@@ -14,7 +14,7 @@
                         <tr>
                             <th>ID</th>
                             <th>NIP</th>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Jabatan</th>
                             <th>Role</th>
                             <th>Email</th>
