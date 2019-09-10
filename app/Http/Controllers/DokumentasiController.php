@@ -15,7 +15,7 @@ class DokumentasiController extends Controller
     public function index()
     {
         return view('welcome')->with([
-            'items' => Dokumentasi::orderBy('id', 'desc')->get()
+            'items' => Dokumentasi::paginate(5)
         ]);
     }
 

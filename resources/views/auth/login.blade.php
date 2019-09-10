@@ -51,6 +51,17 @@
                             </a>
                         @endif
                     </div>
+
+                    <div class="form-group">
+                        <p>
+                            Email : <u>superadmin@example.net</u> <br/>
+                            Password : <u>password</u>
+                        </p>
+                        <p>
+                            Email : <u>admin@example.net</u> <br/>
+                            Password : <u>password</u>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>

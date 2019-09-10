@@ -6,7 +6,6 @@
             <div class="col-md-8 mb-4">
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="holder.js/100x180/" alt="">
                         <div class="card-body">
                             <h4 class="card-title">Dokumentasi Kegiatan</h4>
                             <p class="card-text">
@@ -22,7 +21,7 @@
                 </div>
             </div>
             @forelse ($items as $item)
-            <div class="col-md-8 mb-4">
+                <div class="col-md-8 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <a href="{{route('pegawai.show', $item->pelaksana->user->id)}}">{{$item->pelaksana->user->name}}</a> /
@@ -37,7 +36,11 @@
                     </div>
                 </div>
             @empty
+                Tidak ada data
             @endforelse
+            <div class="col-md-8">
+                {{ $items->links() }}
+            </div>
         </div>
     </div>
 @endsection
