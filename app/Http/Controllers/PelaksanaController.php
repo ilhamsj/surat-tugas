@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Pelaksana;
-use PDF;
 use Illuminate\Http\Request;
 
 class PelaksanaController extends Controller
@@ -54,7 +52,7 @@ class PelaksanaController extends Controller
     public function show($id)
     {
         $item = Pelaksana::find($id);
-        $pdf = PDF::loadview('print', [
+        $pdf = \PDF::loadview('print', [
             'item' => $item,
         ]);
         return $pdf->setPaper('a4')->stream();

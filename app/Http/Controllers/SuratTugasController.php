@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use App\SuratTugas;
 use Illuminate\Http\Request;
 
