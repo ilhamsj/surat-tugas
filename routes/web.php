@@ -25,4 +25,4 @@ Route::resource('dokumentasi', 'DokumentasiController');
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-Route::get('/home/cetak/{id}', 'HomeController@print')->name('surat.cetak');
+// Route::get('/surat/{id}/print', 'HomeController@print')->name('surat.cetak');

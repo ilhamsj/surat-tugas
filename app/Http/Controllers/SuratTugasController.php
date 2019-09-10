@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Pangkat;
-
-use App\Undangan;
 use App\SuratTugas;
 use Illuminate\Http\Request;
 
@@ -20,8 +17,8 @@ class SuratTugasController extends Controller
     public function index()
     {
         $items = SuratTugas::all();
-        $undangan = Undangan::all();
-        $pangkat = Pangkat::all();
+        $undangan = \App\Undangan::all();
+        $pangkat = \App\Pangkat::all();
 
         return view('surat_tugas')->with([
             'items'  => $items,
@@ -38,7 +35,7 @@ class SuratTugasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'undangan_id' => 'required',
+            'undangan_id' => 'required|unique:surat_tugas',
             'pangkat_id' => 'required',
         ]);
 

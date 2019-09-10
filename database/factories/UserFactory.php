@@ -26,5 +26,7 @@ $factory->define(User::class, function (Faker $faker) {
         'nip' => $faker->bankAccountNumber,
         'jabatan' => $faker->jobTitle,
         'role' => $faker->randomElement(['admin_bagian', 'admin_kepegawaian', 'pegawai']),
+        'golongan' => $faker->randomElement(['I/a', 'I/b', 'I/c', 'I/d']),
+        'nama_golongan' => $faker->randomElement(['Juru Tingkat 1', 'Juru', 'Juru Muda Tingkat 1', 'Juru Muda']),
     ];
 });

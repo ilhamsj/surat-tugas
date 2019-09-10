@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Undangan;
 use Illuminate\Http\Request;
-use App\SuratTugas;
-use App\Pelaksana;
 
 class UndanganController extends Controller
 {

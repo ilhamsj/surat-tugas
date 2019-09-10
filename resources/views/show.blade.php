@@ -29,6 +29,10 @@
                                     <td>{{$item->role}}</td>
                                 </tr>
                                 <tr>
+                                    <th>Golongan</th>
+                                    <td>{{$item->golongan}} {{$item->nama_golongan}}</td>
+                                </tr>
+                                <tr>
                                     <th>Jabatan</th>
                                     <td>{{$item->jabatan}}</td>
                                 </tr>
@@ -132,7 +136,7 @@
                                                     Belum Tersedia
                                                 </span>
                                             @else
-                                                <a href="{{route('surat.cetak', $pelaksana->id)}}" target="_blank">
+                                                <a href="{{route('pelaksana.show', $pelaksana->id)}}" target="_blank">
                                                     <i data-feather="printer"></i>
                                                 </a>
                                             @endif

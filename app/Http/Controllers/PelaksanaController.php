@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Pelaksana;
-use App\SuratTugas;
-use App\User;
 use Auth;
+use App\Pelaksana;
+use PDF;
+use Illuminate\Http\Request;
 
 class PelaksanaController extends Controller
 {
@@ -19,9 +18,8 @@ class PelaksanaController extends Controller
     public function index()
     {
         $items = Pelaksana::all();
-        // $items = Pelaksana::where('user_id', Auth::user()->id)->get();
-        $itemsSurat = SuratTugas::all();
-        $itemsUser = User::all();
+        $itemsSurat = \App\SuratTugas::all();
+        $itemsUser = \App\User::all();
 
         return view('pelaksana')->with([
             'items'         => $items,
@@ -37,6 +35,11 @@ class PelaksanaController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'surat_tugas_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
         foreach ($request->user_id as $user) {
             Pelaksana::create([
                 'surat_tugas_id' => $request->surat_tugas_id,
@@ -50,25 +53,24 @@ class PelaksanaController extends Controller
 
     public function show($id)
     {
-        //
+        $item = Pelaksana::find($id);
+        $pdf = PDF::loadview('print', [
+            'item' => $item,
+        ]);
+        return $pdf->setPaper('a4')->stream();
+        // return view('print')->with([
+        //     'item' => $item
+        // ]);
     }
 
     public function edit($id)
     {
+
         //
     }
 
     public function update(Request $request, $id)
     {
-        // dd($request->all());
-        // dd($request->input());
-        // dd(count($request->input('user_id')));
-        // $a = count($request->input('user_id'));
-        // $nilai = 0;
-        // for ($i=0; $i < $a; $i++) { 
-        //     # code...
-        // }
-
         $item = Pelaksana::find($id);
         $item->update($request->all());
         return redirect()->route('pelaksana.index')->with([
