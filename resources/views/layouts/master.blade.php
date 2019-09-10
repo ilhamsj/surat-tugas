@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ env('app_name') }}</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="css/app.css">
     @stack('styles')
 </head>
 <body>
@@ -90,7 +90,7 @@
         @yield('content')
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/app.js"></script>
     <script>
         $(document).ready(function() {
             $('#example, #tabelUndangan, #tabelPegawai').DataTable( {
