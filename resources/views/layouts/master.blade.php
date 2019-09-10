@@ -46,7 +46,12 @@
                         {{Str::title(Auth::user()->name)}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="{{ route('pegawai.show', Auth::user()->id) }}">Dashboard</a>
+
+                        @if (Auth::user()->role != 'pegawai')
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                        @endif
+
+                        <a class="dropdown-item" href="{{ route('pegawai.show', Auth::user()->id) }}">Profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

@@ -23,11 +23,6 @@ Route::resource('pelaksana', 'PelaksanaController');
 Route::resource('pegawai', 'UserController');
 Route::resource('dokumentasi', 'DokumentasiController');
 
-Route::get('dashboard', 'DashboardController@index')->name('dashboard.index')->middleware('admin'); 
-Route::post('dashboard', 'DashboardController@store')->name('dashboard.store'); 
-
-Route::post('/home', 'HomeController@storeDokumentasi')->name('home.store');
-Route::put('/home/dokumentasi/{id}', 'HomeController@updateDokumentasi')->name('home.update');
-Route::delete('/home/dokumentasi/{id}', 'HomeController@destroyDokumentasi')->name('home.destroy');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 Route::get('/home/cetak/{id}', 'HomeController@print')->name('surat.cetak');

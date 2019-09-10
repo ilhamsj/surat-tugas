@@ -13,15 +13,19 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('admin')->only('index');
     }
 
     public function index()
     {
-        $items = Pelaksana::where('user_id', Auth::user()->id)->get();
-
-        return view('home')->with([
-            'items'  => $items,
+        return view('admin')->with([
+            'total' => [
+                "Pegawai" => \App\User::count(),
+                "Undangan" => \App\Undangan::count(),
+                "Surat Tugas" => \App\SuratTugas::count(),
+            ]
         ]);
+
     }
 
     public function print($id)
