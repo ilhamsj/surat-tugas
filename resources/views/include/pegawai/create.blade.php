@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="form-group col-md">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" class="form-control @error('name') is-invalid  @enderror" value="{{ old('name') ? old('name') : ''}}">
+                    <input type="text" name="name" id="name" class="form-control @error('name') is-invalid  @enderror" value="{{ old('name') ? old('name') : ''}}" autocomplete="name">
 
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
 
                 <div class="form-group col-md">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control @error('email') is-invalid  @enderror" value="{{ old('email') ? old('email') : ''}}">
+                    <input type="email" name="email" id="email" class="form-control @error('email') is-invalid  @enderror" value="{{ old('email') ? old('email') : ''}}" autocomplete="email">
 
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="form-group col-md">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control @error('password') is-invalid  @enderror" value="{{ old('password') ? old('password') : ''}}">
+                    <input type="password" name="password" id="password" class="form-control @error('password') is-invalid  @enderror" value="{{ old('password') ? old('password') : ''}}" autocomplete="new-password">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
