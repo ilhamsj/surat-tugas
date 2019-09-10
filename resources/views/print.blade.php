@@ -13,76 +13,67 @@
         font-size: medium;
       }
 
+      table {
+        width: 100%;
+      }
+
       table, tr, td {
         /* border: 1px solid black; */
         border-collapse: collapse;
       }
-      .main {
-        margin: auto;
-        text-align: left;
-        width: 90%;
-      }
-
-      table tr, .main td {
-        vertical-align: top;
-        padding: 10px;
-      }
-
-      .peserta td {
-        padding: 0 5px;
-      }
-      .list {
-        width: 100%;
-      }
-    .list td{
+      
+      .bordered table, .bordered tr, .bordered td {
         border: 1px solid black;
       }
 
-      .ttd .kepala {
+      .text-right {
         text-align: right
       }
 
       .text-center {
         text-align: center;
-      }
-
-      ol {
-        margin: 0;
-      }
+      }    
     </style>
   </head>
   <body>
     <div class="text-center">
-      <img src="{{asset('images/logo2019.png')}}" alt="" srcset="" style="max-width:120px">
-        <h1>
-          KEMENTERIAN AGAMA REPUBLIK INDONESIA <br/>
-          KANTOR WILAYAH KEMENTERIAN AGAMA <br/>
-          DAERAH ISTIMEWA YOGYAKARTA
-        </h1>
-        <p>
-            Jalan Sukonandi No. 8 Yogyakarta 55166 <br/>
-            Telp.(0274) 513492 Faksimili.(0274)516030 <br/>
-            Website: www.yogyakarta.kemenag.go.id
-        </p>
+      <table>
+        <tr class=" text-center">
+          <td>
+              <img style="width:120px" src="{{asset('images/logo2019.png')}}">
+          </td>
+          <td>
+              <h1>
+                KEMENTERIAN AGAMA REPUBLIK INDONESIA <br/>
+                KANTOR WILAYAH KEMENTERIAN AGAMA <br/>
+                DAERAH ISTIMEWA YOGYAKARTA
+              </h1>
+                  Jalan Sukonandi No. 8 Yogyakarta 55166 <br/>
+                  Telp.(0274) 513492 Faksimili.(0274)516030 <br/>
+                  Website: www.yogyakarta.kemenag.go.id
+          </td>
+        </tr>
+      </table>
         <hr>
         <h2>
-          <u>SURAT TUGAS</u>
+          SURAT TUGAS
         </h2>
-        Nomor :  <u>{{$item->surattugas->nomor}}</u>
+        Nomor :  {{$item->surattugas->nomor}}
 
     </div>
 
     <div>
-      <table class="main">
+      <table>
       <tr>
         <td>Menimbang</td>
+        <td>:</td>
         <td>
           <ol type="a"> 
             <li>
-              <u>{{ $item->surattugas->undangan->pengundang }}</u>
+              {{ $item->surattugas->undangan->pengundang }}
               Akan menyelenggarakan 
               kegiatan
-              <u>{{ $item->surattugas->undangan->acara }}</u>
+              {{ $item->surattugas->undangan->acara }}
             <li>
                 Bahwa mereka yang namanya tercantum disurat tugas ini dipandang
                 mampu, cakap serta bertanggung jawab sepenuhnya dalam
@@ -96,26 +87,27 @@
         </tr>
       <tr>
         <td>Dasar</td>
+        <td>:</td>
         <td>
-            <u>{{ $item->surattugas->undangan->tipe }}</u>
-            <u>{{ $item->surattugas->undangan->pengundang }}</u>,
-            Nomor  <u>{{ $item->surattugas->undangan->nomor }}</u>,
-            perihal  <u>{{$item->surattugas->undangan->perihal}}</u>.
+            {{ $item->surattugas->undangan->tipe }}
+            {{ $item->surattugas->undangan->pengundang }},
+            Nomor  {{ $item->surattugas->undangan->nomor }},
+            perihal  {{$item->surattugas->undangan->perihal}}.
 
         </td>
       </tr>
 
       <tr>
-        <td></td>
+        <td colspan="2"></td>
         <td>memberikan tugas</td>
       </tr>
 
       <tr>
         <td>Kepada</td>
+        <td>:</td>
         <td>
-
-          <table class="peserta list">
-              <tr class="text-center ">
+          <table class="bordered">
+              <tr>
                   <td>No</td>
                   <td>Nama</td>
                   <td>Jabatan</td>
@@ -127,7 +119,7 @@
 
               @foreach ($item->surattugas->pelaksana as $pegawai)
                   <tr>
-                      <td class="text-center">{{$no++}}</td>
+                      <td>{{$no++}}</td>
                       <td>{{$pegawai->user->name}}</td>
                       <td>{{$pegawai->user->jabatan}}</td>
                   </tr>
@@ -140,38 +132,36 @@
 
       <tr>
         <td>Untuk</td>
+        <td>:</td>
         <td>
             Melaksanakan tugas pada kegiatan <b>tersebut diatas</b>, pada:
-              <table class="peserta ttd" style="width: 450px">
+              <table>
                 <tr>
-                  <td>1. Hari/Tanggal </td>
+                  <td>1</td>
+                  <td>Hari/Tanggal </td>
                   <td> : </td>
                   <td> 
                       {{\Carbon\Carbon::parse($item->surattugas->undangan->waktu)->format('d M Y')}} - Selesai
                   </td>
                 </tr>
                 <tr>
-                  <td>2. Tempat </td>
+                  <td>2</td>
+                  <td>Tempat </td>
                   <td>:</td>
                   <td> 
-                      <u>{{$item->surattugas->undangan->tempat}}</u>,
+                      {{$item->surattugas->undangan->tempat}},
                   </td>
                 </tr>
-
-                <tr>
-                  <td colspan="3" class="kepala">
-                    <p>Yogyakarta,  {{  date('d M Y')  }}</p>
+                <tr class="text-right">
+                  <td colspan="4">
+                      Yogyakarta,  {{  date('d M Y')  }}
                   </td>
                 </tr>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td class="kepala">Kepala</td>
+                  <td colspan="4" class="text-right">Kepala</td>
                 </tr>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td class="kepala">
+                  <td colspan="4" class="text-right">
                     @php
                         $pangkat = $item->SuratTugas->pangkat->nama;
                     @endphp
@@ -183,14 +173,12 @@
                   </td>
                 </tr>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td class="kepala">
+                  <td colspan="4" class="text-right">
                     {{$item->SuratTugas->pangkat->user->name}}
                   </td>
                 </tr>
-                <tr style="text-align:right">
-                  <td colspan="3">
+                <tr>
+                  <td colspan="4" class="text-right">
                     @if ($pangkat == 'kakanwil')
                       <img src="{{  asset('images/ttd/paraf_kasubag.jpg') }}" alt="" srcset="" style="max-width:20px; margin-right:100px">
                       <img src="{{  asset('images/ttd/paraf_kepala_bagian_tata_usaha.jpg') }}" alt="" srcset="" style="max-width:20px">
