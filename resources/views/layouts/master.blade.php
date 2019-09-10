@@ -15,7 +15,7 @@
 
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
             </ul>
 

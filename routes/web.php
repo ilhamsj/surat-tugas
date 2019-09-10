@@ -1,5 +1,7 @@
 <?php
 
+use App\Dokumentasi;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +14,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome')->with([
+        'items' => Dokumentasi::all()
+    ]);
+})->name('home');
 
 Auth::routes();
 
@@ -25,7 +29,6 @@ Route::resource('pegawai', 'UserController');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard.index')->middleware('admin'); 
 Route::post('dashboard', 'DashboardController@store')->name('dashboard.store'); 
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@storeDokumentasi')->name('home.store');
 Route::put('/home/dokumentasi/{id}', 'HomeController@updateDokumentasi')->name('home.update');
 Route::delete('/home/dokumentasi/{id}', 'HomeController@destroyDokumentasi')->name('home.destroy');
