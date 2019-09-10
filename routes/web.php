@@ -1,5 +1,7 @@
 <?php
 
+use App\Dokumentasi;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,21 +13,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DokumentasiController@index')->name('home');
 
 Auth::routes();
 
-Route::resource('dashboard/undangan', 'UndanganController');
-Route::resource('dashboard/surat-tugas', 'SuratTugasController');
-Route::resource('dashboard/pelaksana', 'PelaksanaController');
-Route::resource('dashboard/pegawai', 'UserController');
+Route::resource('undangan', 'UndanganController');
+Route::resource('surat-tugas', 'SuratTugasController');
+Route::resource('pelaksana', 'PelaksanaController');
+Route::resource('pegawai', 'UserController');
+Route::resource('dokumentasi', 'DokumentasiController');
 
-Route::get('dashboard', 'DashboardController@index')->name('dashboard.index'); 
+Route::get('dashboard', 'DashboardController@index')->name('dashboard.index')->middleware('admin'); 
 Route::post('dashboard', 'DashboardController@store')->name('dashboard.store'); 
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@storeDokumentasi')->name('home.store');
 Route::put('/home/dokumentasi/{id}', 'HomeController@updateDokumentasi')->name('home.update');
 Route::delete('/home/dokumentasi/{id}', 'HomeController@destroyDokumentasi')->name('home.destroy');

@@ -19,7 +19,7 @@ class SuratTugas extends Model
     {
         return $this->belongsTo(Pangkat::class);
     }
-
+    
     public function Pelaksana()
     {
         return $this->hasMany(Pelaksana::class);

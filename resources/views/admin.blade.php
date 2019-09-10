@@ -1,12 +1,5 @@
 @extends('layouts.master')
 
-@php
-    $data = [
-        'Data Pegawai',
-        'Data Undangan',
-        'Data Surat Tugas',
-    ];
-@endphp
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

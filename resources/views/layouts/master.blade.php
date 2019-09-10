@@ -15,7 +15,7 @@
 
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
             </ul>
 
@@ -43,10 +43,10 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{Auth::user()->name}}
+                        {{Str::title(Auth::user()->name)}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a>
+                        <a class="dropdown-item" href="{{ route('pegawai.show', Auth::user()->id) }}">Dashboard</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

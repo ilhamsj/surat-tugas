@@ -14,7 +14,7 @@
                         <tr>
                             <th>ID</th>
                             <th>NIP</th>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Jabatan</th>
                             <th>Role</th>
                             <th>Email</th>
@@ -27,7 +27,9 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td class="nip">{{ $item->nip }}</td>
-                                <td class="name">{{ $item->name }}</td>
+                                <td class="name">
+                                    <a href="{{ route('pegawai.show',  $item->id) }}">{{ $item->name }}</a>
+                                </td>
                                 <td class="jabatan">{{ $item->jabatan }}</td>
                                 <td class="role">
                                     {{Str::title($item->role)}}
@@ -38,7 +40,6 @@
                                 <td class="email">{{ $item->email }}</td>
                                 <td class="create">{{ $item->created_at }}</td>
                                 <td class="text-center">
- 
                                     <a href="" 
                                     onclick="editPost(
                                         {{$item->id}}, 
@@ -94,27 +95,11 @@
                 $("#password").val(password);
                 $("#nip").val(nip);
                 $("#jabatan").val(jabatan);
-                var x = $(".badge").html();
-                console.log(x);
-                
 
                 var roleText = $("#role [value='"+role+"']").html();
                 $("#role [value='"+role+"']").remove();
                 $("#role option:first-child").before("<option value='"+role+"' selected>"+roleText+"</option>");
             }
-
-            $("td").click(function (e) { 
-                e.preventDefault();
-                // var content = $(this).val();
-                // var content = $(this).html();
-                // var content = $(this).attr("class");
-                // var content = $(this).html();
-                // $(this).remove();
-                
-                
-                // console.log(content);
-                
-            });
 
             $("#closeForm").click(function (e) { 
                 e.preventDefault();

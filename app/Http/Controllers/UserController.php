@@ -12,7 +12,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('super_admin');
+        $this->middleware('super_admin')->except('show');
     }
 
     public function index()
@@ -62,7 +62,11 @@ class UserController extends Controller
 
     public function show($id)
     {
-        //
+        $item = User::find($id);
+
+        return view('show')->with([
+            'item'  => $item,
+        ]);
     }
 
     public function edit($id)

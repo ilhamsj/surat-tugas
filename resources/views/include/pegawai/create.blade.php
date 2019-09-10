@@ -43,7 +43,7 @@
                 </div>
                 
                 <div class="form-group col-md">
-                    <label for="nip">Nip</label>
+                    <label for="nip">NIP</label>
                     <input type="text" name="nip" id="nip" class="form-control @error('nip') is-invalid  @enderror" value="{{ old('nip') ? old('nip') : ''}}">
 
                     @error('nip')
@@ -85,10 +85,9 @@
                 <div class="form-group col-md" id="roleTTD">
                     <label for="roleTTD">Pangkat</label>
                     <select id="roleTTD" name="roleTTD" class="form-control @error('roleTTD') is-invalid  @enderror">
-                        <option></option>
-                        <option value="kakanwil">kakanwil</option>
-                        <option value="kabag">kabag</option>
-                        <option value="kasubag">kasubag</option>
+                        <option value="kakanwil">Kakanwil</option>
+                        <option value="kabag">Kabag</option>
+                        <option value="kasubag">Kasubag</option>
                     </select>
                     @error('roleTTD')
                         <span class="invalid-feedback" roleTTD="alert">

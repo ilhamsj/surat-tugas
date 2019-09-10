@@ -47,4 +47,8 @@ class User extends Authenticatable
         return $this->hasMany(Pangkat::class);
     }
 
+    public function SuratTugas()
+    {
+        return $this->hasManyThrough('App\Comment', 'App\Post');
+    }
 }
