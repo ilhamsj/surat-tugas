@@ -13,11 +13,7 @@ use App\Dokumentasi;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome')->with([
-        'items' => Dokumentasi::all()
-    ]);
-})->name('home');
+Route::get('/', 'DokumentasiController@index')->name('home');
 
 Auth::routes();
 
@@ -25,6 +21,7 @@ Route::resource('undangan', 'UndanganController');
 Route::resource('surat-tugas', 'SuratTugasController');
 Route::resource('pelaksana', 'PelaksanaController');
 Route::resource('pegawai', 'UserController');
+Route::resource('dokumentasi', 'DokumentasiController');
 
 Route::get('dashboard', 'DashboardController@index')->name('dashboard.index')->middleware('admin'); 
 Route::post('dashboard', 'DashboardController@store')->name('dashboard.store'); 
