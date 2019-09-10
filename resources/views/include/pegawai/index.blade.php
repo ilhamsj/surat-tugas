@@ -15,6 +15,8 @@
                             <th>ID</th>
                             <th>NIP</th>
                             <th>Nama</th>
+                            <th>Golongan</th>
+                            <th>Nama Golongan</th>
                             <th>Jabatan</th>
                             <th>Role</th>
                             <th>Email</th>
@@ -30,6 +32,8 @@
                                 <td class="name">
                                     <a href="{{ route('pegawai.show',  $item->id) }}">{{ $item->name }}</a>
                                 </td>
+                                <td class="golongan">{{ $item->golongan}}</td>
+                                <td class="golongan">{{$item->nama_golongan}}</td>
                                 <td class="jabatan">{{ $item->jabatan }}</td>
                                 <td class="role">
                                     {{Str::title($item->role)}}
@@ -49,6 +53,8 @@
                                         '{{$item->nip}}', 
                                         '{{$item->role}}', 
                                         '{{$item->jabatan}}', 
+                                        '{{$item->golongan}}', 
+                                        '{{$item->nama_golongan}}', 
                                         '{{route('pegawai.update', $item->id)}}',
                                         )">
                                         <i data-feather="edit"></i>
@@ -82,7 +88,7 @@
                 document.getElementById(id).submit();
             }
     
-            function editPost(id, name, email, password, nip, role, jabatan, url)
+            function editPost(id, name, email, password, nip, role, jabatan, golongan, nm_gol, url)
             {
                 event.preventDefault(); 
                 $("#dataCard").toggle("slow", "swing");
@@ -95,10 +101,17 @@
                 $("#password").val(password);
                 $("#nip").val(nip);
                 $("#jabatan").val(jabatan);
+                $("#nama_golongan").val(nm_gol);
 
                 var roleText = $("#role [value='"+role+"']").html();
                 $("#role [value='"+role+"']").remove();
                 $("#role option:first-child").before("<option value='"+role+"' selected>"+roleText+"</option>");
+
+                console.log(golongan);
+                
+                var golongan = $("#golongan [value='"+golongan+"']").html();
+                $("#role [value='"+golongan+"']").remove();
+                $("#golongan option:first-child").after("<option value='"+golongan+"' selected>"+golongan+"</option>");
             }
 
             $("#closeForm").click(function (e) { 

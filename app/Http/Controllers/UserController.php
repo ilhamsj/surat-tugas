@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $items = User::orderBy('id', 'desc')->get();
+        $items = User::orderBy('created_at', 'desc')->get();
         return view('pegawai')->with([
             'items'  => $items,
         ]);
@@ -25,11 +25,12 @@ class UserController extends Controller
 
     public function create()
     {
-        //
+        
     }
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -46,6 +47,8 @@ class UserController extends Controller
             'role' => $request->role,
             'jabatan' => $request->jabatan,
             'nip' => $request->nip,
+            'golongan' => $request->golongan,
+            'nama_golongan' => $request->nama_golongan,
         ]);
             
         if ($request->roleTTD != null) {
@@ -93,6 +96,8 @@ class UserController extends Controller
             'role' => $request->role,
             'jabatan' => $request->jabatan,
             'nip' => $request->nip,
+            'golongan' => $request->golongan,
+            'nama_golongan' => $request->nama_golongan,
         ]);
         
         $pangkat = Pangkat::where('user_id', $id)->get();

@@ -55,6 +55,67 @@
             </div>
 
             <div class="row">
+                <div class="form-group col-md">
+                    <label for="jabatan">Jabatan</label>
+                    <input type="text" name="jabatan" id="jabatan" class="form-control @error('jabatan') is-invalid  @enderror" value="{{ old('jabatan') ? old('jabatan') : ''}}">
+
+                    @error('jabatan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                @php
+                    $golongan = [
+                        'I/a' => 'Juru Muda', 
+                        'I/b' => 'Juru Muda Tingkat 1', 
+                        'I/c' => 'Juru', 
+                        'I/d' => 'Juru Tingkat 1',
+                        'II/a' => 'Pengatur Muda', 
+                        'II/b' => 'Pengatur Muda Tingkat 1', 
+                        'II/c' => 'Pengatur', 
+                        'II/d' => 'Pengatur Tingkat 1',
+                        'III/a' => 'Penata Muda', 
+                        'III/b' => 'Penata Muda Tingkat 1', 
+                        'III/c' => 'Penata', 
+                        'III/d' => 'Penata Tingkat 1',
+                        'IV/a' => 'Pembina', 
+                        'IV/b' => 'Pembina Tingkat 1', 
+                        'IV/c' => 'Pembina Utama Muda', 
+                        'IV/d' => 'Pembina Utama Madya',
+                        'IV/e' => 'Pembina Utama',
+                    ];
+                @endphp
+
+                <div class="form-group col-md" id="golongan">
+                    <label for="golongan">Golongan</label>
+                    <select id="golongan" name="golongan" class="form-control @error('golongan') is-invalid  @enderror" required>
+                        {{-- <option></option> --}}
+                        @foreach ($golongan as $key => $value)
+                            <option value="{{$key}}">{{ $key }}/{{ $value }}</option>
+                        @endforeach
+                    </select>
+                    @error('golongan')
+                        <span class="invalid-feedback" golongan="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group col-md">
+                    <label for="nama_golongan">Nama Golongan</label>
+                    <input type="text" name="nama_golongan" id="nama_golongan" class="form-control @error('nama_golongan') is-invalid  @enderror" value="{{ old('nama_golongan') ? old('nama_golongan') : ''}}" readonly>
+
+                    @error('nama_golongan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+            
+            <div class="row">
                 <div class="form-group col-md" id="role">
                     <label for="role">Role</label>
                     <select id="role" name="role" class="form-control @error('role') is-invalid  @enderror" required>
@@ -69,19 +130,6 @@
                     @enderror
                 </div>
 
-                <div class="form-group col-md">
-                    <label for="jabatan">Jabatan</label>
-                    <input type="text" name="jabatan" id="jabatan" class="form-control @error('jabatan') is-invalid  @enderror" value="{{ old('jabatan') ? old('jabatan') : ''}}">
-
-                    @error('jabatan')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-            </div>
-            <div class="row">
                 <div class="form-group col-md" id="roleTTD">
                     <label for="roleTTD">Pangkat</label>
                     <select id="roleTTD" name="roleTTD" class="form-control @error('roleTTD') is-invalid  @enderror">
@@ -103,3 +151,13 @@
     </div>
 </div>
     
+@push('scripts')
+    <script>
+        $("#golongan").change(function (e) { 
+            e.preventDefault();
+            var x = $('#golongan option:selected').text();
+            var golongan = x.split("/").pop();
+            $("#nama_golongan").val(golongan);
+        });
+    </script>
+@endpush
